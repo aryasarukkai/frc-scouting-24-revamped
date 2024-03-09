@@ -1,0 +1,20 @@
+{
+    "name": "649 Scouting App",
+    "short_name": "649",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#001F3F",
+    "theme_color": "#001F3F",
+    "icons": [
+        {
+            "src": "/icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

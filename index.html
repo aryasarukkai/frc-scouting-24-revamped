@@ -1,0 +1,248 @@
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>Scouting App</title>
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+        @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900');
+
+        body {
+            font-family: 'Red Hat Display', sans-serif;
+            margin: 20px;
+            background-color: #001F3F; /* Dark background for contrast */
+            color: #FFFFFF; /* White text */
+        }
+        .input-group label {
+            font-family: 'Archivo Black', sans-serif;
+            color: #FFFFFF; /* White label text */
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], input[type="checkbox"], input[type="radio"], button {
+            font-family: 'Red Hat Display', sans-serif;
+            color: #FFFFFF;
+            background-color: #555; /* Slightly lighter than body for visibility */
+            border: 1px solid #777; /* Gray border for differentiation */
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            font-weight: 900; /* Matching the weight of Red Hat Display Black */
+            text-transform: uppercase;
+            border: 2px solid #FFFFFF; /* White border for outlined effect */
+            background-color: transparent;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #FFFFFF;
+            color: #333;
+        }
+        /* Enhance visibility of checkboxes and radios */
+        input[type="checkbox"], input[type="radio"] {
+            transform: scale(1.2); /* Make checkboxes and radios slightly larger */
+            margin-right: 5px;
+        }
+        /* Styling for radio buttons and their labels */
+        .input-group div {
+            margin-bottom: 10px;
+        }
+        .input-group label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+    </style>
+
+  </head>
+  <body>
+      <h1>649 Scouting [WEB]</h1>
+    <h2>FRC Crescendo</h2>
+      <div class="input-group">
+          <label for="scout_name">Scout Name:</label>
+          <input type="text" id="scout_name" required>
+      </div>
+      <div class="input-group">
+          <label for="match_number">Match Number:</label>
+          <input type="number" id="match_number" required>
+      </div>
+      <div class="input-group">
+          <label for="team_number">Team Number:</label>
+          <input type="number" id="team_number" required>
+      </div>
+      <div class="input-group">
+          <label for="alliance_color">Alliance Color:</label>
+          <div>
+              <input type="radio" id="alliance_color_red" name="alliance_color" value="red" required>
+              <label for="alliance_color_red">Red</label>
+              <input type="radio" id="alliance_color_blue" name="alliance_color" value="blue" required>
+              <label for="alliance_color_blue">Blue</label>
+          </div>
+      </div>
+      <div class="input-group">
+          <label for="preload">Preload:</label>
+          <input type="checkbox" id="preload">
+      </div>
+      <div class="input-group">
+          <label for="ground_pickup_auton">Ground Pickup (Auton):</label>
+          <input type="checkbox" id="ground_pickup_auton">
+      </div>
+      <div class="input-group">
+          <label for="ground_pickup_teleop">Ground Pickup (Teleop):</label>
+          <input type="checkbox" id="ground_pickup_teleop">
+      </div>
+      <div class="input-group">
+          <label for="source_pickup_auton">Source Pickup (Auton):</label>
+          <input type="checkbox" id="source_pickup_auton">
+      </div>
+      <div class="input-group">
+          <label for="source_pickup_teleop">Source Pickup (Teleop):</label>
+          <input type="checkbox" id="source_pickup_teleop">
+      </div>
+      <div class="input-group">
+          <label for="regular_note_auton">Regular Note (Auton):</label>
+          <input type="text" id="regular_note_auton" required>
+      </div>
+      <div class="input-group">
+          <label for="regular_note_teleop">Regular Note (Teleop):</label>
+          <input type="text" id="regular_note_teleop" required>
+      </div>
+      <div class="input-group">
+          <label for="amplified_note">Amplified Note:</label>
+          <input type="text" id="amplified_note" required>
+      </div>
+      <div class="input-group">
+          <label for="speaker_notes_auton">Speaker Notes (Auton):</label>
+          <input type="text" id="speaker_notes_auton" required>
+      </div>
+      <div class="input-group">
+          <label for="speaker_notes_teleop">Speaker Notes (Teleop):</label>
+          <input type="text" id="speaker_notes_teleop" required>
+      </div>
+      <div class="input-group">
+          <label for="amp_notes_auton">Amp Notes (Auton):</label>
+          <input type="text" id="amp_notes_auton" required>
+      </div>
+      <div class="input-group">
+          <label for="amp_notes_teleop">Amp Notes (Teleop):</label>
+          <input type="text" id="amp_notes_teleop" required>
+      </div>
+      <div class="input-group">
+          <label for="drop">Drop:</label>
+          <input type="number" id="drop" required>
+      </div>
+      <div class="input-group">
+          <label for="blocked_shots">Blocked Shots:</label>
+          <input type="checkbox" id="blocked_shots">
+      </div>
+      <div class="input-group">
+          <label for="times_they_blocked">Times They Blocked:</label>
+          <input type="number" id="times_they_blocked" required>
+      </div>
+      <div class="input-group">
+          <label for="total_fails">Total Fails:</label>
+          <input type="number" id="total_fails" required>
+      </div>
+      <div class="input-group">
+          <label for="source_to_speaker">Source to Speaker:</label>
+          <input type="text" id="source_to_speaker" required>
+      </div>
+      <div class="input-group">
+          <label for="spotlight">Spotlight:</label>
+          <input type="checkbox" id="spotlight">
+      </div>
+      <div class="input-group">
+          <label for="buddy_climb">Buddy Climb:</label>
+          <input type="checkbox" id="buddy_climb">
+      </div>
+      <div class="input-group">
+          <label for="trap">Trap:</label>
+          <input type="checkbox" id="trap">
+      </div>
+      <div class="input-group">
+          <label for="onstage">On Stage:</label>
+          <input type="checkbox" id="onstage">
+      </div>
+      <div class="input-group">
+          <label for="list">List:</label>
+          <input type="text" id="list" required>
+      </div>
+    <button onclick="submitData()">Save Locally</button>
+    <button onclick="uploadData()">Upload</button>
+
+    <script>
+        // Function to save data locally
+        function submitData() {
+            const formData = {
+                scoutName: document.getElementById("scout_name").value,
+                matchNumber: document.getElementById("match_number").value,
+                teamNumber: document.getElementById("team_number").value,
+                allianceColor: document.querySelector('input[name="alliance_color"]:checked').value,
+                preload: document.getElementById("preload").checked,
+                groundPickupAuton: document.getElementById("ground_pickup_auton").checked,
+                groundPickupTeleop: document.getElementById("ground_pickup_teleop").checked,
+                sourcePickupAuton: document.getElementById("source_pickup_auton").checked,
+                sourcePickupTeleop: document.getElementById("source_pickup_teleop").checked,
+                regularNoteAuton: document.getElementById("regular_note_auton").value,
+                regularNoteTeleop: document.getElementById("regular_note_teleop").value,
+                amplifiedNote: document.getElementById("amplified_note").value,
+                speakerNotesAuton: document.getElementById("speaker_notes_auton").value,
+                speakerNotesAeleop: document.getElementById("speaker_notes_teleop").value,
+                ampNotesAuton: document.getElementById("amp_notes_auton").value,
+                ampNotesAeleop: document.getElementById("amp_notes_teleop").value,
+                drop: document.getElementById("drop").value,
+                blockedShots: document.getElementById("blocked_shots").checked,
+                timesTheyBlocked: document.getElementById("times_they_blocked").value,
+                totalFails: document.getElementById("total_fails").value,
+                sourceToSpeaker: document.getElementById("source_to_speaker").value,
+                spotlight: document.getElementById("spotlight").checked,
+                buddyClimb: document.getElementById("buddy_climb").checked,
+                trapValue: document.getElementById("trap").checked,
+                onstage: document.getElementById("onstage").checked,
+                list: document.getElementById("list").value
+            };
+
+            // Save data to localStorage
+            localStorage.setItem("formData", JSON.stringify(formData));
+            alert("Data saved locally successfully!");
+        }
+
+        // Function to upload data
+        function uploadData() {
+            const formData = JSON.parse(localStorage.getItem("formData"));
+
+            if (!formData) {
+                alert("No data to upload. Please save data locally first.");
+                return;
+            }
+
+            const url = `https://script.google.com/macros/s/AKfycbw6GYL5Vqa3Bo3DiBoRnBx6yvVRvbLR_fkUfnFIANa7Q1seGizskp69DBASKm5p9qo2/exec?action=create&name=${formData.scoutName}&matchnumber=${formData.matchNumber}&teamnumber=${formData.teamNumber}&color=${formData.allianceColor}&preload=${formData.preload}&groundpickupauton=${formData.groundPickupAuton}&groundpickupteleop=${formData.groundPickupTeleop}&sourcepickupauton=${formData.sourcePickupAuton}&sourcepickupteleop=${formData.sourcePickupTeleop}&regularnoteauton=${formData.regularNoteAuton}&regularnoteteleop=${formData.regularNoteTeleop}&amplifiednote=${formData.amplifiedNote}&speakernotesauton=${formData.speakerNotesAuton}&speakernotesteleop=${formData.speakerNotesAeleop}&ampnotesauton=${formData.ampNotesAuton}&ampnotesteleop=${formData.ampNotesAeleop}&drop=${formData.drop}&blockedshots=${formData.blockedShots}&timestheyblocked=${formData.timesTheyBlocked}&totalfails=${formData.totalFails}&sourcetospeaker=${formData.sourceToSpeaker}&spotlight=${formData.spotlight}&buddyclimb=${formData.buddyClimb}&trap=${formData.trapValue}&onstage=${formData.onstage}&list=${formData.list}`;
+
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    alert(`Data uploaded successfully: ${data}`);
+                    localStorage.removeItem("formData"); // Clear local data after successful upload
+                })
+                .catch(error => {
+                    alert(`Data upload failed: ${error}`);
+                });
+        }
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully:', registration);
+                    })
+                    .catch(error => {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+    </body>
+    </html>
+    

@@ -6,8 +6,8 @@
     <title>Scouting App</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="icon.png">
-  <link rel="manifest" href="/manifest.json">
-  
+  <link rel="manifest" href="manifest.json">
+
   <style>
       @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
       @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900');
@@ -31,7 +31,7 @@
           color: #FFFFFF; /* White label text */
           margin-bottom: 5px;
       }
-   
+
 
       input[type="text"], input[type="number"], input[type="checkbox"], input[type="radio"], button {
           font-family: 'Red Hat Display', sans-serif;
@@ -121,6 +121,31 @@
   <h1>FRC Crescendo</h1>
   <br><br>
   <h2><u>Setup</u> 🚀</h2>
+  <script>
+	let deferredPrompt;
+
+	window.addEventListener('beforeinstallprompt', function(event) {
+	  event.preventDefault();
+	  deferredPrompt = event;
+	  document.getElementById('install-button').style.display = 'block';
+	});
+
+	document.getElementById('install-button').addEventListener('click', function() {
+	  deferredPrompt.prompt();
+	  deferredPrompt.userChoice.then(function(choiceResult) {
+		if (choiceResult.outcome === 'accepted') {
+		  console.log('User accepted the install prompt');
+		} else {
+		  console.log('User dismissed the install prompt');
+		}
+		deferredPrompt = null;
+	  });
+	});
+  </script>
+  <div class = "input-group">
+	<label for="install-button">Install App:</label>
+	<button id="install-button">Install</button>
+	  </div>
     <div class="input-group">
         <label for="scout_name">Scout Name:</label>
         <input type="text" id="scout_name" required>
@@ -229,7 +254,13 @@
     </div>
   <button onclick="submitData()">Save Locally</button>
   <button onclick="uploadData()">Upload</button>
-
+  <script>
+	if ('serviceWorker' in navigator) {
+	  window.addEventListener('load', function() {
+		navigator.serviceWorker.register('/service-worker.js');
+	  });
+	}
+  </script>
   <script>
       let sourceSelected = false;
       let speakerSelected = false;
@@ -334,16 +365,6 @@
       }
   </script>
 
-<script>
-    if ('serviceWorker' in navigator) {
-       window.addEventListener('load', function() {
-         navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-           console.log('ServiceWorker registration successful with scope: ', registration.scope);
-         }, function(err) {
-           console.log('ServiceWorker registration failed: ', err);
-         });
-       });
-    }
-   </script>
+
   </body>
   </html>

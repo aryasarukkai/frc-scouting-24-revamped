@@ -6,6 +6,7 @@
     <title>Scouting App</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="icon.png">
+  <link rel="manifest" href="/manifest.json">
   <style>
       @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
       @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900');
@@ -46,8 +47,8 @@
           border: 2px solid #FFFFFF; /* White border for outlined effect */
           background-color: transparent;
           padding: 15px; /* Increase padding to make the buttons bigger */
-          padding-left:50px;
-          padding-right:50px;
+          padding-left:25px;
+          padding-right:25px;
           cursor: pointer;
       }
       button:hover {
@@ -332,18 +333,16 @@
       }
   </script>
 
-  <script>
-      if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-              navigator.serviceWorker.register('/service-worker.js')
-                  .then(registration => {
-                      console.log('Service Worker registered successfully:', registration);
-                  })
-                  .catch(error => {
-                      console.error('Service Worker registration failed:', error);
-                  });
-          });
-      }
-  </script>
+<script>
+    if ('serviceWorker' in navigator) {
+       window.addEventListener('load', function() {
+         navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+           console.log('ServiceWorker registration successful with scope: ', registration.scope);
+         }, function(err) {
+           console.log('ServiceWorker registration failed: ', err);
+         });
+       });
+    }
+   </script>
   </body>
   </html>

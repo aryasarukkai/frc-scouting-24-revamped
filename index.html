@@ -204,7 +204,7 @@
     <div class="input-group">
         <label for="amps_scored_teleop">Amp Notes</label>
         <div>
-            <input type="number" id="amps_scored_teleop" min="0" value="0" required>1            <button onclick="incrementValue('amps_scored_teleop')">+</button>
+            <input type="number" id="amps_scored_teleop" min="0" value="0" required>           <button onclick="incrementValue('amps_scored_teleop')">+</button>
             <button onclick="decrementValue('amps_scored_teleop')">-</button>
         </div>
     </div>
@@ -235,7 +235,7 @@
 		<label class="checkmark" for="spotlight">✅</label>
     </div>
     <div class="input-group">
-        <label for="buddy_climb">Buddy Climb:</label>
+        <label for="buddy_climb">Onstage:</label>
         <input type="checkbox" id="buddy_climb">
 		<label class="checkmark" for="buddy_climb">✅</label>
     </div>
@@ -308,35 +308,35 @@
       }
 
       // Function to save data locally
-      function submitData() {
-        const formData = {
-        scoutName: document.getElementById("scout_name").value,
-        matchNumber: document.getElementById("match_number").value,
-        teamNumber: document.getElementById("team_number").value,
-        allianceColor: document.querySelector('input[name="alliance_color"]:checked').value,
-        preloadScored: document.getElementById("preload_scored").checked,
-        notesCollectedAuton: document.getElementById("notes_collected_auton").value,
-        notesCollectedTeleop: document.getElementById("notes_intaked_teleop").value,
-        ampsPlayedAuton: document.getElementById("amps_scored_auton").value,
-        speakersPlayedAuton: document.getElementById("speakers_scored_auton").value,
-        ampsPlayedTeleop: document.getElementById("amps_scored_teleop").value,
-        unamplifiedSpeakersPlayedTeleop: document.getElementById("unamplifiedspeaker_scored_teleop").value,
-        amplifiedSpeakersPlayedTeleop: document.getElementById("amplifiedspeaker_scored_teleop").value,
-        harmonized: document.getElementById("harmonized").checked,
-        spotlight: document.getElementById("spotlight").checked,
-        buddyClimb: document.getElementById("buddy_climb").checked,
-        notes: document.getElementById("notes").value,
-        scoredSpeakers: scoredSpeakers,
-        scoredAmps: scoredAmps
-    };
+	  function submitData() {
+  const formData = {
+    scoutName: document.getElementById("scout_name").value,
+    matchNumber: document.getElementById("match_number").value,
+    teamNumber: document.getElementById("team_number").value,
+    allianceColor: document.querySelector('input[name="alliance_color"]:checked').value,
+    preloadScored: document.getElementById("preload_scored").checked,
+    notesCollectedAuton: document.getElementById("notes_collected_auton").value,
+    notesCollectedTeleop: document.getElementById("notes_intaked_teleop").value,
+    ampsPlayedAuton: document.getElementById("amps_scored_auton").value,
+    speakersPlayedAuton: document.getElementById("speakers_scored_auton").value,
+    ampsPlayedTeleop: document.getElementById("amps_scored_teleop").value,
+    unamplifiedSpeakersPlayedTeleop: document.getElementById("unamplifiedspeaker_scored_teleop").value,
+    amplifiedSpeakersPlayedTeleop: document.getElementById("amplifiedspeaker_scored_teleop").value,
+    harmonized: document.getElementById("harmonized").checked,
+    spotlight: document.getElementById("spotlight").checked,
+    buddyClimb: document.getElementById("buddy_climb").checked,
+    notes: document.getElementById("notes").value,
+    scoredSpeakers: scoredSpeakers,
+    scoredAmps: scoredAmps
+  };
 
-    // Save data to localStorage
-    localStorage.setItem("formData", JSON.stringify(formData));
-    alert("Data saved locally successfully!");
+  // Save data to localStorage
+  localStorage.setItem("formData", JSON.stringify(formData));
+  alert("Data saved locally successfully!");
 }
 
-      // Function to upload data
-      function uploadData() {
+// Function to upload data
+function uploadData() {
   const formData = JSON.parse(localStorage.getItem("formData"));
 
   if (!formData) {
@@ -344,7 +344,7 @@
     return;
   }
 
-  const url = `https://script.google.com/macros/s/AKfycbwf0K0IWWnK82vyNXmc0w9u8zrAHWAEFHXvTP7iPQdEsfn5BAP52UCYdiIWXJkN_VcCuw/exec?action=create&name=${formData.scoutName}&matchnumber=${formData.matchNumber}&teamnumber=${formData.teamNumber}&color=${formData.allianceColor}&preloadnotes=${formData.preloadScored}&notescollectedauton=${formData.notesCollectedAuton}&notescollectedteleop=${formData.notesCollectedTeleop}&notesplayedauton=${formData.ampsPlayedAuton}&notesplayedteleop=${formData.ampsPlayedTeleop}&amplifiednotesteleop=${formData.amplifiedSpeakersPlayedTeleop}&onstage=${formData.unamplifiedSpeakersPlayedTeleop}&harmonized=${formData.harmonized}&spotlight=${formData.spotlight}&buddyclimb=${formData.buddyClimb}&notes=${formData.notes}&scoredspeakers=${formData.scoredSpeakers}&scoredamps=${formData.scoredAmps}`;
+  const url = `https://script.google.com/macros/s/AKfycbzt8jKQbUVPcIGhvDYxgms35ss1FLHPzysbzQYW0bPV5jmIKB7WrsRITEkO0FWAU6fjAA/exec?action=create&name=${formData.scoutName}&matchnumber=${formData.matchNumber}&teamnumber=${formData.teamNumber}&color=${formData.allianceColor}&preloadnotes=${formData.preloadScored}&notescollectedauton=${formData.notesCollectedAuton}&notesintakedteleop=${formData.notesCollectedTeleop}&ampnotesscoredauton=${formData.ampsPlayedAuton}&speakernotesscoredauton=${formData.speakersPlayedAuton}&ampnotesscoredteleop=${formData.ampsPlayedTeleop}&notesplayedteleop=${formData.unamplifiedSpeakersPlayedTeleop}&amplifiedspeakernotes=${formData.amplifiedSpeakersPlayedTeleop}&harmonized=${formData.harmonized}&spotlight=${formData.spotlight}&buddy_climb=${formData.buddyClimb}&scoutnotes=${formData.notes}&scoredspeakers=${formData.scoredSpeakers}&scoredamps=${formData.scoredAmps}`;
 
   fetch(url)
     .then(response => response.text())
@@ -356,6 +356,7 @@
       alert(`Data upload failed: ${error}`);
     });
 }
+
 
 function clearData() { document.getElementById("scout_name").value = ""; document.getElementById("match_number").value = ""; document.getElementById("team_number").value = ""; document.getElementById("alliance_color_red").checked = false; document.getElementById("alliance_color_blue").checked = false; document.getElementById("preload_scored").checked = false; document.getElementById("notes_collected_auton").value = "0"; document.getElementById("notes_intaked_teleop").value = "0"; document.getElementById("amps_scored_auton").value = "0"; documentgetElementById("speakers_scored_auton").value = "0";
 document.getElementById("amps_scored_teleop").value = "0";

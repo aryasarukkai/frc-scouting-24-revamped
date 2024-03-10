@@ -1,13 +1,23 @@
 <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
 <head>
+
     <title>Scouting App</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="icon.png">
   <style>
       @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
       @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900');
-
+      @media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    input[type="text"], input[type="number"], input[type="checkbox"], input[type="radio"], button {
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+}
       body {
           font-family: 'Red Hat Display', sans-serif;
           margin: 20px;
@@ -19,6 +29,7 @@
           color: #FFFFFF; /* White label text */
           margin-bottom: 5px;
       }
+   
 
       input[type="text"], input[type="number"], input[type="checkbox"], input[type="radio"], button {
           font-family: 'Red Hat Display', sans-serif;
@@ -34,6 +45,9 @@
           text-transform: uppercase;
           border: 2px solid #FFFFFF; /* White border for outlined effect */
           background-color: transparent;
+          padding: 15px; /* Increase padding to make the buttons bigger */
+          padding-left:50px;
+          padding-right:50px;
           cursor: pointer;
       }
       button:hover {
@@ -41,7 +55,7 @@
           color: #333;
       }
 	  /* Styling for both radio buttons and checkboxes */
-	input[type="radio"],
+	input[type=   "radio"],
 	input[type="checkbox"] {
 		display: none; /* Hide the default input */
 	}
@@ -135,7 +149,7 @@
         <label class="checkmark" for="preload_scored">✅</label>
     </div>
     <div class="input-group">
-        <label for="notes_collected_auton">Notes Collected:</label>
+        <label for="notes_collected_auton">Notes Intaked</label>
         <div>
             <input type="number" id="notes_collected_auton" min="0" value="0" required>
             <button onclick="incrementValue('notes_collected_auton')">+</button>
@@ -144,44 +158,52 @@
     </div>
 
     <div class="input-group">
-        <label for="notes_collected_teleop">Notes Collected:</label>
+        <label for="amps_scored_auton">Amps</label>
         <div>
-            <input type="number" id="notes_collected_teleop" min="0" value="0" required>
-            <button onclick="incrementValue('notes_collected_teleop')">+</button>
-            <button onclick="decrementValue('notes_collected_teleop')">-</button>
+            <input type="number" id="amps_scored_auton" min="0" value="0" required>
+            <button onclick="incrementValue('amps_scored_auton')">+</button>
+            <button onclick="decrementValue('amps_scored_auton')">-</button>
         </div>
     </div>
     <div class="input-group">
-        <label for="notes_played_auton">Notes Played:</label>
+        <label for="speakers_scored_auton">Speakers</label>
         <div>
-            <input type="number" id="notes_played_auton" min="0" value="0" required>
-            <button onclick="incrementValue('notes_played_auton')">+</button>
-            <button onclick="decrementValue('notes_played_auton')">-</button>
+            <input type="number" id="speakers_scored_auton" min="0" value="0" required>
+            <button onclick="incrementValue('speakers_scored_auton')">+</button>
+            <button onclick="decrementValue('speakers_scored_auton')">-</button>
         </div>
     </div>
 	<h2><u>Teleop Portion</u> 🚀</h2>
     <div class="input-group">
-        <label for="notes_played_teleop">Notes Played (Teleop):</label>
+        <label for="notes_intaked_teleop">Notes Intaked</label>
         <div>
-            <button onclick="decrementValue('notes_played_teleop')">-</button>
-            <input type="number" id="notes_played_teleop" min="0" value="0" required>
-            <button onclick="incrementValue('notes_played_teleop')">+</button>
+            <input type="number" id="notes_intaked_teleop" min="0" value="0" required>
+            <button onclick="incrementValue('notes_intaked_teleop')">+</button>
+            <button onclick="decrementValue('notes_intaked_teleop')">-</button>
         </div>
     </div>
     <div class="input-group">
-        <label for="amplified_notes_teleop">Amplified Notes (Teleop):</label>
+        <label for="amps_scored_teleop">Amp</label>
         <div>
-            <button onclick="decrementValue('amplified_notes_teleop')">-</button>
-            <input type="number" id="amplified_notes_teleop" min="0" value="0" required>
-            <button onclick="incrementValue('amplified_notes_teleop')">+</button>
+            <input type="number" id="amps_scored_teleop" min="0" value="0" required>
+            <button onclick="incrementValue('amps_scored_teleop')">+</button>
+            <button onclick="decrementValue('amps_scored_teleop')">-</button>
         </div>
     </div>
     <div class="input-group">
-        <label for="onstage_notes">Notes Scored Onstage:</label>
+        <label for="unamplifiedspeaker_scored_teleop">Reg Speaker</label>
         <div>
-            <button onclick="decrementValue('onstage_notes')">-</button>
-            <input type="number" id="onstage_notes" min="0" value="0" required>
-            <button onclick="incrementValue('onstage_notes')">+</button>
+            <input type="number" id="unamplifiedspeaker_scored_teleop" min="0" value="0" required>
+            <button onclick="incrementValue('unamplifiedspeaker_scored_teleop')">+</button>
+            <button onclick="decrementValue('unamplifiedspeaker_scored_teleop')">-</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="amplifiedspeaker_scored_teleop">Amplify Speaker</label>
+        <div>
+            <input type="number" id="amplifiedspeaker_scored_teleop" min="0" value="0" required>
+            <button onclick="incrementValue('amplifiedspeaker_scored_teleop')">+</button>
+            <button onclick="decrementValue('amplifiedspeaker_scored_teleop')">-</button>
         </div>
     </div>
     <div class="input-group">
@@ -202,22 +224,6 @@
     <div class="input-group">
         <label for="notes">Notes:</label>
         <input type="text" id="notes" required>
-    </div>
-    <div class="input-group">
-        <label>Scoring:</label>
-        <div>
-            <button onclick="scoreSource()">SOURCE</button>
-            <button onclick="scoreSpeaker()">SPEAKER</button>
-            <button onclick="scoreAmp()">AMP</button>
-            <button onclick="scoreNote()">SCORE</button>
-        </div>
-    </div>
-    <div class="input-group">
-        <label>Scored:</label>
-        <div>
-            <span id="scored_speakers">Speakers: 0</span>
-            <span id="scored_amps">Amps: 0</span>
-        </div>
     </div>
   <button onclick="submitData()">Save Locally</button>
   <button onclick="uploadData()">Upload</button>

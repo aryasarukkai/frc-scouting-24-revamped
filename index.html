@@ -10,7 +10,7 @@
 
   <style>
       @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
-      @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900');
+      @import url('https://fnts.googleapis.com/css?family=Red+Hat+Display:900');
       @media (max-width: 600px) {
     body {
         font-size: 14px;
@@ -115,8 +115,8 @@
 </head>
 <body>
     <div class="header">
-        <img src="logo.png" alt="Logo" length=40px width=40px>
-        <h1>649 Scouting | <code>V2 • PWA • SFR</code></h1>
+        <img src="logo.png" alt="Logo" length=80px width=80px>
+        <h1>649 Scouting <br><code>V2 • PWA • SFR</code></h1>
     </div>
   <h1>FRC Crescendo</h1>
   <br><br>
@@ -212,8 +212,7 @@
     <div class="input-group">
         <label for="amps_scored_teleop">Amp Notes</label>
         <div>
-            <input type="number" id="amps_scored_teleop" min="0" value="0" required>
-            <button onclick="incrementValue('amps_scored_teleop')">+</button>
+            <input type="number" id="amps_scored_teleop" min="0" value="0" required>1            <button onclick="incrementValue('amps_scored_teleop')">+</button>
             <button onclick="decrementValue('amps_scored_teleop')">-</button>
         </div>
     </div>
@@ -351,8 +350,7 @@
               return;
           }
 
-          const url = `https://script.google.com/macros/s/AKfycbw6GYL5Vqa3Bo3DiBoRnBx6yvVRvbLR_fkUfnFIANa7Q1seGizskp69DBASKm5p9qo2/exec?action=create&name=${formData.scoutName}&matchnumber=${formData.matchNumber}&teamnumber=${formData.teamNumber}&color=${formData.allianceColor}&preloadnotes=${formData.preloadNotes}&notescollectedauton=${formData.notesCollectedAuton}&notescollectedteleop=${formData.notesCollectedTeleop}&notesplayedauton=${formData.notesPlayedAuton}&notesplayedteleop=${formData.notesPlayedTeleop}&amplifiednotesteleop=${formData.amplifiedNotesTeleop}&onstage=${formData.onstageNotes}&harmonized=${formData.harmonized}&spotlight=${formData.spotlight}&buddyclimb=${formData.buddyClimb}&notes=${formData.notes}&scoredspeakers=${formData.scoredSpeakers}&scoredamps=${formData.scoredAmps}`;
-
+          const url = `https://script.google.com/macros/s/AKfycbyXwNcykjE9zZ_8IWXN553ONNdPT09rRXUQ3aSiIjEU_bbrlt0spHiVp6m92tywLFLxnA/exec?action=create&name=${formData.scoutName}&matchnumber=${formData.matchNumber}&teamnumber=${formData.teamNumber}&color=${formData.allianceColor}&preloadnotes=${formData.preloadNotes}&notescollectedauton=${formData.notesCollectedAuton}&notescollectedteleop=${formData.notesCollectedTeleop}&notesplayedauton=${formData.notesPlayedAuton}&notesplayedteleop=${formData.notesPlayedTeleop}&amplifiednotesteleop=${formData.amplifiedNotesTeleop}&onstage=${formData.onstageNotes}&harmonized=${formData.harmonized}&spotlight=${formData.spotlight}&buddyclimb=${formData.buddyClimb}&notes=${formData.notes}&scoredspeakers=${formData.scoredSpeakers}&scoredamps=${formData.scoredAmps}`;
           fetch(url)
               .then(response => response.text())
               .then(data => {

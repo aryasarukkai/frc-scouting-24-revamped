@@ -121,22 +121,23 @@
   <h1>FRC Crescendo</h1>
   <br><br>
   <h2><u>Setup</u> 🚀</h2>
-  <script>
-document.getElementById('reload-button').addEventListener('click', function() {
-  if ('serviceWorker' in navigator) {
-    caches.keys().then(function(cacheNames) {
-      cacheNames.forEach(function(cacheName) {
-        caches.delete(cacheName);
-      });
-    });
-  }
-  window.location.reload(true);
-});
-  </script>
+
   <div class="input-group">
     <label for="reload-button">Update App:</label>
     <button id="reload-button">Check for Updates</button>
   </div>
+  <script>
+    document.getElementById('reload-button').addEventListener('click', function() {
+      if ('serviceWorker' in navigator) {
+        caches.keys().then(function(cacheNames) {
+          cacheNames.forEach(function(cacheName) {
+            caches.delete(cacheName);
+          });
+        });
+      }
+      window.location.reload(true);
+    });
+      </script>
     <div class="input-group">
         <label for="scout_name">Scout Name:</label>
         <input type="text" id="scout_name" required>

@@ -52,10 +52,7 @@
           padding-right:25px;
           cursor: pointer;
       }
-      button:hover {
-          background-color: #FFFFFF;
-          color: #333;
-      }
+
 	  /* Styling for both radio buttons and checkboxes */
 	input[type=   "radio"],
 	input[type="checkbox"] {
@@ -76,11 +73,7 @@
 	}
 
 	/* Change background and text color on label hover */
-	input[type="radio"] + label:hover,
-	input[type="checkbox"] + label:hover {
-		background-color: #FFFFFF;
-		color: #333;
-	}
+	
 
 	/* Checked state styles */
 	input[type="radio"]:checked + label,
@@ -344,7 +337,7 @@ function uploadData() {
     return;
   }
 
-  const url = `https://script.google.com/macros/s/AKfycbwf0K0IWWnK82vyNXmc0w9u8zrAHWAEFHXvTP7iPQdEsfn5BAP52UCYdiIWXJkN_VcCuw/exec?action=create&name=${formData.scoutName}&matchnumber=${formData.matchNumber}&teamnumber=${formData.teamNumber}&color=${formData.allianceColor}&preloadnotes=${formData.preloadScored}&notescollectedauton=${formData.notesCollectedAuton}&notescollectedteleop=${formData.notesCollectedTeleop}&notesplayedauton=${formData.ampsPlayedAuton}&notesplayedteleop=${formData.ampsPlayedTeleop}&amplifiednotesteleop=${formData.amplifiedSpeakersPlayedTeleop}&onstage=${formData.unamplifiedSpeakersPlayedTeleop}&harmonized=${formData.harmonized}&spotlight=${formData.spotlight}&buddyclimb=${formData.buddyClimb}&notes=${formData.notes}&scoredspeakers=${formData.scoredSpeakers}&scoredamps=${formData.scoredAmps}`;
+  const url = `https://script.google.com/macros/s/AKfycbxmHeBEC5J_XkS6l6fKNMzMzoPJYzWaqk6uZ2l20Eo4q2rVvA6J3uxvRGeK_oSoZq2RdA/exec?action=create&name=${formData.scoutName}&matchnumber=${formData.matchNumber}&teamnumber=${formData.teamNumber}&color=${formData.allianceColor}&preloadnotes=${formData.preloadScored}&notescollectedauton=${formData.notesCollectedAuton}&notescollectedteleop=${formData.notesCollectedTeleop}&notesplayedauton=${formData.ampsPlayedAuton}&notesplayedteleop=${formData.ampsPlayedTeleop}&amplifiednotesteleop=${formData.amplifiedSpeakersPlayedTeleop}&onstage=${formData.unamplifiedSpeakersPlayedTeleop}&harmonized=${formData.harmonized}&spotlight=${formData.spotlight}&buddyclimb=${formData.buddyClimb}&notes=${formData.notes}&scoredspeakers=${formData.scoredSpeakers}&scoredamps=${formData.scoredAmps}`;
 
   fetch(url)
     .then(response => response.text())

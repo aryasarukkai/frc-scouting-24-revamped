@@ -344,7 +344,7 @@
     return;
   }
 
-  const url = `https://script.google.com/macros/s/AKfycbz4Zi1fjhwwq3RPBWlQakdCL0zHMGb9gOCAkTp-sImBMfXZ-5hObI7Z7uhmMQQxVqLoUA/exec?action=create&name=${formData.scoutName}&matchnumber=${formData.matchNumber}&teamnumber=${formData.teamNumber}&color=${formData.allianceColor}&preloadnotes=${formData.preloadScored}&notescollectedauton=${formData.notesCollectedAuton}&notescollectedteleop=${formData.notesCollectedTeleop}&notesplayedauton=${formData.ampsPlayedAuton}&notesplayedteleop=${formData.ampsPlayedTeleop}&amplifiednotesteleop=${formData.amplifiedSpeakersPlayedTeleop}&onstage=${formData.unamplifiedSpeakersPlayedTeleop}&harmonized=${formData.harmonized}&spotlight=${formData.spotlight}&buddyclimb=${formData.buddyClimb}&notes=${formData.notes}&scoredspeakers=${formData.scoredSpeakers}&scoredamps=${formData.scoredAmps}`;
+  const url = `https://script.google.com/macros/s/AKfycbwYJAlb1P9mvGiCMYDyZ6VJI8IU6ZNziLI7u6g545rEf57frGRgi6xcwBNu8gHds9FzCw/exec?action=create&name=${formData.scoutName}&matchnumber=${formData.matchNumber}&teamnumber=${formData.teamNumber}&color=${formData.allianceColor}&preloadnotes=${formData.preloadScored}&notescollectedauton=${formData.notesCollectedAuton}&notescollectedteleop=${formData.notesCollectedTeleop}&notesplayedauton=${formData.ampsPlayedAuton}&notesplayedteleop=${formData.ampsPlayedTeleop}&amplifiednotesteleop=${formData.amplifiedSpeakersPlayedTeleop}&onstage=${formData.unamplifiedSpeakersPlayedTeleop}&harmonized=${formData.harmonized}&spotlight=${formData.spotlight}&buddyclimb=${formData.buddyClimb}&notes=${formData.notes}&scoredspeakers=${formData.scoredSpeakers}&scoredamps=${formData.scoredAmps}`;
 
   fetch(url)
     .then(response => response.text())

@@ -303,7 +303,7 @@
 
       // Function to save data locally
 	  function submitData() {
-		alert("The data has been submitted.  Please wait for the confirmation that it has been uploaded, and do not press the button again or navigate away from the app until you see the upload confirmation, which should show monentarily.");
+
       const formData = {
         scoutName: document.getElementById("scout_name").value,
         matchNumber: document.getElementById("match_number").value,
@@ -324,6 +324,7 @@
         scoredSpeakers: scoredSpeakers,
         scoredAmps: scoredAmps
       };
+	  alert("The data has been submitted.  Please wait for the confirmation that it has been uploaded, and do not press the button again or navigate away from the app until you see the upload confirmation, which should show monentarily.");
 
       const url = `https://script.google.com/macros/s/AKfycbxmHeBEC5J_XkS6l6fKNMzMzoPJYzWaqk6uZ2l20Eo4q2rVvA6J3uxvRGeK_oSoZq2RdA/exec?action=create&name=${formData.scoutName}&matchnumber=${formData.matchNumber}&teamnumber=${formData.teamNumber}&color=${formData.allianceColor}&preloadnotes=${formData.preloadScored}&notescollectedauton=${formData.notesCollectedAuton}&notescollectedteleop=${formData.notesCollectedTeleop}&notesplayedauton=${formData.ampsPlayedAuton}&notesplayedteleop=${formData.ampsPlayedTeleop}&amplifiednotesteleop=${formData.amplifiedSpeakersPlayedTeleop}&onstage=${formData.unamplifiedSpeakersPlayedTeleop}&harmonized=${formData.harmonized}&spotlight=${formData.spotlight}&buddyclimb=${formData.buddyClimb}&notes=${formData.notes}&scoredspeakers=${formData.scoredSpeakers}&scoredamps=${formData.scoredAmps}`;
 

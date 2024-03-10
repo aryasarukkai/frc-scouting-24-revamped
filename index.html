@@ -242,8 +242,9 @@ document.getElementById('reload-button').addEventListener('click', function() {
         <label for="notes">Notes:</label>
         <input type="text" id="notes" required>
     </div>
-  <button onclick="submitData()">Save Locally</button>
-  <button onclick="uploadData()">Upload</button>
+    <button onclick="submitData()">Save Locally</button>
+    <button onclick="clearData()">Clear</button>
+    <button onclick="uploadData()">Upload</button>
   <script>
 	if ('serviceWorker' in navigator) {
 	  window.addEventListener('load', function() {
@@ -354,6 +355,19 @@ document.getElementById('reload-button').addEventListener('click', function() {
       alert(`Data upload failed: ${error}`);
     });
 }
+
+function clearData() { document.getElementById("scout_name").value = ""; document.getElementById("match_number").value = ""; document.getElementById("team_number").value = ""; document.getElementById("alliance_color_red").checked = false; document.getElementById("alliance_color_blue").checked = false; document.getElementById("preload_scored").checked = false; document.getElementById("notes_collected_auton").value = "0"; document.getElementById("notes_intaked_teleop").value = "0"; document.getElementById("amps_scored_auton").value = "0"; documentgetElementById("speakers_scored_auton").value = "0";
+document.getElementById("amps_scored_teleop").value = "0";
+document.getElementById("unamplifiedspeaker_scored_teleop").value = "0";
+document.getElementById("amplifiedspeaker_scored_teleop").value = "0";
+document.getElementById("harmonized").checked = false;
+document.getElementById("spotlight").checked = false;
+document.getElementById("buddy_climb").checked = false;
+document.getElementById("notes").value = "";
+scoredSpeakers = 0;
+scoredAmps = 0;
+}
+
   </script>
 
 

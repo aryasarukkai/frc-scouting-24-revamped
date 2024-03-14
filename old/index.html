@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html>
+<head>
+
+    <title>Scouting App</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+      @import url('https://fnts.googleapis.com/css?family=Red+Hat+Display:900');
+      @media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    input[type="text"], input[type="number"], input[type="checkbox"], input[type="radio"], button {
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+}
+      body {
+          font-family: 'Red Hat Display', sans-serif;
+          margin: 20px;
+          background-color: #001F3F; /* Dark background for contrast */
+          color: #FFFFFF; /* White text */
+      }
+      .input-group label {
+          font-family: 'Archivo Black', sans-serif;
+          color: #FFFFFF; /* White label text */
+          margin-bottom: 5px;
+      }
+
+
+      input[type="text"], input[type="number"], input[type="checkbox"], input[type="radio"], button {
+          font-family: 'Red Hat Display', sans-serif;
+          color: #FFFFFF;
+          background-color: #555; /* Slightly lighter than body for visibility */
+          border: 1px solid #777; /* Gray border for differentiation */
+          border-radius: 4px;
+          padding: 10px;
+          margin-bottom: 10px;
+      }
+      button {
+          font-weight: 900; /* Matching the weight of Red Hat Display Black */
+          text-transform: uppercase;
+          border: 2px solid #FFFFFF; /* White border for outlined effect */
+          background-color: transparent;
+          padding: 15px; /* Increase padding to make the buttons bigger */
+          padding-left:25px;
+          padding-right:25px;
+          cursor: pointer;
+      }
+
+	  /* Styling for both radio buttons and checkboxes */
+	input[type=   "radio"],
+	input[type="checkbox"] {
+		display: none; /* Hide the default input */
+	}
+
+	/* Custom styling for labels to mimic button appearance */
+	input[type="radio"] + label,
+	input[type="checkbox"] + label {
+		font-weight: 900; /* Matching the weight of Red Hat Display Black */
+		text-transform: uppercase;
+		border: 2px solid #FFFFFF; /* White border for outlined effect */
+		background-color: transparent;
+		cursor: pointer;
+		display: inline-block;
+		padding: 8px 16px; /* Adjust padding as needed */
+		margin-right: 10px; /* Adjust margin as needed */
+	}
+
+	/* Change background and text color on label hover */
+
+
+	/* Checked state styles */
+	input[type="radio"]:checked + label,
+	input[type="checkbox"]:checked + label {
+		background-color: #FFFFFF;
+		color: #333;
+	}
+
+      /* Enhance visibility of checkboxes and radios */
+      input[type="checkbox"], input[type="radio"] {
+          transform: scale(1.2); /* Make checkboxes and radios slightly larger */
+          margin-right: 5px;
+      }
+      /* Styling for radio buttons and their labels */
+      .input-group div {
+          margin-bottom: 10px;
+      }
+      .input-group label {
+          display: inline-block;
+          margin-right: 20px;
+      }
+	  .header {
+            display: flex;
+            align-items: center; /* Vertically center items */
+        }
+
+        .header img {
+            margin-right: 10px; /* Adjust margin as needed */
+        }
+  </style>
+
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Logo" length=80px width=80px>
+        <h1>649 Scouting <br><code>V2.51 • SFR</code></h1>
+    </div>
+  <h1>FRC Crescendo</h1>
+
+  <h2><u>Setup</u> 🚀</h2>
+
+  <div class="input-group">
+    <label for="reload-button">Update App:</label>
+    <button id="reload-button">Reload App</button>
+  </div>
+  <script>
+    document.getElementById('reload-button').addEventListener('click', function() {
+      if ('serviceWorker' in navigator) {
+        caches.keys().then(function(cacheNames) {
+          cacheNames.forEach(function(cacheName) {
+            caches.delete(cacheName);
+          });
+        });
+      }
+      window.location.reload(true);
+    });
+      </script>
+    <div class="input-group">
+        <label for="scout_name">Scout Name:</label>
+        <input type="text" id="scout_name" required>
+    </div>
+    <div class="input-group">
+        <label for="match_number">Match Number:</label>
+        <input type="number" id="match_number" required>
+    </div>
+    <div class="input-group">
+        <label for="team_number">Team Number:</label>
+        <input type="number" id="team_number" required>
+    </div>
+    <div class="input-group">
+        <label for="alliance_color">Alliance Color:</label>
+        <div>
+            <input type="radio" id="alliance_color_red" name="alliance_color" value="red" required>
+            <label for="alliance_color_red">Red</label>
+            <input type="radio" id="alliance_color_blue" name="alliance_color" value="blue" required>
+            <label for="alliance_color_blue">Blue</label>
+        </div>
+
+    </div>
+
+	<h2><u>Autonomous Portion</u> 🚀</h2>
+    <div class="input-group">
+        <label for="preload_scored">Preload Scored:</label>
+        <input type="checkbox" id="preload_scored">
+        <label class="checkmark" for="preload_scored">✅</label>
+    </div>
+    <div class="input-group">
+        <label for="notes_collected_auton">Notes Intaked</label>
+        <div>
+            <input type="number" id="notes_collected_auton" min="0" value="0" required>
+            <button onclick="incrementValue('notes_collected_auton')">+</button>
+            <button onclick="decrementValue('notes_collected_auton')">-</button>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label for="amps_scored_auton">Amps</label>
+        <div>
+            <input type="number" id="amps_scored_auton" min="0" value="0" required>
+            <button onclick="incrementValue('amps_scored_auton')">+</button>
+            <button onclick="decrementValue('amps_scored_auton')">-</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="speakers_scored_auton">Speakers</label>
+        <div>
+            <input type="number" id="speakers_scored_auton" min="0" value="0" required>
+            <button onclick="incrementValue('speakers_scored_auton')">+</button>
+            <button onclick="decrementValue('speakers_scored_auton')">-</button>
+        </div>
+    </div>
+	<h2><u>Teleop Portion</u> 🚀</h2>
+    <div class="input-group">
+        <label for="notes_intaked_teleop">Notes Intaked</label>
+        <div>
+            <input type="number" id="notes_intaked_teleop" min="0" value="0" required>
+            <button onclick="incrementValue('notes_intaked_teleop')">+</button>
+            <button onclick="decrementValue('notes_intaked_teleop')">-</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="amps_scored_teleop">Amp Notes</label>
+        <div>
+            <input type="number" id="amps_scored_teleop" min="0" value="0" required>           <button onclick="incrementValue('amps_scored_teleop')">+</button>
+            <button onclick="decrementValue('amps_scored_teleop')">-</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="unamplifiedspeaker_scored_teleop">Regular Speaker Notes</label>
+        <div>
+            <input type="number" id="unamplifiedspeaker_scored_teleop" min="0" value="0" required>
+            <button onclick="incrementValue('unamplifiedspeaker_scored_teleop')">+</button>
+            <button onclick="decrementValue('unamplifiedspeaker_scored_teleop')">-</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="amplifiedspeaker_scored_teleop">Amplified Speaker Notes</label>
+        <div>
+            <input type="number" id="amplifiedspeaker_scored_teleop" min="0" value="0" required>
+            <button onclick="incrementValue('amplifiedspeaker_scored_teleop')">+</button>
+            <button onclick="decrementValue('amplifiedspeaker_scored_teleop')">-</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="harmonized">Harmony:</label>
+        <input type="checkbox" id="harmonized">
+		<label class="checkmark" for="harmonized">✅</label>
+    </div>
+    <div class="input-group">
+        <label for="spotlight">Spotlight:</label>
+        <input type="checkbox" id="spotlight">
+		<label class="checkmark" for="spotlight">✅</label>
+    </div>
+    <div class="input-group">
+        <label for="buddy_climb">Onstage:</label>
+        <input type="checkbox" id="buddy_climb">
+		<label class="checkmark" for="buddy_climb">✅</label>
+    </div>
+	<h4>(We forgot to include trap, please include trap in notes if your team was able to do it)</h4>
+    <div class="input-group">
+        <label for="notes">Notes:</label>
+        <input type="text" id="notes" required>
+    </div>
+	<h3>When you submit, please wait for the confirmation that it has been uploaded, and do not press the button again or navigate away from the app until you see the upload confirmation, which should show monentarily after pressing submit. </h3>
+    <button onclick="submitData()">Save & Upload</button>
+
+  <script>
+	if ('serviceWorker' in navigator) {
+	  window.addEventListener('load', function() {
+		navigator.serviceWorker.register('/service-worker.js');
+	  });
+	}
+  </script>
+  <script>
+      let sourceSelected = false;
+      let speakerSelected = false;
+      let ampSelected = false;
+      let scoredSpeakers = 0;
+      let scoredAmps = 0;
+
+      function decrementValue(inputId) {
+        var input = document.getElementById(inputId);
+        var currentValue = parseInt(input.value);
+        if (currentValue > input.min) {
+            input.value = currentValue - 1;
+        }
+    }
+
+    function incrementValue(inputId) {
+        var input = document.getElementById(inputId);
+        var currentValue = parseInt(input.value);
+        if (currentValue < input.max || !input.max) {
+            input.value = currentValue + 1;
+        }
+    }
+
+      function scoreSource() {
+          sourceSelected = true;
+          speakerSelected = false;
+          ampSelected = false;
+      }
+
+      function scoreSpeaker() {
+          sourceSelected = false;
+          speakerSelected = true;
+          ampSelected = false;
+      }
+
+      function scoreAmp() {
+          sourceSelected = false;
+          speakerSelected = false;
+          ampSelected = true;
+      }
+
+      function scoreNote() {
+          if (sourceSelected && speakerSelected) {
+              scoredSpeakers++;
+              document.getElementById("scored_speakers").textContent = `Speakers: ${scoredSpeakers}`;
+          } else if (sourceSelected && ampSelected) {
+              scoredAmps++;
+              document.getElementById("scored_amps").textContent = `Amps: ${scoredAmps}`;
+          }
+          sourceSelected = false;
+          speakerSelected = false;
+          ampSelected = false;
+      }
+
+      // Function to save data locally
+	  function submitData() {
+
+      const formData = {
+        scoutName: document.getElementById("scout_name").value,
+        matchNumber: document.getElementById("match_number").value,
+        teamNumber: document.getElementById("team_number").value,
+        allianceColor: document.querySelector('input[name="alliance_color"]:checked').value,
+        preloadScored: document.getElementById("preload_scored").checked,
+        notesCollectedAuton: document.getElementById("notes_collected_auton").value,
+        notesCollectedTeleop: document.getElementById("notes_intaked_teleop").value,
+        ampsPlayedAuton: document.getElementById("amps_scored_auton").value,
+        speakersPlayedAuton: document.getElementById("speakers_scored_auton").value,
+        ampsPlayedTeleop: document.getElementById("amps_scored_teleop").value,
+        unamplifiedSpeakersPlayedTeleop: document.getElementById("unamplifiedspeaker_scored_teleop").value,
+        amplifiedSpeakersPlayedTeleop: document.getElementById("amplifiedspeaker_scored_teleop").value,
+        harmonized: document.getElementById("harmonized").checked,
+        spotlight: document.getElementById("spotlight").checked,
+        buddyClimb: document.getElementById("buddy_climb").checked,
+        notes: document.getElementById("notes").value,
+        scoredSpeakers: scoredSpeakers,
+        scoredAmps: scoredAmps
+      };
+	  alert("The data has been submitted.  Please wait for the confirmation that it has been uploaded, and do not press the button again or navigate away from the app until you see the upload confirmation, which should show monentarily.");
+
+      const url = `https://script.google.com/macros/s/AKfycbxmHeBEC5J_XkS6l6fKNMzMzoPJYzWaqk6uZ2l20Eo4q2rVvA6J3uxvRGeK_oSoZq2RdA/exec?action=create&name=${formData.scoutName}&matchnumber=${formData.matchNumber}&teamnumber=${formData.teamNumber}&color=${formData.allianceColor}&preloadnotes=${formData.preloadScored}&notescollectedauton=${formData.notesCollectedAuton}&notescollectedteleop=${formData.notesCollectedTeleop}&notesplayedauton=${formData.ampsPlayedAuton}&notesplayedteleop=${formData.ampsPlayedTeleop}&amplifiednotesteleop=${formData.amplifiedSpeakersPlayedTeleop}&onstage=${formData.unamplifiedSpeakersPlayedTeleop}&harmonized=${formData.harmonized}&spotlight=${formData.spotlight}&buddyclimb=${formData.buddyClimb}&notes=${formData.notes}&scoredspeakers=${formData.scoredSpeakers}&scoredamps=${formData.scoredAmps}`;
+
+	  fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response.text();
+        } else {
+          throw new Error('Request failed');
+        }
+      })
+      .then(data => {
+		if(data !="DONE"){
+		const timestamp = new Date().toISOString().replace(/:/g, "-");
+        const fileName = `error_${timestamp}.txt`;
+        const fileContent = JSON.stringify(formData);
+        const blob = new Blob([fileContent], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.download = fileName;
+        link.href = url;
+        link.click();
+        alert(`Data submission failed. Error saved as ${fileName}`);
+		}
+		else{
+        alert(`Data submitted successfully: ${data}`);
+		location.reload();
+        clearData();
+        document.getElementById("scout_name").value = formData.scoutName;
+
+		}
+      })
+
+  }
+
+
+// Function to upload data
+function uploadData() {
+  const formData = JSON.parse(localStorage.getItem("formData"));
+
+  if (!formData) {
+    alert("No data to upload. Please save data locally first.");
+    return;
+  }
+
+  const url = `https://script.google.com/macros/s/AKfycbxmHeBEC5J_XkS6l6fKNMzMzoPJYzWaqk6uZ2l20Eo4q2rVvA6J3uxvRGeK_oSoZq2RdA/exec?action=create&name=${formData.scoutName}&matchnumber=${formData.matchNumber}&teamnumber=${formData.teamNumber}&color=${formData.allianceColor}&preloadnotes=${formData.preloadScored}&notescollectedauton=${formData.notesCollectedAuton}&notescollectedteleop=${formData.notesCollectedTeleop}&notesplayedauton=${formData.ampsPlayedAuton}&notesplayedteleop=${formData.ampsPlayedTeleop}&amplifiednotesteleop=${formData.amplifiedSpeakersPlayedTeleop}&onstage=${formData.unamplifiedSpeakersPlayedTeleop}&harmonized=${formData.harmonized}&spotlight=${formData.spotlight}&buddyclimb=${formData.buddyClimb}&notes=${formData.notes}&scoredspeakers=${formData.scoredSpeakers}&scoredamps=${formData.scoredAmps}`;
+
+  fetch(url)
+    .then(response => response.text())
+    .then(data => {
+      alert(`Data uploaded successfully: ${data}`);
+      localStorage.removeItem("formData"); // Clear local data after successful upload
+    })
+    .catch(error => {
+      alert(`Data upload failed: ${error}`);
+    });
+}
+
+
+function clearData() {
+    document.getElementById("match_number").value = "";
+    document.getElementById("team_number").value = "";
+
+    document.getElementById("notes_collected_auton").value = "";
+    document.getElementById("notes_played_auton").value = fal
+    document.getElementById("notes_collected_teleop").value = "";
+    document.getElementById("notes_played_teleop").value = "";
+    document.getElementById("amplified_speakers_played_teleop").value = "";
+    document.getElementById("unamplified_speakers_played_teleop").value = "";
+    document.getElementById("spotlight").checked = false;
+    document.getElementById("harmonized").checked = false;
+    document.getElementById("preload_scored").checked = false;
+    document.getElementById("scored_speakers").value = "";
+    document.getElementById("scored_amps").value = "";
+    document.getElementById("buddy_climb").value = "";
+    document.getElementById("notes").value = "";
+  }
+
+  </script>
+
+
+  </body>
+  </html>

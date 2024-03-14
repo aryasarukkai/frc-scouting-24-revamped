@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
-      @import url('https://fnts.googleapis.com/css?family=Red+Hat+Display:900');
+      @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900');
       @media (max-width: 600px) {
     body {
         font-size: 14px;
@@ -92,6 +92,8 @@
         .header img {
             margin-right: 10px; /* Adjust margin as needed */
         }
+        
+
         
 
         

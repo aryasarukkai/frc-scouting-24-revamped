@@ -17,6 +17,10 @@ const firebaseConfig = {
   appId: "1:1043419769449:web:448a22c410c3efd37c50f8"
 };
 
+
+console.log("FRC 649 Scouting App");
+
+
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 

@@ -5,4 +5,4 @@ Welcome to the 649 Scouting App for FRC Crescendo! This application is designed 
 ## 🎮 Usage
 
 https://649c.imarya.xyz
-Access and install PWA on mobile device
+Access and install PWA on mobile devicels

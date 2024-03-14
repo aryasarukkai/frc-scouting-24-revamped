@@ -1,13 +1,21 @@
+// DriverPopup.js
 import React from 'react';
 
-const DriverPopup = ({
-  formData,
-  handleInputChange,
-  incrementValue,
-  decrementValue,
-  handlePrevPopup,
-  submitData,
-}) => {
+const DriverPopup = ({ formData, setFormData, handleStageChange, submitData }) => {
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const newValue = type === 'checkbox' ? checked : parseInt(value, 10);
+    setFormData((prevData) => ({ ...prevData, [name]: newValue }));
+  };
+
+  const incrementValue = (field) => {
+    setFormData((prevData) => ({ ...prevData, [field]: prevData[field] + 1 }));
+  };
+
+  const decrementValue = (field) => {
+    setFormData((prevData) => ({ ...prevData, [field]: Math.max(prevData[field] - 1, 0) }));
+  };
+
   return (
     <div className="popup">
       <h2><u>Teleop Portion</u> 🕹️</h2>
@@ -37,8 +45,6 @@ const DriverPopup = ({
         />
         <button type="button" onClick={() => incrementValue('ampsPlayedTeleop')}>+</button>
       </div>
-
-      <h3><u>Speakers</u> 🔈</h3>
       <div className="input-group">
         <label htmlFor="unamplified_speakers_played_teleop">Unamplified Speakers Scored:</label>
         <button type="button" onClick={() => decrementValue('unamplifiedSpeakersPlayedTeleop')}>-</button>
@@ -65,8 +71,6 @@ const DriverPopup = ({
         />
         <button type="button" onClick={() => incrementValue('amplifiedSpeakersPlayedTeleop')}>+</button>
       </div>
-
-      <h3><u>Endgame</u> 🔚</h3>
       <div className="input-group">
         <label htmlFor="harmonized">Harmonized:</label>
         <input
@@ -76,7 +80,6 @@ const DriverPopup = ({
           checked={formData.harmonized}
           onChange={handleInputChange}
         />
-        <label className="checkmark" htmlFor="harmonized"></label>
       </div>
       <div className="input-group">
         <label htmlFor="spotlight">Spotlight:</label>
@@ -87,56 +90,58 @@ const DriverPopup = ({
           checked={formData.spotlight}
           onChange={handleInputChange}
         />
-        <label className="checkmark" htmlFor="spotlight"></label>
       </div>
       <div className="input-group">
         <label htmlFor="buddy_climb">Buddy Climb:</label>
-  <input
-    type="checkbox"
-    id="buddy_climb"
-    name="buddyClimb"
-    checked={formData.buddyClimb}
-    onChange={handleInputChange}
-  />
-  <label className="checkmark" htmlFor="buddy_climb"></label>
-</div>
-
-<h3><u>Final Scoring</u> 🏆</h3>
-<div className="input-group">
-  <label htmlFor="scored_amps">Scored Amps:</label>
-  <button type="button" onClick={() => decrementValue('scoredAmps')}>-</button>
-  <input
-    type="number"
-    id="scored_amps"
-    name="scoredAmps"
-    value={formData.scoredAmps}
-    onChange={handleInputChange}
-    min="0"
-  />
-  <button type="button" onClick={() => incrementValue('scoredAmps')}>+</button>
-</div>
-<div className="input-group">
-  <label htmlFor="scored_speakers">Scored Speakers:</label>
-  <button type="button" onClick={() => decrementValue('scoredSpeakers')}>-</button>
-  <input
-    type="number"
-    id="scored_speakers"
-    name="scoredSpeakers"
-    value={formData.scoredSpeakers}
-    onChange={handleInputChange}
-    min="0"
-  />
-  <button type="button" onClick={() => incrementValue('scoredSpeakers')}>+</button>
-</div>
-<div className="input-group">
-  <label htmlFor="notes">Miscellaneous Notes:</label>
-  <textarea id="notes" name="notes" value={formData.notes} onChange={handleInputChange}></textarea>
-</div>
-
-<button onClick={handlePrevPopup}>Previous</button>
-<button onClick={submitData}>Submit</button>
-</div>
-);
+        <input
+          type="checkbox"
+          id="buddy_climb"
+          name="buddyClimb"
+          checked={formData.buddyClimb}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="input-group">
+        <label htmlFor="scored_amps">Scored Amps:</label>
+        <button type="button" onClick={() => decrementValue('scoredAmps')}>-</button>
+        <input
+          type="number"
+          id="scored_amps"
+          name="scoredAmps"
+          value={formData.scoredAmps}
+          onChange={handleInputChange}
+          min="0"
+        />
+        <button type="button" onClick={() => incrementValue('scoredAmps')}>+</button>
+      </div>
+      <div className="input-group">
+        <label htmlFor="scored_speakers">Scored Speakers:</label>
+        <button type="button" onClick={() => decrementValue('scoredSpeakers')}>-</button>
+        <input
+          type="number"
+          id="scored_speakers"
+          name="scoredSpeakers"
+          value={formData.scoredSpeakers}
+          onChange={handleInputChange}
+          min="0"
+        />
+        <button type="button" onClick={() => incrementValue('scoredSpeakers')}>+</button>
+      </div>
+      <div className="input-group">
+        <label htmlFor="notes">Miscellaneous Notes:</label>
+        <textarea
+          id="notes"
+          name="notes"
+          value={formData.notes}
+          onChange={handleInputChange}
+        ></textarea>
+      </div>
+      <div className="buttons">
+        <button onClick={() => handleStageChange('auton')}>Previous</button>
+        <button onClick={submitData}>Submit</button>
+      </div>
+    </div>
+  );
 };
 
 export default DriverPopup;

@@ -1,99 +1,92 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
-      @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900');
-      @media (max-width: 600px) {
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900');
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    margin: 20px;
+    background-color: #001F3F; /* Dark background for contrast */
+    color: #FFFFFF; /* White text */
+}
+
+.header {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    margin-bottom: 20px; /* Add space below the header */
+}
+
+.header img {
+    margin-right: 10px; /* Adjust margin as needed */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-bottom: 20px; /* Space below the button container */
+}
+
+/* General input and button styles adapted for horizontal layout */
+input[type="text"], input[type="number"], input[type="checkbox"], input[type="radio"], button {
+    font-family: 'Red Hat Display', sans-serif;
+    color: #FFFFFF;
+    background-color: #555; /* Lighter than body for visibility */
+    border: 1px solid #777; /* Gray border */
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    font-weight: 900; /* Red Hat Display Black */
+    text-transform: uppercase;
+    border: 2px solid #FFFFFF; /* White border */
+    background-color: transparent;
+    padding: 15px 25px; /* Increased padding */
+    cursor: pointer;
+}
+
+.input-group {
+    display: flex;
+    align-items: center; /* Align inputs and labels vertically */
+    margin-bottom: 10px; /* Space between input groups */
+}
+
+.input-group label {
+    font-family: 'Archivo Black', sans-serif;
+    color: #FFFFFF; /* White text */
+    margin-right: 10px; /* Space between label and input */
+}
+
+@media (max-width: 600px) {
     body {
         font-size: 14px;
     }
-    input[type="text"], input[type="number"], input[type="checkbox"], input[type="radio"], button {
-        padding: 8px;
-        margin-bottom: 8px;
+    
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        align-items: center; /* Center buttons */
+    }
+
+    .input-group {
+        flex-direction: column; /* Stack labels and inputs vertically */
+        align-items: flex-start; /* Align items to the start */
     }
 }
-      body {
-          font-family: 'Red Hat Display', sans-serif;
-          margin: 20px;
-          background-color: #001F3F; /* Dark background for contrast */
-          color: #FFFFFF; /* White text */
-      }
-      .input-group label {
-          font-family: 'Archivo Black', sans-serif;
-          color: #FFFFFF; /* White label text */
-          margin-bottom: 5px;
-      }
 
+/* Custom checkbox and radio button styles */
+input[type="radio"], input[type="checkbox"] {
+    display: none; /* Hide default inputs */
+}
 
-      input[type="text"], input[type="number"], input[type="checkbox"], input[type="radio"], button {
-          font-family: 'Red Hat Display', sans-serif;
-          color: #FFFFFF;
-          background-color: #555; /* Slightly lighter than body for visibility */
-          border: 1px solid #777; /* Gray border for differentiation */
-          border-radius: 4px;
-          padding: 10px;
-          margin-bottom: 10px;
-      }
-      button {
-          font-weight: 900; /* Matching the weight of Red Hat Display Black */
-          text-transform: uppercase;
-          border: 2px solid #FFFFFF; /* White border for outlined effect */
-          background-color: transparent;
-          padding: 15px; /* Increase padding to make the buttons bigger */
-          padding-left:25px;
-          padding-right:25px;
-          cursor: pointer;
-      }
+input[type="radio"] + label, input[type="checkbox"] + label {
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 8px 16px;
+    border: 2px solid #FFFFFF;
+}
 
-	  /* Styling for both radio buttons and checkboxes */
-	input[type=   "radio"],
-	input[type="checkbox"] {
-		display: none; /* Hide the default input */
-	}
-
-	/* Custom styling for labels to mimic button appearance */
-	input[type="radio"] + label,
-	input[type="checkbox"] + label {
-		font-weight: 900; /* Matching the weight of Red Hat Display Black */
-		text-transform: uppercase;
-		border: 2px solid #FFFFFF; /* White border for outlined effect */
-		background-color: transparent;
-		cursor: pointer;
-		display: inline-block;
-		padding: 8px 16px; /* Adjust padding as needed */
-		margin-right: 10px; /* Adjust margin as needed */
-	}
-
-	/* Change background and text color on label hover */
-
-
-	/* Checked state styles */
-	input[type="radio"]:checked + label,
-	input[type="checkbox"]:checked + label {
-		background-color: #FFFFFF;
-		color: #333;
-	}
-
-      /* Enhance visibility of checkboxes and radios */
-      input[type="checkbox"], input[type="radio"] {
-          transform: scale(1.2); /* Make checkboxes and radios slightly larger */
-          margin-right: 5px;
-      }
-      /* Styling for radio buttons and their labels */
-      .input-group div {
-          margin-bottom: 10px;
-      }
-      .input-group label {
-          display: inline-block;
-          margin-right: 20px;
-      }
-	  .header {
-            display: flex;
-            align-items: center; /* Vertically center items */
-        }
-
-        .header img {
-            margin-right: 10px; /* Adjust margin as needed */
-        }
-        
-
-        
-
-        
+input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
+    background-color: #FFFFFF;
+    color: #333;
+}

@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, set } from 'firebase/database';
-import SetupPopup from './SetupPopup';
-import AutonPopup from './AutonPopup';
-import DriverPopup from './DriverPopup';
+import SetupPopup from './components/SetupPopup';
+import AutonPopup from './components/AutonPopup';
+import DriverPopup from './components/DriverPopup';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAso045mvuwi4VgaqCFVBT0bz1u3_e9O9g",
@@ -24,7 +25,9 @@ console.log("FRC 649 Scouting App");
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+
 const App = () => {
+  const [currentStage, setCurrentStage] = useState('home');
   const [formData, setFormData] = useState({
     scoutName: '',
     matchNumber: '',
@@ -45,8 +48,10 @@ const App = () => {
     scoredSpeakers: 0,
     scoredAmps: 0,
   });
-
-  const [currentPopup, setCurrentPopup] = useState('setup');
+  const handleStageChange = (stage) => {
+    setCurrentStage(stage);
+  };
+  const [currentPopup, setCurrentPopup] = useState('home');
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -65,6 +70,7 @@ const App = () => {
   const [submissionRef, setSubmissionRef] = useState(null);
 
   const submitData = () => {
+    if(currentStage !== 'home') {
     if (submissionRef) {
       set(submissionRef, formData)
         .catch((error) => {
@@ -72,7 +78,7 @@ const App = () => {
           alert('Failed to update data. Please try again.');
         });
     } else {
-      const dataRef = ref(database, 'formData');
+      const dataRef = ref(database, 'formData-test');
       const newSubmissionRef = push(dataRef);
       set(newSubmissionRef, formData)
         .then(() => {
@@ -83,18 +89,23 @@ const App = () => {
           alert('Failed to submit data. Please try again.');
         });
     }
+  } else {
+    console.log("no active stage");
+  }
   };
 
   useEffect(() => {
     const delay = 500;
     const timeoutId = setTimeout(() => {
-      submitData();
+      // Only submit data if not on the 'home' stage
+      if (currentPopup !== 'home') {
+        submitData();
+      }
     }, delay);
 
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [formData]);
+    // Return a cleanup function to clear the timeout
+    return () => clearTimeout(timeoutId);
+  }, [formData, currentPopup]);
 
   const clearData = () => {
     setFormData((prevData) => ({
@@ -135,46 +146,60 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="App">
       <div className="header">
-        <img src="logo.png" alt="Logo" length="80px" width="80px" />
-        <h1>649 Scouting <br /><code>V3	 • DEMO</code></h1>
+        <img src="logo.png" alt="Logo" width="80px" height="80px" />
+        <h1>649 Scouting <br /><code>V3 • DEMO</code></h1>
       </div>
       <h1>FRC Crescendo</h1>
-
+  
+      {/* Render buttons only when in 'home' stage */}
+      {currentPopup === 'home' && (
+        <div className="button-container">
+          <button onClick={() => setCurrentPopup('setup')}>Setup</button>
+          <button onClick={() => setCurrentPopup('auton')}>Auton</button>
+          <button onClick={() => setCurrentPopup('driver')}>Teleop</button>
+        </div>
+      )}
+  
+      {/* Conditional rendering based on currentPopup state */}
       {currentPopup === 'setup' && (
         <SetupPopup
           formData={formData}
           handleInputChange={handleInputChange}
-          handleNextPopup={handleNextPopup}
+          handleNextPopup={() => setCurrentPopup('auton')}
         />
       )}
-
       {currentPopup === 'auton' && (
         <AutonPopup
           formData={formData}
           handleInputChange={handleInputChange}
           incrementValue={incrementValue}
           decrementValue={decrementValue}
-          handleNextPopup={handleNextPopup}
-          handlePrevPopup={handlePrevPopup}
+          handleNextPopup={() => setCurrentPopup('driver')}
+          handlePrevPopup={() => setCurrentPopup('setup')}
         />
       )}
-
       {currentPopup === 'driver' && (
         <DriverPopup
           formData={formData}
           handleInputChange={handleInputChange}
           incrementValue={incrementValue}
           decrementValue={decrementValue}
-          handlePrevPopup={handlePrevPopup}
+          handlePrevPopup={() => setCurrentPopup('auton')}
           submitData={submitData}
         />
       )}
-
-      <button type="submit" onClick={submitData}>Submit</button>
+  
+      {/* Submit button might be rendered conditionally or always visible based on your application's flow */}
+      {currentPopup !== 'home' && (
+        <button type="button" onClick={submitData} className="submit-button">
+          Submit
+        </button>
+      )}
     </div>
   );
+  
 };
 
 export default App;

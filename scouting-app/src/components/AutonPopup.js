@@ -1,13 +1,21 @@
+// AutonPopup.js
 import React from 'react';
 
-const AutonPopup = ({
-  formData,
-  handleInputChange,
-  incrementValue,
-  decrementValue,
-  handleNextPopup,
-  handlePrevPopup,
-}) => {
+const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const newValue = type === 'checkbox' ? checked : parseInt(value, 10);
+    setFormData((prevData) => ({ ...prevData, [name]: newValue }));
+  };
+
+  const incrementValue = (field) => {
+    setFormData((prevData) => ({ ...prevData, [field]: prevData[field] + 1 }));
+  };
+
+  const decrementValue = (field) => {
+    setFormData((prevData) => ({ ...prevData, [field]: Math.max(prevData[field] - 1, 0) }));
+  };
+
   return (
     <div className="popup">
       <h2><u>Autonomous Portion</u> 🚀</h2>
@@ -20,7 +28,6 @@ const AutonPopup = ({
           checked={formData.preloadScored}
           onChange={handleInputChange}
         />
-        <label className="checkmark" htmlFor="preload_scored"></label>
       </div>
       <div className="input-group">
         <label htmlFor="notes_collected_auton">Notes Collected:</label>
@@ -61,9 +68,10 @@ const AutonPopup = ({
         />
         <button type="button" onClick={() => incrementValue('speakersPlayedAuton')}>+</button>
       </div>
-
-      <button onClick={handlePrevPopup}>Previous</button>
-      <button onClick={handleNextPopup}>Next</button>
+      <div className="buttons">
+        <button onClick={() => handleStageChange('setup')}>Previous</button>
+        <button onClick={() => handleStageChange('driver')}>Next</button>
+      </div>
     </div>
   );
 };

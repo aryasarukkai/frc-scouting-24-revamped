@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, set } from 'firebase/database';
@@ -57,43 +57,60 @@ const App = () => {
     setFormData((prevData) => ({ ...prevData, [field]: prevData[field] - 1 }));
   };
 
-  const submitData = () => {
-    const dataRef = ref(database, 'formData');
+  const [submissionRef, setSubmissionRef] = useState(null);
 
-    const newDataRef = push(dataRef);
-    set(newDataRef, formData)
+const submitData = () => {
+  if (submissionRef) {
+    set(submissionRef, formData)
+      .catch((error) => {
+        console.error('Error updating data:', error);
+        alert('Failed to update data. Please try again.');
+      });
+  } else {
+    const dataRef = ref(database, 'formData');
+    const newSubmissionRef = push(dataRef);
+    set(newSubmissionRef, formData)
       .then(() => {
-        alert('Data submitted successfully');
-        clearData();
-        setFormData((prevData) => ({ ...prevData, scoutName: formData.scoutName }));
+        setSubmissionRef(newSubmissionRef);
       })
       .catch((error) => {
         console.error('Error saving data:', error);
         alert('Failed to submit data. Please try again.');
       });
-  };
-
+  }
+};
  
+  useEffect(() => {
+    const delay = 500; // Delay in milliseconds
+    const timeoutId = setTimeout(() => {
+      submitData();
+    }, delay);
+  
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [formData]);
   
   const clearData = () => {
     setFormData((prevData) => ({
       ...prevData,
       matchNumber: '',
       teamNumber: '',
-      notesCollectedAuton: '',
-      notesPlayedAuton: '',
-      notesCollectedTeleop: '',
-      notesPlayedTeleop: '',
-      amplifiedSpeakersPlayedTeleop: '',
-      unamplifiedSpeakersPlayedTeleop: '',
+      notesCollectedAuton: 0,
+      notesPlayedAuton: 0,
+      notesCollectedTeleop: 0,
+      notesPlayedTeleop: 0,
+      amplifiedSpeakersPlayedTeleop: 0,
+      unamplifiedSpeakersPlayedTeleop: 0,
       spotlight: false,
       harmonized: false,
       preloadScored: false,
-      scoredSpeakers: '',
-      scoredAmps: '',
-      buddyClimb: '',
+      scoredSpeakers: 0,
+      scoredAmps: 0,
+      buddyClimb: false,
       notes: '',
     }));
+    setSubmissionRef(null);
   };
 
   return (

@@ -9,6 +9,7 @@ import ReviewAndSubmit from './components/ReviewAndSubmit';
 import LandscapePopup from './components/LandscapePopup';
 import DataLookup from './components/DataLookup';
 import SuccessPopup from './components/SuccessPopup';
+import EndgamePopup from './components/EndgamePopup';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAso045mvuwi4VgaqCFVBT0bz1u3_e9O9g",
@@ -80,6 +81,13 @@ const App = () => {
           speakersScoredTeleop: 0,
           ampsScoredTeleop: 0,
           notes: '',
+          onstage: '',
+          harmony: '',
+          trap: '',
+          spotlight: '',
+          defenseBot: '',
+          disabledDamagedBot: '',
+          nonFunctionalBot: '',
         });
         setCurrentPopup('success');
       })
@@ -212,6 +220,15 @@ const App = () => {
     />
   </div>
 )}
+{currentPopup === 'endgame' && (
+        <div className="transition-opacity duration-500 ease-in-out opacity-100">
+          <EndgamePopup
+            formData={formData}
+            handleInputChange={handleInputChange}
+            handleStageChange={setCurrentPopup}
+          />
+        </div>
+      )}
 {currentPopup === 'driver' && (
   <div className="transition-opacity duration-500 ease-in-out opacity-100">
     <DriverPopup
@@ -274,10 +291,10 @@ const App = () => {
   </button>
 </div>
 )}
-{currentPopup === 'driver' && (
+{currentPopup === 'endgame' && (
 <div className="flex justify-between mt-4">
   <button
-    onClick={() => setCurrentPopup('auton')}
+    onClick={() => setCurrentPopup('driver')}
     className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
   >
     Previous
@@ -290,6 +307,39 @@ const App = () => {
   </button>
 </div>
 )}
+{currentPopup === 'driver' && (
+<div className="flex justify-between mt-4">
+  <button
+    onClick={() => setCurrentPopup('auton')}
+    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+  >
+    Previous
+  </button>
+  <button
+    onClick={() => setCurrentPopup('endgame')}
+    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+  >
+    Next: Endgame
+  </button>
+</div>
+)}
+{currentPopup === 'review' && (
+<div className="flex justify-between mt-4">
+  <button
+    onClick={() => setCurrentPopup('endgame')}
+    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+  >
+    Previous
+  </button>
+  <button
+    onClick={submitData}
+    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+  >
+    Submit
+  </button>
+  </div>
+)}
+
 </div>
 );
 };

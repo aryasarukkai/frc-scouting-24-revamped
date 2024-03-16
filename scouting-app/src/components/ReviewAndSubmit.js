@@ -296,6 +296,85 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
         </p>
       </div>
       <div className="mb-4">
+        <h3 className="font-bold mb-2">Endgame Data:</h3>
+        <p>
+          Onstage:{' '}
+          {editField === 'onstage' ? (
+            <input
+              type="text"
+              name="onstage"
+              value={formData.onstage}
+              onChange={handleEditInputChange}
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
+            />
+          ) : (
+            formData.onstage
+          )}{' '}
+          {editField !== 'onstage' && (
+            <button onClick={() => handleEdit('onstage')} className="text-blue-500">
+              Edit
+            </button>
+          )}
+        </p>
+        <p>
+          Harmony:{' '}
+          {editField === 'harmony' ? (
+            <input
+              type="text"
+              name="harmony"
+              value={formData.harmony}
+              onChange={handleEditInputChange}
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
+            />
+          ) : (
+            formData.harmony
+          )}{' '}
+          {editField !== 'harmony' && (
+            <button onClick={() => handleEdit('harmony')} className="text-blue-500">
+              Edit
+            </button>
+          )}
+        </p>
+        <p>
+          Trap:{' '}
+          {editField === 'trap' ? (
+            <input
+              type="text"
+              name="trap"
+              value={formData.trap}
+              onChange={handleEditInputChange}
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
+            />
+          ) : (
+            formData.trap
+          )}{' '}
+          {editField !== 'trap' && (
+            <button onClick={() => handleEdit('trap')} className="text-blue-500">
+              Edit
+            </button>
+          )}
+        </p>
+        <p>
+          Spotlight:{' '}
+          {editField === 'spotlight' ? (
+            <input
+              type="text"
+              name="spotlight"
+              value={formData.spotlight}
+              onChange={handleEditInputChange}
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
+            />
+          ) : (
+            formData.spotlight
+          )}{' '} 
+          {editField !== 'spotlight' && (
+            <button onClick={() => handleEdit('spotlight')} className="text-blue-500">
+              Edit
+            </button>
+          )}
+        </p>
+      </div>
+      <div className="mb-4">
         <label htmlFor="notes" className="block mb-2 font-bold">
           Notes:
         </label>
@@ -306,24 +385,14 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
           onChange={handleInputChange}
           className="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded"
         ></textarea>
+        
+        
       </div>
       {editField && (
         <button onClick={handleSave} className="bg-blue-500 text-white px-4 py-2 rounded mr-2">
-          Save
+          Save Edited Values
         </button>
       )}
-      <button
-        onClick={handleSubmit}
-        className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-      >
-        Submit
-      </button>
-      <button
-        onClick={() => handleStageChange('driver')}
-        className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer ml-2"
-      >
-        Previous
-      </button>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, set } from 'firebase/database';
-import './index.css';
 import SetupPopup from './components/SetupPopup';
 import AutonPopup from './components/AutonPopup';
 import DriverPopup from './components/DriverPopup';
@@ -55,20 +54,18 @@ const App = () => {
   };
 
   return (
-    <div className="bg-blue-900 min-h-screen text-white p-4">
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold">649 Scouting</h1>
-        <p className="text-sm">V3 • DEMO</p>
-        <h2 className="text-4xl font-bold">FRC Crescendo</h2>
+    <div className="bg-blue-900 text-white p-4">
+      <div className="flex items-center mb-4">
+        <img src="logo.png" alt="Logo" className="w-20 h-20 mr-2" />
+        <h1 className="text-2xl font-bold">
+          649 Scouting <br />
+          <code className="text-sm">V3 • DEMO</code>
+        </h1>
       </div>
-
-      <div className="flex items-center justify-between mb-8">
-        <h3 className="text-2xl font-bold">2024</h3>
-        <img src="logo.png" alt="Logo" className="w-64 h-64" />
-      </div>
+      <h1 className="text-4xl font-bold mb-4">FRC Crescendo</h1>
 
       {currentPopup === 'home' && (
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center space-x-4 mb-4">
           <button
             onClick={() => setCurrentPopup('setup')}
             className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"

@@ -39,13 +39,6 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit }) => {
           className="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded"
         ></textarea>
       </div>
-      <div className="flex justify-between">
-        <button
-          onClick={() => handleStageChange('driver')}
-          className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-        >
-          Previous
-        </button>
         <button
           onClick={handleSubmit}
           className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"

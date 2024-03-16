@@ -92,10 +92,17 @@ const App = () => {
         timer={formatTime(timer)}
         handleStartStop={handleStartStop}
         isActive={isActive}
+        handleHomeClick={() => setCurrentPopup('home')}
       />
 
       {currentPopup === 'home' && (
         <div className="flex justify-center space-x-4 mb-4">
+          <button
+            onClick={() => window.location.reload()}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Reload
+          </button>
           <button
             onClick={() => setCurrentPopup('setup')}
             className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"

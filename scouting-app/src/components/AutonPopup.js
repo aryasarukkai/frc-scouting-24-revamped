@@ -52,7 +52,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
             className="bg-red-600 text-white font-bold uppercase border-2 border-white px-4 py-2  rounded cursor-pointer w-full"
           >
             Speaker [F]
-            <span className="block">{formData.speakersFailedAuton}</span>
+            <span className="data">{formData.speakersFailedAuton}</span>
           </button>
           <button
             type="button"
@@ -60,7 +60,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
             className="bg-red-600 text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2"
           >
             Amp [F]
-            <span className="block">{formData.ampsFailedAuton}</span>
+            <span className="data">{formData.ampsFailedAuton}</span>
           </button>
         </div>
         <div>
@@ -70,7 +70,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
             className="bg-transparent text-white bg-blue-500 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full"
           >
             Ground
-            <span className="block">{formData.groundAuton}</span>
+            <span className="data">{formData.groundAuton}</span>
           </button>
         </div>
         <div>

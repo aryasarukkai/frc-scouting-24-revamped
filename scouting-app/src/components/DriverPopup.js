@@ -23,23 +23,21 @@ const DriverPopup = ({ formData, handleInputChange, incrementValue, decrementVal
           </button>
         </div>
         <div>
-          <button
+        <button
             type="button"
             onClick={() => incrementValue('groundTeleop')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full"
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full"
           >
             Ground
             <span className="block">{formData.groundTeleop}</span>
           </button>
-        </div>
-        <div>
           <button
             type="button"
-            onClick={() => incrementValue('groundTeleop')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full"
+            onClick={() => incrementValue('sourceTeleop')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2"
           >
-            Ground
-            <span className="block">{formData.groundTeleop}</span>
+            Source
+            <span className="block">{formData.sourceTeleop}</span>
           </button>
         </div>
         <div>

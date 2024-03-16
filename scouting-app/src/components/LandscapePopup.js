@@ -1,43 +1,48 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const LandscapePopup = () => {
-  const [showPopup, setShowPopup] = useState(true); // Set showPopup to true initially
+  const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef(null);
 
   const handleDismiss = () => {
-    if (popupRef.current) {
-      // Add a class to trigger the exit animation
-      popupRef.current.classList.add('animate-popup-exit');
-  
-      // Wait for the animation to complete before hiding the popup
-      setTimeout(() => {
-        setShowPopup(false);
-      }, 300); // Adjust the delay if needed to match the animation duration
-    }
-  };
-      
-  
+  if (popupRef.current) {
+    // Add a class to trigger the exit animation
+    popupRef.current.classList.add('animate-popup-exit');
+
+    // Wait for the animation to complete before hiding the popup
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 300); // Adjust the delay if needed to match the animation duration
+  }
+};
 
   useEffect(() => {
     const handleAnimationEnd = () => {
-        if (popupRef.current) {
-          popupRef.current.style.opacity = '1';
-        }
-      };
-      
-
-    if (showPopup) {
       if (popupRef.current) {
-        popupRef.current.addEventListener('animationend', handleAnimationEnd);
+        popupRef.current.style.opacity = '1';
       }
+    };
+
+    const handleOrientationChange = () => {
+      const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+      setShowPopup(isPortrait);
+    };
+
+    handleOrientationChange(); // Check initial orientation
+
+    if (popupRef.current) {
+      popupRef.current.addEventListener('animationend', handleAnimationEnd);
     }
+
+    window.addEventListener('resize', handleOrientationChange);
 
     return () => {
       if (popupRef.current) {
         popupRef.current.removeEventListener('animationend', handleAnimationEnd);
       }
+      window.removeEventListener('resize', handleOrientationChange);
     };
-  }, [showPopup]);
+  }, []);
 
   return (
     <>

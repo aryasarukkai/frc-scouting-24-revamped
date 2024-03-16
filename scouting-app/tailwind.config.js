@@ -6,6 +6,9 @@ module.exports = {
       animation: {
         popup: 'popup 0.3s ease-in-out',
       },
+      animation: {
+        'fade-out': 'fadeOut 1s ease-out forwards',
+      },
       keyframes: {
         popup: {
           '0%': { transform: 'scale(0.9)', opacity: 0 },
@@ -13,6 +16,7 @@ module.exports = {
         },
       },
     },
+
   },
   variants: {
     extend: {},

@@ -6,10 +6,10 @@ import AutonPopup from './components/AutonPopup';
 import Header from './components/Header';
 import DriverPopup from './components/DriverPopup';
 import ReviewAndSubmit from './components/ReviewAndSubmit';
-
-import LandscapePopup from './components/LandscapePopup'; 
+import LandscapePopup from './components/LandscapePopup';
 import DataLookup from './components/DataLookup';
 import SuccessPopup from './components/SuccessPopup';
+
 const firebaseConfig = {
   apiKey: "AIzaSyAso045mvuwi4VgaqCFVBT0bz1u3_e9O9g",
   authDomain: "crescendo-scouting-app-649.firebaseapp.com",
@@ -19,7 +19,6 @@ const firebaseConfig = {
   messagingSenderId: "1043419769449",
   appId: "1:1043419769449:web:448a22c410c3efd37c50f8"
 };
-
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
@@ -139,7 +138,6 @@ const App = () => {
   };
 
   return (
-    
     <div className="bg-blue-950 text-white p-4 rounded-lg min-h-screen flex flex-col">
       <LandscapePopup />
       <Header
@@ -150,126 +148,143 @@ const App = () => {
         handleHomeClick={() => setCurrentPopup('home')}
       />
 
-      {currentPopup === 'home' && (
-        <div className="flex justify-center space-x-4 mb-4">
-          <button
-            onClick={() => window.location.reload()}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-          >
-            Reload
-          </button>
-          <button
-            onClick={() => setCurrentPopup('setup')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-          >
-            Setup
-          </button>
-          <button
-            onClick={() => setCurrentPopup('auton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-          >
-            Auton
-          </button>
-          <button
-            onClick={() => setCurrentPopup('driver')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-          >
-            Teleop
-          </button>
-          <button
-            onClick={() => setCurrentPopup('dataLookup')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-          >
-            Data Lookup
-          </button>
-        </div>
-      )}
-      {currentPopup === 'success' && (
- <SuccessPopup onClose={() => setCurrentPopup('home')} />
+      <div className="relative">
+        {currentPopup === 'home' && (
+          <div className="flex justify-center space-x-4 mb-4 transition-opacity duration-500 ease-in-out opacity-100">
+            <button
+              onClick={() => window.location.reload()}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+            >
+              Reload
+            </button>
+            <button
+              onClick={() => setCurrentPopup('setup')}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+            >
+              Setup
+            </button>
+            <button
+              onClick={() => setCurrentPopup('auton')}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+            >
+              Auton
+            </button>
+            <button
+              onClick={() => setCurrentPopup('driver')}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+            >
+              Teleop
+            </button>
+            <button
+              onClick={() => setCurrentPopup('dataLookup')}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+            >
+              Data Lookup
+            </button>
+          </div>
+        )}
+        {currentPopup === 'success' && (
+          <div className="transition-opacity duration-500 ease-in-out opacity-100">
+            <SuccessPopup onClose={() => setCurrentPopup('home')} />
+  </div>
 )}
-      {currentPopup === 'setup' && (
-        <SetupPopup
-          formData={formData}
-          handleInputChange={handleInputChange}
-          handleNextPopup={() => setCurrentPopup('auton')}
-        />
-      )}
-      {currentPopup === 'auton' && (
-        <AutonPopup
-          formData={formData}
-          setFormData={setFormData}
-          handleStageChange={setCurrentPopup}
-        />
-      )}
-      {currentPopup === 'driver' && (
-        <DriverPopup
-          formData={formData}
-          handleInputChange={handleInputChange}
-          incrementValue={incrementValue}
-          decrementValue={decrementValue}
-          handlePrevPopup={() => setCurrentPopup('auton')}
-          handleReviewAndSubmit={() => setCurrentPopup('review')}
-        />
-      )}
-      {currentPopup === 'review' && (
-        <ReviewAndSubmit
-          formData={formData}
-          handleInputChange={handleInputChange}
-          handleSubmit={submitData}
-          handleStageChange={setCurrentPopup}
-        />
-      )}
-      {currentPopup === 'dataLookup' && <DataLookup />}
-      {currentPopup === 'setup' && (
-        <div className="flex justify-between mt-4">
-          <button
-            onClick={clearData}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-          >
-            Clear
-          </button>
-          <button
-            onClick={() => setCurrentPopup('auton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-          >
-            Next: Autonomous
-          </button>
-        </div>
-      )}
-      {currentPopup === 'auton' && (
-        <div className="flex justify-between mt-4">
-          <button
-            onClick={() => setCurrentPopup('setup')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-          >
-            Previous
-          </button>
-          <button
-            onClick={() => setCurrentPopup('driver')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-          >
-            Next: Teleop
-          </button>
-        </div>
-      )}
-      {currentPopup === 'driver' && (
-        <div className="flex justify-between mt-4">
-          <button
-            onClick={() => setCurrentPopup('auton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-          >
-            Previous
-          </button>
-          <button
-            onClick={() => setCurrentPopup('review')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-          >
-            Next: Review
-          </button>
-        </div>
-      )}
-    </div>
-  );
+{currentPopup === 'setup' && (
+  <div className="transition-opacity duration-500 ease-in-out opacity-100">
+    <SetupPopup
+      formData={formData}
+      handleInputChange={handleInputChange}
+      handleNextPopup={() => setCurrentPopup('auton')}
+    />
+  </div>
+)}
+{currentPopup === 'auton' && (
+  <div className="transition-opacity duration-500 ease-in-out opacity-100">
+    <AutonPopup
+      formData={formData}
+      setFormData={setFormData}
+      handleStageChange={setCurrentPopup}
+    />
+  </div>
+)}
+{currentPopup === 'driver' && (
+  <div className="transition-opacity duration-500 ease-in-out opacity-100">
+    <DriverPopup
+      formData={formData}
+      handleInputChange={handleInputChange}
+      incrementValue={incrementValue}
+      decrementValue={decrementValue}
+      handlePrevPopup={() => setCurrentPopup('auton')}
+      handleReviewAndSubmit={() => setCurrentPopup('review')}
+    />
+  </div>
+)}
+{currentPopup === 'review' && (
+  <div className="transition-opacity duration-500 ease-in-out opacity-100">
+    <ReviewAndSubmit
+      formData={formData}
+      handleInputChange={handleInputChange}
+      handleSubmit={submitData}
+      handleStageChange={setCurrentPopup}
+    />
+  </div>
+)}
+{currentPopup === 'dataLookup' && (
+  <div className="transition-opacity duration-500 ease-in-out opacity-100">
+    <DataLookup />
+  </div>
+)}
+</div>
+
+{currentPopup === 'setup' && (
+<div className="flex justify-between mt-4">
+  <button
+    onClick={clearData}
+    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+  >
+    Clear
+  </button>
+  <button
+    onClick={() => setCurrentPopup('auton')}
+    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+  >
+    Next: Autonomous
+  </button>
+</div>
+)}
+{currentPopup === 'auton' && (
+<div className="flex justify-between mt-4">
+  <button
+    onClick={() => setCurrentPopup('setup')}
+    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+  >
+    Previous
+  </button>
+  <button
+    onClick={() => setCurrentPopup('driver')}
+    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+  >
+    Next: Teleop
+  </button>
+</div>
+)}
+{currentPopup === 'driver' && (
+<div className="flex justify-between mt-4">
+  <button
+    onClick={() => setCurrentPopup('auton')}
+    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+  >
+    Previous
+  </button>
+  <button
+    onClick={() => setCurrentPopup('review')}
+    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+  >
+    Next: Review
+  </button>
+</div>
+)}
+</div>
+);
 };
 
 export default App;

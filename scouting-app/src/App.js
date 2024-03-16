@@ -171,15 +171,12 @@ const App = () => {
         />
       )}
       {currentPopup === 'auton' && (
-        <AutonPopup
-          formData={formData}
-          handleInputChange={handleInputChange}
-          incrementValue={incrementValue}
-          decrementValue={decrementValue}
-          handleNextPopup={() => setCurrentPopup('driver')}
-          handlePrevPopup={() => setCurrentPopup('setup')}
-        />
-      )}
+  <AutonPopup
+    formData={formData}
+    setFormData={setFormData} // Pass the setFormData function as a prop
+    handleStageChange={handleStageChange}
+  />
+)}
       {currentPopup === 'driver' && (
         <DriverPopup
           formData={formData}

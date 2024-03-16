@@ -1,13 +1,7 @@
 // AutonPopup.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    const newValue = type === 'checkbox' ? checked : parseInt(value, 10);
-    setFormData((prevData) => ({ ...prevData, [name]: newValue }));
-  };
-
   const incrementValue = (field) => {
     setFormData((prevData) => ({ ...prevData, [field]: prevData[field] + 1 }));
   };
@@ -16,57 +10,69 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
     setFormData((prevData) => ({ ...prevData, [field]: Math.max(prevData[field] - 1, 0) }));
   };
 
+  const [timer, setTimer] = useState(15);
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    let interval;
+    if (isActive) {
+      interval = setInterval(() => {
+        setTimer((prevTimer) => Math.max(prevTimer - 1, 0));
+      }, 1000);
+    } else {
+      clearInterval(interval);
+    }
+
+    return () => clearInterval(interval);
+  }, [isActive]);
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+  };
+
+  const handleStartStop = () => {
+    setIsActive((prevActive) => !prevActive);
+  };
+
+  const handleReset = () => {
+    setTimer(15);
+    setIsActive(false);
+  };
+
   return (
     <div className="popup">
-      <h2><u>Autonomous Portion</u> 🚀</h2>
-      <div className="input-group">
-        <label htmlFor="preload_scored">Preload Scored:</label>
-        <input
-          type="checkbox"
-          id="preload_scored"
-          name="preloadScored"
-          checked={formData.preloadScored}
-          onChange={handleInputChange}
-        />
+      <div className="top">
+        <header className="header">Autonomous</header>
+        <div className="timer">{formatTime(timer)}</div>
+        <div className="timeButtons">
+          <button onClick={handleStartStop}>{isActive ? 'Stop' : 'Start'}</button>
+          <button onClick={handleReset}>Reset</button>
+        </div>
       </div>
-      <div className="input-group">
-        <label htmlFor="notes_collected_auton">Notes Collected:</label>
-        <button type="button" onClick={() => decrementValue('notesCollectedAuton')}>-</button>
-        <input
-          type="number"
-          id="notes_collected_auton"
-          name="notesCollectedAuton"
-          value={formData.notesCollectedAuton}
-          onChange={handleInputChange}
-          min="0"
-        />
-        <button type="button" onClick={() => incrementValue('notesCollectedAuton')}>+</button>
-      </div>
-      <div className="input-group">
-        <label htmlFor="amps_played_auton">Amps Played:</label>
-        <button type="button" onClick={() => decrementValue('ampsPlayedAuton')}>-</button>
-        <input
-          type="number"
-          id="amps_played_auton"
-          name="ampsPlayedAuton"
-          value={formData.ampsPlayedAuton}
-          onChange={handleInputChange}
-          min="0"
-        />
-        <button type="button" onClick={() => incrementValue('ampsPlayedAuton')}>+</button>
-      </div>
-      <div className="input-group">
-        <label htmlFor="speakers_played_auton">Speakers Scored:</label>
-        <button type="button" onClick={() => decrementValue('speakersPlayedAuton')}>-</button>
-        <input
-          type="number"
-          id="speakers_played_auton"
-          name="speakersPlayedAuton"
-          value={formData.speakersPlayedAuton}
-          onChange={handleInputChange}
-          min="0"
-        />
-        <button type="button" onClick={() => incrementValue('speakersPlayedAuton')}>+</button>
+      <div className="bottom">
+        <div className="bottom-left">
+          <button type="button" onClick={() => incrementValue('ampsFailedAuton')}>Amp (Fail)
+            <span className="data">{formData.ampsFailedAuton}</span>
+          </button>
+          <button type="button" onClick={() => incrementValue('speakersFailedAuton')}>Speakers (Fail)
+            <span className="data">{formData.speakersFailedAuton}</span>
+          </button>
+        </div>
+        <div className="bottom-center">
+          <button type="button" onClick={() => incrementValue('notesCollectedAuton')}>Pickup
+            <span className="data">{formData.notesCollectedAuton}</span>
+          </button>
+        </div>
+        <div className="bottom-right">
+          <button type="button" onClick={() => incrementValue('speakersPlayedAuton')}>Speaker (Score)
+            <span className="data">{formData.speakersPlayedAuton}</span>
+          </button>
+          <button type="button" onClick={() => incrementValue('ampsPlayedAuton')}>Amp (Score)
+            <span className="data">{formData.ampsPlayedAuton}</span>
+          </button>
+        </div>
       </div>
       <div className="buttons">
         <button onClick={() => handleStageChange('setup')}>Previous</button>

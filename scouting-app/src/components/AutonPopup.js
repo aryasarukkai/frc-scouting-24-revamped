@@ -43,16 +43,6 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
 
   return (
     <div className="bg-lime-700 p-4 rounded">
-      <div className="flex items-center justify-between mb-4">
-        <div className="space-x-2">
-          <button
-            onClick={handleStartStop}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
-          >
-            {isActive ? 'Stop' : 'Go'}
-          </button>
-        </div>
-      </div>
       <div className="grid grid-cols-3 gap-4">
         <div>
           <button 
@@ -83,14 +73,17 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
           </button>
         </div>
         <div>
-          <button
-            type="button" 
-            onClick={() => incrementValue('speakersScoredAuton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full"
-          >
-            Speaker (Score)
-            <span className="block">{formData.speakersScoredAuton}</span>
-          </button>
+        <button
+          type="button"
+          onClick={() => setFormData((prevData) => ({
+            ...prevData,
+            speakersScoredAuton: prevData.speakersScoredAuton + 1
+          }))}
+          className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full"
+>
+          Speaker (Score)
+          <span className="block">{formData.speakersScoredAuton}</span>
+        </button>
           <button
             type="button"
             onClick={() => incrementValue('ampsScoredAuton')}

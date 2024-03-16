@@ -54,12 +54,44 @@ const App = () => {
   const clearData = () => {
     // Your clear data logic
   };
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+  };
+  const [timer, setTimer] = useState(0);
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    let interval;
+    if (isActive) {
+      interval = setInterval(() => {
+        setTimer((prevTimer) => prevTimer - 1);
+      }, 1000);
+    } else {
+      clearInterval(interval);
+    }
+
+    return () => clearInterval(interval);
+  }, [isActive]);
+
+  useEffect(() => {
+    setTimer(currentPopup === 'auton' ? 15 : currentPopup === 'driver' ? 135 : 0);
+    setIsActive(false);
+  }, [currentPopup]);
+
+
+  const handleStartStop = () => {
+    setIsActive((prevActive) => !prevActive);
+  };
 
   return (
     <div className="bg-blue-950 text-white p-4 rounded-lg min-h-screen flex flex-col">
       <Header
         title={currentPopup === 'auton' ? 'Autonomous' : currentPopup === 'driver' ? 'Teleop' : ''}
-        timer={currentPopup === 'auton' ? formatTime(timer) : null}
+        timer={formatTime(timer)}
+        handleStartStop={handleStartStop}
+        isActive={isActive}
       />
 
       {currentPopup === 'home' && (
@@ -110,7 +142,7 @@ const App = () => {
         />
       )}
 
-      {currentPopup !== 'home' && (
+      {currentPopup === 'home' && (
         <button
           type="button"
           onClick={submitData}
@@ -118,6 +150,54 @@ const App = () => {
         >
           Submit
         </button>
+      )}
+      {currentPopup === 'setup' && ( 
+        <div className="flex justify-between mt-4">
+          <button
+            onClick={clearData}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Clear
+          </button>
+          <button
+            onClick={() => setCurrentPopup('auton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Next: Autonomous
+          </button>
+        </div>
+      )}
+      {currentPopup === 'auton' && (
+        <div className="flex justify-between mt-4">
+          <button
+            onClick={() => setCurrentPopup('setup')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Previous
+          </button>
+          <button
+            onClick={() => setCurrentPopup('driver')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Next: Teleop
+          </button>
+        </div>
+      )}
+      {currentPopup === 'driver' && (
+        <div className="flex justify-between mt-4">
+          <button
+            onClick={() => setCurrentPopup('auton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Previous
+          </button>
+          <button
+            onClick={submitData}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Submit
+          </button>
+        </div>
       )}
     </div>
   );

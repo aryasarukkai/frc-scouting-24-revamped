@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = ({ title, timer }) => {
+const Header = ({ title, timer, handleStartStop, handleReset, isActive, handleHomeClick }) => {
   return (
     <div className="flex items-center justify-between mb-4">
       <div className="flex items-center">
@@ -12,7 +12,31 @@ const Header = ({ title, timer }) => {
       </div>
       <div className="flex items-center space-x-4">
         <h2 className="text-2xl font-bold">{title}</h2>
-        {timer && <div className="text-2xl font-bold">{timer}</div>}
+        {timer && (
+          <>
+            <div className="text-2xl font-bold">{timer}</div>
+            <button
+              onClick={handleStartStop}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+            >
+              {isActive ? 'Stop' : 'Go'}
+            </button>
+            {isActive && (
+              <button
+                onClick={handleReset}
+                className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+              >
+                Reset
+              </button>
+            )}
+          </>
+        )}
+        <button
+          onClick={handleHomeClick}
+          className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+        >
+          Home
+        </button>
       </div>
     </div>
   );

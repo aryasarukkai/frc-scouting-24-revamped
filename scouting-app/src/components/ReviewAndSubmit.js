@@ -30,7 +30,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="scoutName"
               value={formData.scoutName}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.scoutName
@@ -49,7 +49,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="matchNumber"
               value={formData.matchNumber}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.matchNumber
@@ -68,7 +68,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="teamNumber"
               value={formData.teamNumber}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.teamNumber
@@ -87,7 +87,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="allianceColor"
               value={formData.allianceColor}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.allianceColor
@@ -109,7 +109,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="speakersFailedAuton"
               value={formData.speakersFailedAuton}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.speakersFailedAuton
@@ -128,7 +128,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="ampsFailedAuton"
               value={formData.ampsFailedAuton}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.ampsFailedAuton
@@ -147,7 +147,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="groundAuton"
               value={formData.groundAuton}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.groundAuton
@@ -166,7 +166,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="speakersScoredAuton"
               value={formData.speakersScoredAuton}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.speakersScoredAuton
@@ -185,7 +185,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="ampsScoredAuton"
               value={formData.ampsScoredAuton}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.ampsScoredAuton
@@ -207,7 +207,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="speakersFailedTeleop"
               value={formData.speakersFailedTeleop}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.speakersFailedTeleop
@@ -226,7 +226,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="ampsFailedTeleop"
               value={formData.ampsFailedTeleop}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.ampsFailedTeleop
@@ -245,7 +245,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="groundTeleop"
               value={formData.groundTeleop}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.groundTeleop
@@ -264,7 +264,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="speakersScoredTeleop"
               value={formData.speakersScoredTeleop}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.speakersScoredTeleop
@@ -283,7 +283,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
               name="ampsScoredTeleop"
               value={formData.ampsScoredTeleop}
               onChange={handleEditInputChange}
-              className="border border-gray-300 rounded px-2 py-1"
+              className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />
           ) : (
             formData.ampsScoredTeleop

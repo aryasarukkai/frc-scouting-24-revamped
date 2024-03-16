@@ -51,32 +51,6 @@ const DriverPopup = ({ formData, handleInputChange, incrementValue, decrementVal
           </button>
         </div>
       </div>
-      <div className="mt-4">
-        <label htmlFor="notes" className="block mb-2 font-bold">
-          Notes:
-        </label>
-        <textarea
-          id="notes"
-          name="notes"
-          value={formData.notes}
-          onChange={handleInputChange}
-          className="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded"
-        ></textarea>
-      </div>
-      <div className="flex justify-between mt-4">
-        <button
-          onClick={() => handleStageChange('auton')}
-          className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-        >
-          Previous
-        </button>
-        <button
-          onClick={submitData}
-          className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-        >
-          Submit
-        </button>
-      </div>
     </div>
   );
 };

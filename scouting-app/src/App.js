@@ -5,8 +5,8 @@ import SetupPopup from './components/SetupPopup';
 import AutonPopup from './components/AutonPopup';
 import Header from './components/Header';
 import DriverPopup from './components/DriverPopup';
+import ReviewAndSubmit from './components/ReviewAndSubmit';
 import './noScroll.css';
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyAso045mvuwi4VgaqCFVBT0bz1u3_e9O9g",
@@ -24,7 +24,21 @@ const database = getDatabase(app);
 const App = () => {
   const [currentPopup, setCurrentPopup] = useState('home');
   const [formData, setFormData] = useState({
-    // Your form data state
+    scoutName: '',
+    matchNumber: '',
+    teamNumber: '',
+    allianceColor: '',
+    speakersFailedAuton: 0,
+    ampsFailedAuton: 0,
+    groundAuton: 0,
+    speakersScoredAuton: 0,
+    ampsScoredAuton: 0,
+    speakersFailedTeleop: 0,
+    ampsFailedTeleop: 0,
+    groundTeleop: 0,
+    speakersScoredTeleop: 0,
+    ampsScoredTeleop: 0,
+    notes: '',
   });
 
   const handleInputChange = (e) => {
@@ -44,21 +58,81 @@ const App = () => {
   const [submissionRef, setSubmissionRef] = useState(null);
 
   const submitData = () => {
-    // Your submit data logic
+    set(submissionRef, formData)
+      .then(() => {
+        console.log('Data submitted successfully');
+        setFormData({
+          scoutName: '',
+          matchNumber: '',
+          teamNumber: '',
+          allianceColor: '',
+          speakersFailedAuton: 0,
+          ampsFailedAuton: 0,
+          groundAuton: 0,
+          speakersScoredAuton: 0,
+          ampsScoredAuton: 0,
+          speakersFailedTeleop: 0,
+          ampsFailedTeleop: 0,
+          groundTeleop: 0,
+          speakersScoredTeleop: 0,
+          ampsScoredTeleop: 0,
+          notes: '',
+        });
+        setCurrentPopup('home');
+      })
+      .catch((error) => {
+        console.error('Error submitting data:', error);
+      });
   };
 
   useEffect(() => {
-    // Your useEffect logic
-  }, [formData, currentPopup]);
+    let interval;
+    if (currentPopup !== 'home') {
+      const newSubmissionRef = push(ref(database, 'submissions'));
+      setSubmissionRef(newSubmissionRef);
+
+      interval = setInterval(() => {
+        set(newSubmissionRef, formData)
+          .then(() => {
+            console.log('Autosave successful');
+          })
+          .catch((error) => {
+            console.error('Error during autosave:', error);
+          });
+      }, 500);
+    }
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [currentPopup, formData]);
 
   const clearData = () => {
-    // Your clear data logic
+    setFormData({
+      scoutName: '',
+      matchNumber: '',
+      teamNumber: '',
+      allianceColor: '',
+      speakersFailedAuton: 0,
+      ampsFailedAuton: 0,
+      groundAuton: 0,
+      speakersScoredAuton: 0,
+      ampsScoredAuton: 0,
+      speakersFailedTeleop: 0,
+      ampsFailedTeleop: 0,
+      groundTeleop: 0,
+      speakersScoredTeleop: 0,
+      ampsScoredTeleop: 0,
+      notes: '',
+    });
   };
+
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     return `${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
   };
+
   const [timer, setTimer] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
@@ -79,7 +153,6 @@ const App = () => {
     setTimer(currentPopup === 'auton' ? 15 : currentPopup === 'driver' ? 135 : 0);
     setIsActive(false);
   }, [currentPopup]);
-
 
   const handleStartStop = () => {
     setIsActive((prevActive) => !prevActive);
@@ -145,7 +218,15 @@ const App = () => {
           incrementValue={incrementValue}
           decrementValue={decrementValue}
           handlePrevPopup={() => setCurrentPopup('auton')}
-          submitData={submitData}
+          handleReviewAndSubmit={() => setCurrentPopup('review')}
+        />
+      )}
+      {currentPopup === 'review' && (
+        <ReviewAndSubmit
+          formData={formData}
+          handleInputChange={handleInputChange}
+          handleSubmit={submitData}
+          handleStageChange={setCurrentPopup}
         />
       )}
 
@@ -158,7 +239,7 @@ const App = () => {
           Submit
         </button>
       )}
-      {currentPopup === 'setup' && ( 
+      {currentPopup === 'setup' && (
         <div className="flex justify-between mt-4">
           <button
             onClick={clearData}
@@ -190,7 +271,7 @@ const App = () => {
           </button>
         </div>
       )}
-      {currentPopup === 'driver' && (
+      {currentPopup === 'driver' && ( 
         <div className="flex justify-between mt-4">
           <button
             onClick={() => setCurrentPopup('auton')}
@@ -199,10 +280,10 @@ const App = () => {
             Previous
           </button>
           <button
-            onClick={submitData}
+            onClick={() => setCurrentPopup('review')}
             className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
           >
-            Submit
+            Next: Review
           </button>
         </div>
       )}

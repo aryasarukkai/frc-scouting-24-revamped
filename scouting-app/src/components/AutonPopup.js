@@ -52,7 +52,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
             className="bg-red-600 text-white font-bold uppercase border-2 border-white px-4 py-2  rounded cursor-pointer w-full"
           >
             Speaker [F]
-            <span className="data">{formData.speakersFailedAuton}</span>
+            <span className="block">{formData.speakersFailedAuton}</span>
           </button>
           <button
             type="button"
@@ -60,7 +60,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
             className="bg-red-600 text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2"
           >
             Amp [F]
-            <span className="data">{formData.ampsFailedAuton}</span>
+            <span className="block">{formData.ampsFailedAuton}</span>
           </button>
         </div>
         <div>
@@ -70,7 +70,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
             className="bg-transparent text-white bg-blue-500 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full"
           >
             Ground
-            <span className="data">{formData.groundAuton}</span>
+            <span className="block">{formData.pickupsAuton}</span>
           </button>
         </div>
         <div>
@@ -95,20 +95,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
           </button>
         </div>
       </div>
-      <div className="flex justify-between mt-4">
-        <button
-          onClick={() => handleStageChange('setup')}
-          className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-        >
-          Previous
-        </button>
-        <button
-          onClick={() => handleStageChange('driver')}
-          className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-        >
-          Next
-        </button>
-      </div>
+      
     </div>
   );
 };

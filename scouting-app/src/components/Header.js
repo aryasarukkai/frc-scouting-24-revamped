@@ -7,7 +7,7 @@ const Header = ({ title, timer, handleStartStop, handleReset, isActive, handleHo
         <img src="logo.png" alt="Logo" className="w-20 h-20 mr-2 rounded-lg" />
         <div>
           <h1 className="text-2xl font-bold">649 Scouting</h1>
-          <code className="text-sm">V3 • DEMO</code>
+          <code className="text-sm">V4 • TRAINING</code>
         </div>
       </div>
       <div className="flex items-center space-x-4">

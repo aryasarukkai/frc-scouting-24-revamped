@@ -3,3 +3,9 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
 @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900');
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  margin: 20px;
+  background-color: #001F3F; /* Dark background for contrast */
+  color: #FFFFFF; /* White text */
+}

@@ -54,9 +54,9 @@ const App = () => {
   };
 
   return (
-    <div className="bg-blue-900 text-white p-4">
+    <div className="bg-blue-950 text-white p-4 rounded-lg min-h-screen flex flex-col">
       <div className="flex items-center mb-4">
-        <img src="logo.png" alt="Logo" className="w-20 h-20 mr-2" />
+        <img src="logo.png" alt="Logo" className="w-20 h-20 mr-2 rounded-lg" />
         <h1 className="text-2xl font-bold">
           649 Scouting <br />
           <code className="text-sm">V3 • DEMO</code>

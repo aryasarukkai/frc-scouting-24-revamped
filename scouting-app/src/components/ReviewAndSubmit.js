@@ -46,7 +46,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit }) => {
           Submit
         </button>
       </div>
-    </div>
+
   );
 };
 

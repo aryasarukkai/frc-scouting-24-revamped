@@ -7,7 +7,7 @@ import Header from './components/Header';
 import DriverPopup from './components/DriverPopup';
 import ReviewAndSubmit from './components/ReviewAndSubmit';
 import './noScroll.css';
-
+import LandscapePopup from './components/LandscapePopup'; 
 const firebaseConfig = {
   apiKey: "AIzaSyAso045mvuwi4VgaqCFVBT0bz1u3_e9O9g",
   authDomain: "crescendo-scouting-app-649.firebaseapp.com",
@@ -17,6 +17,7 @@ const firebaseConfig = {
   messagingSenderId: "1043419769449",
   appId: "1:1043419769449:web:448a22c410c3efd37c50f8"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
@@ -55,10 +56,9 @@ const App = () => {
     setFormData((prevData) => ({ ...prevData, [field]: prevData[field] - 1 }));
   };
 
-  const [submissionRef, setSubmissionRef] = useState(null);
-
   const submitData = () => {
-    set(submissionRef, formData)
+    const newSubmissionRef = push(ref(database, 'submissions'));
+    set(newSubmissionRef, formData)
       .then(() => {
         console.log('Data submitted successfully');
         setFormData({
@@ -84,28 +84,6 @@ const App = () => {
         console.error('Error submitting data:', error);
       });
   };
-
-  useEffect(() => {
-    let interval;
-    if (currentPopup !== 'home') {
-      const newSubmissionRef = push(ref(database, 'submissions'));
-      setSubmissionRef(newSubmissionRef);
-
-      interval = setInterval(() => {
-        set(newSubmissionRef, formData)
-          .then(() => {
-            console.log('Autosave successful');
-          })
-          .catch((error) => {
-            console.error('Error during autosave:', error);
-          });
-      }, 500);
-    }
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [currentPopup, formData]);
 
   const clearData = () => {
     setFormData({
@@ -159,7 +137,9 @@ const App = () => {
   };
 
   return (
+    
     <div className="bg-blue-950 text-white p-4 rounded-lg min-h-screen flex flex-col">
+      <LandscapePopup />
       <Header
         title={currentPopup === 'auton' ? 'Auton' : currentPopup === 'driver' ? 'Teleop' : ''}
         timer={formatTime(timer)}
@@ -230,15 +210,6 @@ const App = () => {
         />
       )}
 
-      {currentPopup === 'home' && (
-        <button
-          type="button"
-          onClick={submitData}
-          className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer mt-4"
-        >
-          Submit
-        </button>
-      )}
       {currentPopup === 'setup' && (
         <div className="flex justify-between mt-4">
           <button
@@ -271,7 +242,7 @@ const App = () => {
           </button>
         </div>
       )}
-      {currentPopup === 'driver' && ( 
+      {currentPopup === 'driver' && (
         <div className="flex justify-between mt-4">
           <button
             onClick={() => setCurrentPopup('auton')}

@@ -5,15 +5,26 @@ const LandscapePopup = () => {
   const popupRef = useRef(null);
 
   const handleDismiss = () => {
-    setShowPopup(false);
+    if (popupRef.current) {
+      // Add a class to trigger the exit animation
+      popupRef.current.classList.add('animate-popup-exit');
+  
+      // Wait for the animation to complete before hiding the popup
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 300); // Adjust the delay if needed to match the animation duration
+    }
   };
+  
+  
 
   useEffect(() => {
     const handleAnimationEnd = () => {
-      if (popupRef.current) {
-        popupRef.current.classList.remove('animate-popup');
-      }
-    };
+        if (popupRef.current) {
+          popupRef.current.style.opacity = '1';
+        }
+      };
+      
 
     if (showPopup) {
       if (popupRef.current) {

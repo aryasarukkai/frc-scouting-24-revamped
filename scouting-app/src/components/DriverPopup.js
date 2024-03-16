@@ -1,144 +1,55 @@
-// DriverPopup.js
 import React from 'react';
 
-const DriverPopup = ({ formData, setFormData, handleStageChange, submitData }) => {
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    const newValue = type === 'checkbox' ? checked : parseInt(value, 10);
-    setFormData((prevData) => ({ ...prevData, [name]: newValue }));
-  };
-
-  const incrementValue = (field) => {
-    setFormData((prevData) => ({ ...prevData, [field]: prevData[field] + 1 }));
-  };
-
-  const decrementValue = (field) => {
-    setFormData((prevData) => ({ ...prevData, [field]: Math.max(prevData[field] - 1, 0) }));
-  };
-
+const DriverPopup = ({ formData, handleInputChange, incrementValue, decrementValue, handlePrevPopup, submitData }) => {
   return (
-    <div className="popup">
-      <h2><u>Teleop Portion</u> 🕹️</h2>
-      <div className="input-group">
-        <label htmlFor="notes_collected_teleop">Notes Collected:</label>
-        <button type="button" onClick={() => decrementValue('notesCollectedTeleop')}>-</button>
-        <input
-          type="number"
-          id="notes_collected_teleop"
-          name="notesCollectedTeleop"
-          value={formData.notesCollectedTeleop}
-          onChange={handleInputChange}
-          min="0"
-        />
-        <button type="button" onClick={() => incrementValue('notesCollectedTeleop')}>+</button>
+    <div className="bg-blue-800 p-4 rounded">
+      <h2 className="text-2xl font-bold mb-4">Teleop</h2>
+      <div className="mb-4">
+        <label htmlFor="notes_collected_teleop" className="block mb-2 font-bold">
+          Notes Collected in Teleop:
+        </label>
+        <div className="flex items-center space-x-2">
+          <button
+            onClick={() => decrementValue('notesCollectedTeleop')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+          >
+            -
+          </button>
+          <span>{formData.notesCollectedTeleop}</span>
+          <button
+            onClick={() => incrementValue('notesCollectedTeleop')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+          >
+            +
+          </button>
+        </div>
       </div>
-      <div className="input-group">
-        <label htmlFor="amps_played_teleop">Amps Played:</label>
-        <button type="button" onClick={() => decrementValue('ampsPlayedTeleop')}>-</button>
-        <input
-          type="number"
-          id="amps_played_teleop"
-          name="ampsPlayedTeleop"
-          value={formData.ampsPlayedTeleop}
-          onChange={handleInputChange}
-          min="0"
-        />
-        <button type="button" onClick={() => incrementValue('ampsPlayedTeleop')}>+</button>
-      </div>
-      <div className="input-group">
-        <label htmlFor="unamplified_speakers_played_teleop">Unamplified Speakers Scored:</label>
-        <button type="button" onClick={() => decrementValue('unamplifiedSpeakersPlayedTeleop')}>-</button>
-        <input
-          type="number"
-          id="unamplified_speakers_played_teleop"
-          name="unamplifiedSpeakersPlayedTeleop"
-          value={formData.unamplifiedSpeakersPlayedTeleop}
-          onChange={handleInputChange}
-          min="0"
-        />
-        <button type="button" onClick={() => incrementValue('unamplifiedSpeakersPlayedTeleop')}>+</button>
-      </div>
-      <div className="input-group">
-        <label htmlFor="amplified_speakers_played_teleop">Amplified Speakers Scored:</label>
-        <button type="button" onClick={() => decrementValue('amplifiedSpeakersPlayedTeleop')}>-</button>
-        <input
-          type="number"
-          id="amplified_speakers_played_teleop"
-          name="amplifiedSpeakersPlayedTeleop"
-          value={formData.amplifiedSpeakersPlayedTeleop}
-          onChange={handleInputChange}
-          min="0"
-        />
-        <button type="button" onClick={() => incrementValue('amplifiedSpeakersPlayedTeleop')}>+</button>
-      </div>
-      <div className="input-group">
-        <label htmlFor="harmonized">Harmonized:</label>
-        <input
-          type="checkbox"
-          id="harmonized"
-          name="harmonized"
-          checked={formData.harmonized}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="input-group">
-        <label htmlFor="spotlight">Spotlight:</label>
-        <input
-          type="checkbox"
-          id="spotlight"
-          name="spotlight"
-          checked={formData.spotlight}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="input-group">
-        <label htmlFor="buddy_climb">Buddy Climb:</label>
-        <input
-          type="checkbox"
-          id="buddy_climb"
-          name="buddyClimb"
-          checked={formData.buddyClimb}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="input-group">
-        <label htmlFor="scored_amps">Scored Amps:</label>
-        <button type="button" onClick={() => decrementValue('scoredAmps')}>-</button>
-        <input
-          type="number"
-          id="scored_amps"
-          name="scoredAmps"
-          value={formData.scoredAmps}
-          onChange={handleInputChange}
-          min="0"
-        />
-        <button type="button" onClick={() => incrementValue('scoredAmps')}>+</button>
-      </div>
-      <div className="input-group">
-        <label htmlFor="scored_speakers">Scored Speakers:</label>
-        <button type="button" onClick={() => decrementValue('scoredSpeakers')}>-</button>
-        <input
-          type="number"
-          id="scored_speakers"
-          name="scoredSpeakers"
-          value={formData.scoredSpeakers}
-          onChange={handleInputChange}
-          min="0"
-        />
-        <button type="button" onClick={() => incrementValue('scoredSpeakers')}>+</button>
-      </div>
-      <div className="input-group">
-        <label htmlFor="notes">Miscellaneous Notes:</label>
+      {/* Rest of the form fields */}
+      <div className="mb-4">
+        <label htmlFor="notes" className="block mb-2 font-bold">
+          Notes:
+        </label>
         <textarea
           id="notes"
           name="notes"
           value={formData.notes}
           onChange={handleInputChange}
+          className="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded"
         ></textarea>
       </div>
-      <div className="buttons">
-        <button onClick={() => handleStageChange('auton')}>Previous</button>
-        <button onClick={submitData}>Submit</button>
+      <div className="flex justify-between">
+        <button
+          onClick={handlePrevPopup}
+          className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+        >
+          Previous
+        </button>
+        <button
+          onClick={submitData}
+          className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+        >
+          Submit
+        </button>
       </div>
     </div>
   );

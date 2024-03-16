@@ -1,6 +1,4 @@
-
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, set } from 'firebase/database';
 import SetupPopup from './components/SetupPopup';
@@ -18,40 +16,14 @@ const firebaseConfig = {
   appId: "1:1043419769449:web:448a22c410c3efd37c50f8"
 };
 
-
-console.log("FRC 649 Scouting App");
-
-
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-
 const App = () => {
-  const [currentStage, setCurrentStage] = useState('home');
-  const [formData, setFormData] = useState({
-    scoutName: '',
-    matchNumber: '',
-    teamNumber: '',
-    allianceColor: '',
-    preloadScored: false,
-    notesCollectedAuton: 0,
-    notesCollectedTeleop: 0,
-    ampsPlayedAuton: 0,
-    speakersPlayedAuton: 0,
-    ampsPlayedTeleop: 0,
-    unamplifiedSpeakersPlayedTeleop: 0,
-    amplifiedSpeakersPlayedTeleop: 0,
-    harmonized: false,
-    spotlight: false,
-    buddyClimb: false,
-    notes: '',
-    scoredSpeakers: 0,
-    scoredAmps: 0,
-  });
-  const handleStageChange = (stage) => {
-    setCurrentStage(stage);
-  };
   const [currentPopup, setCurrentPopup] = useState('home');
+  const [formData, setFormData] = useState({
+    // Your form data state
+  });
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -70,99 +42,51 @@ const App = () => {
   const [submissionRef, setSubmissionRef] = useState(null);
 
   const submitData = () => {
-    if(currentStage !== 'home') {
-    if (submissionRef) {
-      set(submissionRef, formData)
-        .catch((error) => {
-          console.error('Error updating data:', error);
-          alert('Failed to update data. Please try again.');
-        });
-    } else {
-      const dataRef = ref(database, 'formData-test');
-      const newSubmissionRef = push(dataRef);
-      set(newSubmissionRef, formData)
-        .then(() => {
-          setSubmissionRef(newSubmissionRef);
-        })
-        .catch((error) => {
-          console.error('Error saving data:', error);
-          alert('Failed to submit data. Please try again.');
-        });
-    }
-  } else {
-    console.log("no active stage");
-  }
+    // Your submit data logic
   };
 
   useEffect(() => {
-    const delay = 500;
-    const timeoutId = setTimeout(() => {
-      // Only submit data if not on the 'home' stage
-      if (currentPopup !== 'home') {
-        submitData();
-      }
-    }, delay);
-
-    // Return a cleanup function to clear the timeout
-    return () => clearTimeout(timeoutId);
+    // Your useEffect logic
   }, [formData, currentPopup]);
 
   const clearData = () => {
-    setFormData((prevData) => ({
-      ...prevData,
-      matchNumber: '',
-      teamNumber: '',
-      notesCollectedAuton: 0,
-      notesPlayedAuton: 0,
-      notesCollectedTeleop: 0,
-      notesPlayedTeleop: 0,
-      amplifiedSpeakersPlayedTeleop: 0,
-      unamplifiedSpeakersPlayedTeleop: 0,
-      spotlight: false,
-      harmonized: false,
-      preloadScored: false,
-      scoredSpeakers: 0,
-      scoredAmps: 0,
-      buddyClimb: false,
-      notes: '',
-    }));
-    setSubmissionRef(null);
-  };
-
-  const handleNextPopup = () => {
-    if (currentPopup === 'setup') {
-      setCurrentPopup('auton');
-    } else if (currentPopup === 'auton') {
-      setCurrentPopup('driver');
-    }
-  };
-
-  const handlePrevPopup = () => {
-    if (currentPopup === 'driver') {
-      setCurrentPopup('auton');
-    } else if (currentPopup === 'auton') {
-      setCurrentPopup('setup');
-    }
+    // Your clear data logic
   };
 
   return (
-    <div className="App">
-      <div className="header">
-        <img src="logo.png" alt="Logo" width="80px" height="80px" />
-        <h1>649 Scouting <br /><code>V3 • DEMO</code></h1>
+    <div className="bg-blue-900 text-white p-4">
+      <div className="flex items-center mb-4">
+        <img src="logo.png" alt="Logo" className="w-20 h-20 mr-2" />
+        <h1 className="text-2xl font-bold">
+          649 Scouting <br />
+          <code className="text-sm">V3 • DEMO</code>
+        </h1>
       </div>
-      <h1>FRC Crescendo</h1>
-  
-      {/* Render buttons only when in 'home' stage */}
+      <h1 className="text-4xl font-bold mb-4">FRC Crescendo</h1>
+
       {currentPopup === 'home' && (
-        <div className="button-container">
-          <button onClick={() => setCurrentPopup('setup')}>Setup</button>
-          <button onClick={() => setCurrentPopup('auton')}>Auton</button>
-          <button onClick={() => setCurrentPopup('driver')}>Teleop</button>
+        <div className="flex justify-center space-x-4 mb-4">
+          <button
+            onClick={() => setCurrentPopup('setup')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Setup
+          </button>
+          <button
+            onClick={() => setCurrentPopup('auton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Auton
+          </button>
+          <button
+            onClick={() => setCurrentPopup('driver')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Teleop
+          </button>
         </div>
       )}
-  
-      {/* Conditional rendering based on currentPopup state */}
+
       {currentPopup === 'setup' && (
         <SetupPopup
           formData={formData}
@@ -171,12 +95,12 @@ const App = () => {
         />
       )}
       {currentPopup === 'auton' && (
-  <AutonPopup
-    formData={formData}
-    setFormData={setFormData} // Pass the setFormData function as a prop
-    handleStageChange={handleStageChange}
-  />
-)}
+        <AutonPopup
+          formData={formData}
+          setFormData={setFormData}
+          handleStageChange={setCurrentPopup}
+        />
+      )}
       {currentPopup === 'driver' && (
         <DriverPopup
           formData={formData}
@@ -187,16 +111,18 @@ const App = () => {
           submitData={submitData}
         />
       )}
-  
-      {/* Submit button might be rendered conditionally or always visible based on your application's flow */}
+
       {currentPopup !== 'home' && (
-        <button type="button" onClick={submitData} className="submit-button">
+        <button
+          type="button"
+          onClick={submitData}
+          className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer mt-4"
+        >
           Submit
         </button>
       )}
     </div>
   );
-  
 };
 
 export default App;

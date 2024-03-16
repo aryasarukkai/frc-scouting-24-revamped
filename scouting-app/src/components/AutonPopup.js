@@ -1,4 +1,3 @@
-// AutonPopup.js
 import React, { useState, useEffect } from 'react';
 
 const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
@@ -8,6 +7,12 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
 
   const decrementValue = (field) => {
     setFormData((prevData) => ({ ...prevData, [field]: Math.max(prevData[field] - 1, 0) }));
+  };
+
+  const handleInputChange = (e) => {
+    const { name, type, checked, value } = e.target;
+    const newValue = type === 'checkbox' ? checked : value;
+    setFormData((prevData) => ({ ...prevData, [name]: newValue }));
   };
 
   const [timer, setTimer] = useState(15);
@@ -42,41 +47,112 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
   };
 
   return (
-    <div className="popup">
-      <div className="top">
-        <header className="header">Autonomous</header>
-        <div className="timer">{formatTime(timer)}</div>
-        <div className="timeButtons">
-          <button onClick={handleStartStop}>{isActive ? 'Stop' : 'Start'}</button>
-          <button onClick={handleReset}>Reset</button>
-        </div>
-      </div>
-      <div className="bottom">
-        <div className="bottom-left">
-          <button type="button" onClick={() => incrementValue('ampsFailedAuton')}>Amp (Fail)
-            <span className="data">{formData.ampsFailedAuton}</span>
+    <div className="bg-blue-800 p-4 rounded">
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-2xl font-bold">Autonomous</h2>
+        <div className="text-2xl font-bold">{formatTime(timer)}</div>
+        <div className="space-x-2">
+          <button
+            onClick={handleStartStop}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+          >
+            {isActive ? 'Stop' : 'Start'}
           </button>
-          <button type="button" onClick={() => incrementValue('speakersFailedAuton')}>Speakers (Fail)
-            <span className="data">{formData.speakersFailedAuton}</span>
-          </button>
-        </div>
-        <div className="bottom-center">
-          <button type="button" onClick={() => incrementValue('notesCollectedAuton')}>Pickup
-            <span className="data">{formData.notesCollectedAuton}</span>
-          </button>
-        </div>
-        <div className="bottom-right">
-          <button type="button" onClick={() => incrementValue('speakersPlayedAuton')}>Speaker (Score)
-            <span className="data">{formData.speakersPlayedAuton}</span>
-          </button>
-          <button type="button" onClick={() => incrementValue('ampsPlayedAuton')}>Amp (Score)
-            <span className="data">{formData.ampsPlayedAuton}</span>
+          <button
+            onClick={handleReset}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+          >
+            Reset
           </button>
         </div>
       </div>
-      <div className="buttons">
-        <button onClick={() => handleStageChange('setup')}>Previous</button>
-        <button onClick={() => handleStageChange('driver')}>Next</button>
+      <div className="mb-4">
+        <label htmlFor="preload_scored" className="block mb-2 font-bold">
+          Preload Scored:
+        </label>
+        <input
+          type="checkbox"
+          id="preload_scored"
+          name="preloadScored"
+          checked={formData.preloadScored}
+          onChange={handleInputChange}
+          className="mr-2"
+        />
+        <label htmlFor="preload_scored">Yes</label>
+      </div>
+      <div className="mb-4">
+        <label htmlFor="notes_collected_auton" className="block mb-2 font-bold">
+          Notes Collected in Auton:
+        </label>
+        <div className="flex items-center space-x-2">
+          <button
+            onClick={() => decrementValue('notesCollectedAuton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+          >
+            -
+          </button>
+          <span>{formData.notesCollectedAuton}</span>
+          <button
+            onClick={() => incrementValue('notesCollectedAuton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <div className="mb-4">
+        <label htmlFor="amps_played_auton" className="block mb-2 font-bold">
+          Amps Played in Auton:
+        </label>
+        <div className="flex items-center space-x-2">
+          <button
+            onClick={() => decrementValue('ampsPlayedAuton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+          >
+            -
+          </button>
+          <span>{formData.ampsPlayedAuton}</span>
+          <button
+            onClick={() => incrementValue('ampsPlayedAuton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <div className="mb-4">
+        <label htmlFor="speakers_played_auton" className="block mb-2 font-bold">
+          Speakers Played in Auton:
+        </label>
+        <div className="flex items-center space-x-2">
+          <button
+            onClick={() => decrementValue('speakersPlayedAuton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+          >
+            -
+          </button>
+          <span>{formData.speakersPlayedAuton}</span>
+          <button
+            onClick={() => incrementValue('speakersPlayedAuton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <div className="flex justify-between">
+        <button
+          onClick={() => handleStageChange('setup')}
+          className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+        >
+          Previous
+        </button>
+        <button
+          onClick={() => handleStageChange('driver')}
+          className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+        >
+          Next
+        </button>
       </div>
     </div>
   );

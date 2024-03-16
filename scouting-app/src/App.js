@@ -3,7 +3,9 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, set } from 'firebase/database';
 import SetupPopup from './components/SetupPopup';
 import AutonPopup from './components/AutonPopup';
+import Header from './components/Header';
 import DriverPopup from './components/DriverPopup';
+import './noScroll.css';
 
 
 const firebaseConfig = {
@@ -55,14 +57,10 @@ const App = () => {
 
   return (
     <div className="bg-blue-950 text-white p-4 rounded-lg min-h-screen flex flex-col">
-      <div className="flex items-center mb-4">
-        <img src="logo.png" alt="Logo" className="w-20 h-20 mr-2 rounded-lg" />
-        <h1 className="text-2xl font-bold">
-          649 Scouting <br />
-          <code className="text-sm">V3 • DEMO</code>
-        </h1>
-      </div>
-      <h1 className="text-4xl font-bold mb-4">FRC Crescendo</h1>
+      <Header
+        title={currentPopup === 'auton' ? 'Autonomous' : currentPopup === 'driver' ? 'Teleop' : ''}
+        timer={currentPopup === 'auton' ? formatTime(timer) : null}
+      />
 
       {currentPopup === 'home' && (
         <div className="flex justify-center space-x-4 mb-4">

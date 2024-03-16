@@ -2,7 +2,7 @@ import React from 'react';
 
 const DriverPopup = ({ formData, handleInputChange, incrementValue, decrementValue, handlePrevPopup, submitData }) => {
   return (
-    <div className="bg-blue-800 p-4 rounded">
+    <div className="bg-cyan-700 p-4 rounded">
       <h2 className="text-2xl font-bold mb-4">Teleop</h2>
       <div className="mb-4">
         <label htmlFor="notes_collected_teleop" className="block mb-2 font-bold">

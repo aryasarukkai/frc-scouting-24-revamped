@@ -1,0 +1,10 @@
+/* Disable scrolling on the body */
+body {
+    overflow: hidden;
+  }
+  
+  /* Disable scrolling on the #root element (where your React app is mounted) */
+  #root {
+    height: 100vh;
+    overflow: hidden;
+  }

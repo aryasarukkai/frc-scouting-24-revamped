@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Header from './Header';
 
 const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
   const incrementValue = (field) => {
@@ -7,12 +8,6 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
 
   const decrementValue = (field) => {
     setFormData((prevData) => ({ ...prevData, [field]: Math.max(prevData[field] - 1, 0) }));
-  };
-
-  const handleInputChange = (e) => {
-    const { name, type, checked, value } = e.target;
-    const newValue = type === 'checkbox' ? checked : value;
-    setFormData((prevData) => ({ ...prevData, [name]: newValue }));
   };
 
   const [timer, setTimer] = useState(15);
@@ -47,100 +42,66 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
   };
 
   return (
-    <div className="bg-blue-800 p-4 rounded">
+    <div className="bg-lime-700 p-4 rounded">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-2xl font-bold">Autonomous</h2>
-        <div className="text-2xl font-bold">{formatTime(timer)}</div>
         <div className="space-x-2">
           <button
             onClick={handleStartStop}
             className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
           >
-            {isActive ? 'Stop' : 'Start'}
-          </button>
-          <button
-            onClick={handleReset}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
-          >
-            Reset
+            {isActive ? 'Stop' : 'Go'}
           </button>
         </div>
       </div>
-      <div className="mb-4">
-        <label htmlFor="preload_scored" className="block mb-2 font-bold">
-          Preload Scored:
-        </label>
-        <input
-          type="checkbox"
-          id="preload_scored"
-          name="preloadScored"
-          checked={formData.preloadScored}
-          onChange={handleInputChange}
-          className="mr-2"
-        />
-        <label htmlFor="preload_scored">Yes</label>
-      </div>
-      <div className="mb-4">
-        <label htmlFor="notes_collected_auton" className="block mb-2 font-bold">
-          Notes Collected in Auton:
-        </label>
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={() => decrementValue('notesCollectedAuton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <button 
+            type="button"
+            onClick={() => incrementValue('speakersFailedAuton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full"
           >
-            -
+            Speaker (Fail)
+            <span className="block">{formData.speakersFailedAuton}</span>
           </button>
-          <span>{formData.notesCollectedAuton}</span>
           <button
-            onClick={() => incrementValue('notesCollectedAuton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
+            type="button"
+            onClick={() => incrementValue('ampsFailedAuton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2"
           >
-            +
+            Amp (Fail)
+            <span className="block">{formData.ampsFailedAuton}</span>
+          </button>
+        </div>
+        <div>
+          <button
+            type="button"
+            onClick={() => incrementValue('groundAuton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full"
+          >
+            Ground
+            <span className="block">{formData.groundAuton}</span>
+          </button>
+        </div>
+        <div>
+          <button
+            type="button" 
+            onClick={() => incrementValue('speakersScoredAuton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full"
+          >
+            Speaker (Score)
+            <span className="block">{formData.speakersScoredAuton}</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => incrementValue('ampsScoredAuton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2"
+          >
+            Amp (Score) 
+            <span className="block">{formData.ampsScoredAuton}</span>
           </button>
         </div>
       </div>
-      <div className="mb-4">
-        <label htmlFor="amps_played_auton" className="block mb-2 font-bold">
-          Amps Played in Auton:
-        </label>
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={() => decrementValue('ampsPlayedAuton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
-          >
-            -
-          </button>
-          <span>{formData.ampsPlayedAuton}</span>
-          <button
-            onClick={() => incrementValue('ampsPlayedAuton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
-          >
-            +
-          </button>
-        </div>
-      </div>
-      <div className="mb-4">
-        <label htmlFor="speakers_played_auton" className="block mb-2 font-bold">
-          Speakers Played in Auton:
-        </label>
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={() => decrementValue('speakersPlayedAuton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
-          >
-            -
-          </button>
-          <span>{formData.speakersPlayedAuton}</span>
-          <button
-            onClick={() => incrementValue('speakersPlayedAuton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer"
-          >
-            +
-          </button>
-        </div>
-      </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between mt-4">
         <button
           onClick={() => handleStageChange('setup')}
           className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"

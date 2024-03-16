@@ -6,7 +6,7 @@ import AutonPopup from './components/AutonPopup';
 import Header from './components/Header';
 import DriverPopup from './components/DriverPopup';
 import ReviewAndSubmit from './components/ReviewAndSubmit';
-import './noScroll.css';
+
 import LandscapePopup from './components/LandscapePopup'; 
 import DataLookup from './components/DataLookup';
 import SuccessPopup from './components/SuccessPopup';

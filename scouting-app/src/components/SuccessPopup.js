@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const LandscapePopup = () => {
+const SuccessPopup = () => {
   const [showPopup, setShowPopup] = useState(true); // Set showPopup to true initially
   const popupRef = useRef(null);
 
@@ -47,8 +47,8 @@ const LandscapePopup = () => {
             ref={popupRef}
             className={`bg-white bg-opacity-20 backdrop-filter backdrop-blur-md rounded-lg p-6 text-center shadow-lg transform transition-all duration-300 ease-in-out scale-90 opacity-0 animate-popup`}
           >
-            <h2 className="text-2xl font-bold mb-4 text-white">Landscape Mode</h2>
-            <p className="mb-6 text-white">This app is better/designed for use in landscape mode.</p>
+            <h2 className="text-2xl font-bold mb-4 text-white">Submission Successful</h2>
+            <p className="mb-6 text-white">Your submission was successful!</p>
             <button onClick={handleDismiss} className="bg-blue-500 text-white px-4 py-2 rounded">
               Dismiss
             </button>
@@ -59,4 +59,4 @@ const LandscapePopup = () => {
   );
 };
 
-export default LandscapePopup;
+export default SuccessPopup;

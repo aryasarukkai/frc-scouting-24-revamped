@@ -8,6 +8,8 @@ import DriverPopup from './components/DriverPopup';
 import ReviewAndSubmit from './components/ReviewAndSubmit';
 import './noScroll.css';
 import LandscapePopup from './components/LandscapePopup'; 
+import DataLookup from './components/DataLookup';
+import SuccessPopup from './components/SuccessPopup';
 const firebaseConfig = {
   apiKey: "AIzaSyAso045mvuwi4VgaqCFVBT0bz1u3_e9O9g",
   authDomain: "crescendo-scouting-app-649.firebaseapp.com",
@@ -57,7 +59,7 @@ const App = () => {
   };
 
   const submitData = () => {
-    const newSubmissionRef = push(ref(database, 'submissions'));
+    const newSubmissionRef = push(ref(database, 'formData-test'));
     set(newSubmissionRef, formData)
       .then(() => {
         console.log('Data submitted successfully');
@@ -78,7 +80,7 @@ const App = () => {
           ampsScoredTeleop: 0,
           notes: '',
         });
-        setCurrentPopup('home');
+        setCurrentPopup('success');
       })
       .catch((error) => {
         console.error('Error submitting data:', error);
@@ -174,9 +176,17 @@ const App = () => {
           >
             Teleop
           </button>
+          <button
+            onClick={() => setCurrentPopup('dataLookup')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Data Lookup
+          </button>
         </div>
       )}
-
+      {currentPopup === 'success' && (
+ <SuccessPopup onClose={() => setCurrentPopup('home')} />
+)}
       {currentPopup === 'setup' && (
         <SetupPopup
           formData={formData}
@@ -209,7 +219,7 @@ const App = () => {
           handleStageChange={setCurrentPopup}
         />
       )}
-
+      {currentPopup === 'dataLookup' && <DataLookup />}
       {currentPopup === 'setup' && (
         <div className="flex justify-between mt-4">
           <button

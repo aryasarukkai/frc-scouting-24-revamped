@@ -88,7 +88,7 @@ const App = () => {
   return (
     <div className="bg-blue-950 text-white p-4 rounded-lg min-h-screen flex flex-col">
       <Header
-        title={currentPopup === 'auton' ? 'Autonomous' : currentPopup === 'driver' ? 'Teleop' : ''}
+        title={currentPopup === 'auton' ? 'Auton' : currentPopup === 'driver' ? 'Teleop' : ''}
         timer={formatTime(timer)}
         handleStartStop={handleStartStop}
         isActive={isActive}

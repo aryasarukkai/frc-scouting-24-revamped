@@ -44,21 +44,22 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
   return (
     <div className="bg-lime-700 p-4 rounded">
       <div className="grid grid-cols-3 gap-4">
+
         <div>
           <button 
             type="button"
             onClick={() => incrementValue('speakersFailedAuton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full"
+            className="bg-red-600 text-white font-bold uppercase border-2 border-white px-4 py-2  rounded cursor-pointer w-full"
           >
-            Speaker (Fail)
+            Speaker [F]
             <span className="block">{formData.speakersFailedAuton}</span>
           </button>
           <button
             type="button"
             onClick={() => incrementValue('ampsFailedAuton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2"
+            className="bg-red-600 text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2"
           >
-            Amp (Fail)
+            Amp [F]
             <span className="block">{formData.ampsFailedAuton}</span>
           </button>
         </div>
@@ -66,7 +67,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
           <button
             type="button"
             onClick={() => incrementValue('groundAuton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full"
+            className="bg-transparent text-white bg-blue-500 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full"
           >
             Ground
             <span className="block">{formData.groundAuton}</span>
@@ -79,17 +80,17 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
             ...prevData,
             speakersScoredAuton: prevData.speakersScoredAuton + 1
           }))}
-          className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full"
+          className="bg-transparent text-black bg-yellow-200 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full"
 >
-          Speaker (Score)
+          Speaker [S]
           <span className="block">{formData.speakersScoredAuton}</span>
         </button>
           <button
             type="button"
             onClick={() => incrementValue('ampsScoredAuton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2"
+            className="bg-transparent text-black bg-yellow-200 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2"
           >
-            Amp (Score) 
+            Amp [S]
             <span className="block">{formData.ampsScoredAuton}</span>
           </button>
         </div>

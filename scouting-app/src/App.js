@@ -136,7 +136,12 @@ const App = () => {
   }, [currentPopup]);
 
   const handleStartStop = () => {
-    setIsActive((prevActive) => !prevActive);
+    setIsActive((prevActive) => {
+      if (prevActive) {
+        setTimer(currentPopup === 'auton' ? 15 : currentPopup === 'driver' ? 135 : 0);
+      }
+      return !prevActive;
+    });
   };
 
   return (
@@ -144,12 +149,11 @@ const App = () => {
       <LandscapePopup />
       <Header
         title={currentPopup === 'auton' ? 'Auton' : currentPopup === 'driver' ? 'Teleop' : ''}
-        timer={formatTime(timer)}
+        timer={currentPopup === 'auton' || currentPopup === 'driver' ? formatTime(timer) : ''}
         handleStartStop={handleStartStop}
         isActive={isActive}
         handleHomeClick={() => setCurrentPopup('home')}
       />
-
       <div className="relative">
         {currentPopup === 'home' && (
           <div className="flex justify-center space-x-4 mb-4 transition-opacity duration-500 ease-in-out opacity-100">
@@ -212,6 +216,7 @@ const App = () => {
   <div className="transition-opacity duration-500 ease-in-out opacity-100">
     <DriverPopup
       formData={formData}
+      setFormData={setFormData}
       handleInputChange={handleInputChange}
       incrementValue={incrementValue}
       decrementValue={decrementValue}

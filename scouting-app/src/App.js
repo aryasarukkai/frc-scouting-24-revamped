@@ -66,7 +66,7 @@ const App = () => {
   };
 
   const submitData = () => {
-    const newSubmissionRef = push(ref(database, 'formData-training'));
+    const newSubmissionRef = push(ref(database, 'formData-dev'));
     set(newSubmissionRef, formData)
       .then(() => {
         console.log('Data submitted successfully');
@@ -362,7 +362,9 @@ const App = () => {
   <button
   type="button"
   onClick={() => incrementValue('amplifiedNotesAuton')}
-  className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+  className={`bg-transparent text-white font-bold uppercase border-2 px-6 py-3 rounded cursor-pointer ${
+    showCountdown ? 'bg-orange-500 border-orange-500' : 'border-white'
+  }`}
 >
   Amplified
   {showCountdown && <span className="ml-2">{countdownTime}</span>}

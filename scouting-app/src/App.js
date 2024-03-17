@@ -129,20 +129,24 @@ const App = () => {
     let interval;
     if (isActive) {
       interval = setInterval(() => {
-        setTimer((prevTimer) => prevTimer - 1);
+        setTimer((prevTimer) => (prevTimer > 0 ? prevTimer - 1 : 0));
       }, 1000);
     } else {
       clearInterval(interval);
     }
-
+  
     return () => clearInterval(interval);
   }, [isActive]);
-
+  
   useEffect(() => {
     setTimer(currentPopup === 'auton' ? 15 : currentPopup === 'driver' ? 135 : 0);
-    setIsActive(false);
+    if (currentPopup === 'driver') {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
   }, [currentPopup]);
-
+  
   const handleStartStop = () => {
     setIsActive((prevActive) => {
       if (prevActive) {

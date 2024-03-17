@@ -21,6 +21,8 @@ const firebaseConfig = {
   appId: "1:1043419769449:web:448a22c410c3efd37c50f8"
 };
 
+
+
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
@@ -34,6 +36,7 @@ const App = () => {
     speakersFailedAuton: 0,
     ampsFailedAuton: 0,
     groundAuton: 0,
+    amplifiedNotesTeleop: 0,
     speakersScoredAuton: 0,
     ampsScoredAuton: 0,
     speakersFailedTeleop: 0,
@@ -53,6 +56,9 @@ const App = () => {
 
   const incrementValue = (field) => {
     setFormData((prevData) => ({ ...prevData, [field]: prevData[field] + 1 }));
+    if (field === 'amplifiedNotesAuton') {
+      setShowCountdown(true);
+    }
   };
 
   const decrementValue = (field) => {
@@ -80,6 +86,7 @@ const App = () => {
           sourceTeleop: 0,
           speakersScoredTeleop: 0,
           ampsScoredTeleop: 0,
+          amplifiedNotesTeleop: 0,
           notes: '',
           onstage: '',
           harmony: '',
@@ -112,9 +119,29 @@ const App = () => {
       groundTeleop: 0,
       speakersScoredTeleop: 0,
       ampsScoredTeleop: 0,
+      amplifiedNotesTeleop: 0,
       notes: '',
     });
   };
+
+  const [showCountdown, setShowCountdown] = useState(false);
+  const [countdownTime, setCountdownTime] = useState(10);
+
+  useEffect(() => {
+    let interval;
+    if (showCountdown) {
+      interval = setInterval(() => {
+        setCountdownTime((prevTime) => prevTime - 1);
+      }, 1000);
+    }
+  
+    if (countdownTime === 0) {
+      setShowCountdown(false);
+      setCountdownTime(10);
+    }
+  
+    return () => clearInterval(interval);
+  }, [showCountdown, countdownTime]);
 
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
@@ -332,6 +359,14 @@ const App = () => {
   >
     Previous
   </button>
+  <button
+  type="button"
+  onClick={() => incrementValue('amplifiedNotesAuton')}
+  className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+>
+  Amplified
+  {showCountdown && <span className="ml-2">{countdownTime}</span>}
+</button>
   <button
     onClick={() => setCurrentPopup('endgame')}
     className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"

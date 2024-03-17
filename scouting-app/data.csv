@@ -1,9 +1,2 @@
-allianceColor,ampsFailedAuton,ampsFailedTeleop,ampsScoredAuton,ampsScoredTeleop,groundAuton,groundTeleop,matchNumber,notes,scoutName,sourceTeleop,speakersFailedAuton,speakersFailedTeleop,speakersScoredAuton,speakersScoredTeleop,teamNumber
-"blue",0,0,0,4,0,12,"14","great team
-","jamar ",0,0,0,6,8,"1678"
-"blue",0,0,0,1,2,16,"5","","jamar",0,1,2,4,9,"254"
-"",0,0,1,0,0,1,"w","","",0,0,0,2,1,""
-"blue",0,0,4,0,14,0,"5",""," Idididisiiejdmdmikul",0,3,0,10,0,"254"
-"Red",0,0,0,0,0,4,"5","","Arvin",0,0,0,1,4,"1662"
-"blue",0,0,0,0,0,0,"6665","","Mikuł",0,0,0,0,0,""
-"red",0,0,0,0,2,13,"14","","Arvin",0,0,"3",2,"10","254"
+allianceColor,ampsFailedAuton,ampsFailedTeleop,ampsScoredAuton,ampsScoredTeleop,defenseBot,disabledDamagedBot,groundAuton,groundTeleop,harmony,matchNumber,nonFunctionalBot,notes,onstage,scoutName,sourceTeleop,speakersFailedAuton,speakersFailedTeleop,speakersScoredAuton,speakersScoredTeleop,spotlight,teamNumber,trap
+"red",1,2,1,1,"No","No",4,6,"Yes","0","No","hi there !","No","Arya",0,1,2,1,1,"No","0","Yes"

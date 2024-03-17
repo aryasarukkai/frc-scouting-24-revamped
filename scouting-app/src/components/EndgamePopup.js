@@ -5,7 +5,6 @@ const EndgamePopup = ({ formData, handleInputChange, handleStageChange }) => {
     <div className="bg-blue-950 text-white p-4 rounded-lg">
       <h2 className="text-2xl font-bold mb-4">Endgame</h2>
       <div className="mb-4">
-        <h3 className="font-bold mb-2">Yes/No/Fail Options:</h3>
         <div className="flex items-center mb-2">
           <label htmlFor="onstage" className="mr-2">Onstage:</label>
           <select
@@ -68,7 +67,6 @@ const EndgamePopup = ({ formData, handleInputChange, handleStageChange }) => {
         </div>
       </div>
       <div className="mb-4">
-        <h3 className="font-bold mb-2">Yes/No Options:</h3>
         <div className="flex items-center mb-2">
           <label htmlFor="defenseBot" className="mr-2">Defense Bot:</label>
           <select

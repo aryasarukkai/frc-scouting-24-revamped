@@ -60,7 +60,7 @@ const App = () => {
   };
 
   const submitData = () => {
-    const newSubmissionRef = push(ref(database, 'formData-test'));
+    const newSubmissionRef = push(ref(database, 'formData-dev'));
     set(newSubmissionRef, formData)
       .then(() => {
         console.log('Data submitted successfully');
@@ -163,40 +163,53 @@ const App = () => {
         handleHomeClick={() => setCurrentPopup('home')}
       />
       <div className="relative">
-        {currentPopup === 'home' && (
-          <div className="flex justify-center space-x-4 mb-4 transition-opacity duration-500 ease-in-out opacity-100">
-            <button
-              onClick={() => window.location.reload()}
-              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-            >
-              Reload
-            </button>
-            <button
-              onClick={() => setCurrentPopup('setup')}
-              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-            >
-              Setup
-            </button>
-            <button
-              onClick={() => setCurrentPopup('auton')}
-              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-            >
-              Auton
-            </button>
-            <button
-              onClick={() => setCurrentPopup('driver')}
-              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-            >
-              Teleop
-            </button>
-            <button
-              onClick={() => setCurrentPopup('dataLookup')}
-              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-            >
-              Data Lookup
-            </button>
-          </div>
-        )}
+      {currentPopup === 'home' && (
+        <div className="flex flex-wrap justify-center mb-4 transition-opacity duration-500 ease-in-out opacity-100">
+          <button
+            onClick={() => setCurrentPopup('setup')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+          >
+            Setup
+          </button>
+          <button
+            onClick={() => setCurrentPopup('auton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+          >
+            Auton
+          </button>
+          <button
+            onClick={() => setCurrentPopup('driver')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+          >
+            Teleop
+          </button>
+          <button
+            onClick={() => setCurrentPopup('endgame')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+          >
+            Endgame
+          </button>
+          <button
+            onClick={() => setCurrentPopup('dataLookup')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+          >
+            Data Lookup
+          </button>
+          {/* make button that opens a new chrome tab with https://msetscoutingcalculator.streamlit.app/ */}
+          <button 
+            onClick={() => window.open('https://msetscoutingcalculator.streamlit.app/', '_blank')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+          >
+            Scouting Calculator
+          </button>
+          <button
+            onClick={() => window.location.reload()}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+          >
+            Reload
+          </button>
+        </div>
+      )}
         {currentPopup === 'success' && (
           <div className="transition-opacity duration-500 ease-in-out opacity-100">
             <SuccessPopup onClose={() => setCurrentPopup('home')} />

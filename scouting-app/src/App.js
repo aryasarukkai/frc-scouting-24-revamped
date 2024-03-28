@@ -165,14 +165,14 @@ const App = () => {
     return () => clearInterval(interval);
   }, [isActive]);
 
-  useEffect(() => {
-    setTimer(currentPopup === 'auton' ? 15 : currentPopup === 'driver' ? 135 : 0);
-    if (currentPopup === 'driver') {
-      setIsActive(true);
-    } else {
-      setIsActive(false);
-    }
-  }, [currentPopup]);
+useEffect(() => {
+  setTimer(currentPopup === 'auton' ? 15 : (currentPopup === 'driver' || currentPopup === 'endgame') ? 135 : 0);
+  if (currentPopup === 'driver' || currentPopup === 'endgame') {
+    setIsActive(true);
+  } else {
+    setIsActive(false);
+  }
+}, [currentPopup]);
 
   const handleStartStop = () => {
     setIsActive((prevActive) => {
@@ -269,29 +269,32 @@ const App = () => {
             />
           </div>
         )}
-        {currentPopup === 'endgame' && (
-          <div className="transition-opacity duration-500 ease-in-out opacity-100">
-            <EndgamePopup
-              formData={formData}
-              handleInputChange={handleInputChange}
-              handleStageChange={setCurrentPopup}
-            />
-          </div>
-        )}
         {currentPopup === 'driver' && (
-          <div className="transition-opacity duration-500 ease-in-out opacity-100">
-            <DriverPopup
-              formData={formData}
-              setFormData={setFormData}
-              handleInputChange={handleInputChange}
-              incrementValue={incrementValue}
-              decrementValue={decrementValue}
-              handlePrevPopup={() => setCurrentPopup('auton')}
-              handleReviewAndSubmit={() => setCurrentPopup('review')}
-              logAction={logAction}
-            />
-          </div>
-        )}
+  <div className="transition-opacity duration-500 ease-in-out opacity-100">
+    <DriverPopup
+      formData={formData}
+      setFormData={setFormData}
+      handleInputChange={handleInputChange}
+      incrementValue={incrementValue}
+      decrementValue={decrementValue}
+      handlePrevPopup={() => setCurrentPopup('auton')}
+      handleEndgame={() => {
+        setCurrentPopup('endgame');
+        logAction('ENTERED_ENDGAME');
+      }}
+      logAction={logAction}
+    />
+  </div>
+)}
+{currentPopup === 'endgame' && (
+  <div className="transition-opacity duration-500 ease-in-out opacity-100">
+    <EndgamePopup
+      formData={formData}
+      handleInputChange={handleInputChange}
+      handleStageChange={setCurrentPopup}
+    />
+  </div>
+)}
         {currentPopup === 'review' && (
           <div className="transition-opacity duration-500 ease-in-out opacity-100">
             <ReviewAndSubmit

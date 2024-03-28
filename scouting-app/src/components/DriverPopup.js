@@ -136,7 +136,13 @@ const DriverPopup = ({ formData, setFormData, handleStageChange, logAction }) =>
           <p className="text-white text-2xl font-bold mt-4">{scoredItem} SCORE RECORDED</p>
         </div>
       )}
-    </div>
+    <button
+      onClick={handleEndgame}
+      className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer mt-4"
+    >
+      Endgame
+    </button>
+  </div>
   );
 };
 

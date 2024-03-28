@@ -94,7 +94,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange, logAction }) => 
             className="bg-transparent text-white bg-blue-500 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full lg:px-6 lg:py-3"
           >
             Pickup
-            <span className="block">{formData.pickupsAuton}</span>
+            <span className="block">{formData.groundAuton}</span>
           </button>
         </div>
         <div>
@@ -116,7 +116,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange, logAction }) => 
           <button
             type="button"
             onClick={() => {
-              incrementValue('ampsScoredAuton');
+              incrementValue('amplifiedNotesAuton');
               handleButtonClick('AMP');
               logAction('AMP_SCORED_AUTON');
             }}

@@ -42,6 +42,7 @@ const App = () => {
     groundTeleop: 0,
     sourceTeleop: 0,
     speakersScoredTeleop: 0,
+    amplifiedNotesAuton: 0,
     ampsScoredTeleop: 0,
     notes: '',
   });
@@ -91,6 +92,8 @@ const App = () => {
           defenseBot: '',
           disabledDamagedBot: '',
           nonFunctionalBot: '',
+          amplifiedNotesAuton: isNaN(formData.amplifiedNotesAuton) ? 0 : formData.amplifiedNotesAuton,
+          actionLogs: actionLogs,
         });
         setActionLogs([]); // Clear the action logs after submission
         setCurrentPopup('success');

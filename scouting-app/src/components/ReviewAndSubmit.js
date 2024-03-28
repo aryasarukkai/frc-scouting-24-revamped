@@ -179,10 +179,10 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
         </p>
         <p>
           Amps Scored:{' '}
-          {editField === 'ampsScoredAuton' ? (
+          {editField === 'amplifiedNotesAuton' ? (
             <input
               type="number"
-              name="ampsScoredAuton"
+              name="amplifiedNotesAuton"
               value={formData.ampsScoredAuton}
               onChange={handleEditInputChange}
               className="border border-gray-300 rounded px-2 py-1 bg-black text-white"

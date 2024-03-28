@@ -55,9 +55,6 @@ const App = () => {
 
   const incrementValue = (field) => {
     setFormData((prevData) => ({ ...prevData, [field]: prevData[field] + 1 }));
-    if (field === 'amplifiedNotesAuton') {
-      setShowCountdown(true);
-    }
   };
 
   const decrementValue = (field) => {

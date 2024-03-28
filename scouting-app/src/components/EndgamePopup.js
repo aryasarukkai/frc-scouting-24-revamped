@@ -110,13 +110,7 @@ const EndgamePopup = ({ formData, handleInputChange, handleStageChange }) => {
           </select>
         </div>
       </div>
-      <button
-      onClick={() => handleStageChange('driver')}
-      className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer mt-4"
-    >
-      Back to Teleop
-    </button>
-  </div>
+    </div>
   );
 };
 

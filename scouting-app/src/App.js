@@ -21,8 +21,6 @@ const firebaseConfig = {
   appId: "1:1043419769449:web:448a22c410c3efd37c50f8"
 };
 
-
-
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
@@ -47,6 +45,7 @@ const App = () => {
     ampsScoredTeleop: 0,
     notes: '',
   });
+  const [actionLogs, setActionLogs] = useState([]);
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -67,7 +66,7 @@ const App = () => {
 
   const submitData = () => {
     const newSubmissionRef = push(ref(database, 'formData-dev'));
-    set(newSubmissionRef, formData)
+    set(newSubmissionRef, { ...formData, actionLogs })
       .then(() => {
         console.log('Data submitted successfully');
         setFormData({
@@ -96,6 +95,7 @@ const App = () => {
           disabledDamagedBot: '',
           nonFunctionalBot: '',
         });
+        setActionLogs([]); // Clear the action logs after submission
         setCurrentPopup('success');
       })
       .catch((error) => {
@@ -134,12 +134,12 @@ const App = () => {
         setCountdownTime((prevTime) => prevTime - 1);
       }, 1000);
     }
-  
+
     if (countdownTime === 0) {
       setShowCountdown(false);
       setCountdownTime(10);
     }
-  
+
     return () => clearInterval(interval);
   }, [showCountdown, countdownTime]);
 
@@ -161,10 +161,10 @@ const App = () => {
     } else {
       clearInterval(interval);
     }
-  
+
     return () => clearInterval(interval);
   }, [isActive]);
-  
+
   useEffect(() => {
     setTimer(currentPopup === 'auton' ? 15 : currentPopup === 'driver' ? 135 : 0);
     if (currentPopup === 'driver') {
@@ -173,7 +173,7 @@ const App = () => {
       setIsActive(false);
     }
   }, [currentPopup]);
-  
+
   const handleStartStop = () => {
     setIsActive((prevActive) => {
       if (prevActive) {
@@ -181,6 +181,11 @@ const App = () => {
       }
       return !prevActive;
     });
+  };
+
+  const logAction = (action) => {
+    const timestamp = formatTime(timer);
+    setActionLogs((prevLogs) => [...prevLogs, { action, timestamp }]);
   };
 
   return (
@@ -194,203 +199,204 @@ const App = () => {
         handleHomeClick={() => setCurrentPopup('home')}
       />
       <div className="relative">
-      {currentPopup === 'home' && (
-        <div className="flex flex-wrap justify-center mb-4 transition-opacity duration-500 ease-in-out opacity-100">
-          <button
-            onClick={() => setCurrentPopup('setup')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
-          >
-            Setup
-          </button>
-          <button
-            onClick={() => setCurrentPopup('auton')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
-          >
-            Auton
-          </button>
-          <button
-            onClick={() => setCurrentPopup('driver')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
-          >
-            Teleop
-          </button>
-          <button
-            onClick={() => setCurrentPopup('endgame')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
-          >
-            Endgame
-          </button>
-          <button
-            onClick={() => setCurrentPopup('dataLookup')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
-          >
-            Data Lookup
-          </button>
-          {/* make button that opens a new chrome tab with https://msetscoutingcalculator.streamlit.app/ */}
-          <button 
-            onClick={() => window.open('https://msetscoutingcalculator.streamlit.app/', '_blank')}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
-          >
-            Scouting Calculator
-          </button>
-          <button
-            onClick={() => window.location.reload()}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
-          >
-            Reload
-          </button>
-        </div>
-      )}
+        {currentPopup === 'home' && (
+          <div className="flex flex-wrap justify-center mb-4 transition-opacity duration-500 ease-in-out opacity-100">
+            <button
+              onClick={() => setCurrentPopup('setup')}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+            >
+              Setup
+            </button>
+            <button
+              onClick={() => setCurrentPopup('auton')}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+            >
+              Auton
+            </button>
+            <button
+              onClick={() => setCurrentPopup('driver')}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+            >
+              Teleop
+            </button>
+            <button
+              onClick={() => setCurrentPopup('endgame')}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+            >
+              Endgame
+            </button>
+            <button
+              onClick={() => setCurrentPopup('dataLookup')}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+            >
+              Data Lookup
+            </button>
+            <button
+              onClick={() => window.open('https://msetscoutingcalculator.streamlit.app/', '_blank')}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+            >
+              Scouting Calculator
+            </button>
+            <button
+              onClick={() => window.location.reload()}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+            >
+              Reload
+            </button>
+          </div>
+        )}
         {currentPopup === 'success' && (
           <div className="transition-opacity duration-500 ease-in-out opacity-100">
             <SuccessPopup onClose={() => setCurrentPopup('home')} />
-  </div>
-)}
-{currentPopup === 'setup' && (
-  <div className="transition-opacity duration-500 ease-in-out opacity-100">
-    <SetupPopup
-      formData={formData}
-      handleInputChange={handleInputChange}
-      handleNextPopup={() => setCurrentPopup('auton')}
-    />
-  </div>
-)}
-{currentPopup === 'auton' && (
-  <div className="transition-opacity duration-500 ease-in-out opacity-100">
-    <AutonPopup
-      formData={formData}
-      setFormData={setFormData}
-      handleStageChange={setCurrentPopup}
-    />
-  </div>
-)}
-{currentPopup === 'endgame' && (
-        <div className="transition-opacity duration-500 ease-in-out opacity-100">
-          <EndgamePopup
-            formData={formData}
-            handleInputChange={handleInputChange}
-            handleStageChange={setCurrentPopup}
-          />
+          </div>
+        )}
+        {currentPopup === 'setup' && (
+          <div className="transition-opacity duration-500 ease-in-out opacity-100">
+            <SetupPopup
+              formData={formData}
+              handleInputChange={handleInputChange}
+              handleNextPopup={() => setCurrentPopup('auton')}
+            />
+          </div>
+        )}
+        {currentPopup === 'auton' && (
+          <div className="transition-opacity duration-500 ease-in-out opacity-100">
+            <AutonPopup
+              formData={formData}
+              setFormData={setFormData}
+              handleStageChange={setCurrentPopup}
+              logAction={logAction}
+            />
+          </div>
+        )}
+        {currentPopup === 'endgame' && (
+          <div className="transition-opacity duration-500 ease-in-out opacity-100">
+            <EndgamePopup
+              formData={formData}
+              handleInputChange={handleInputChange}
+              handleStageChange={setCurrentPopup}
+            />
+          </div>
+        )}
+        {currentPopup === 'driver' && (
+          <div className="transition-opacity duration-500 ease-in-out opacity-100">
+            <DriverPopup
+              formData={formData}
+              setFormData={setFormData}
+              handleInputChange={handleInputChange}
+              incrementValue={incrementValue}
+              decrementValue={decrementValue}
+              handlePrevPopup={() => setCurrentPopup('auton')}
+              handleReviewAndSubmit={() => setCurrentPopup('review')}
+              logAction={logAction}
+            />
+          </div>
+        )}
+        {currentPopup === 'review' && (
+          <div className="transition-opacity duration-500 ease-in-out opacity-100">
+            <ReviewAndSubmit
+              formData={formData}
+              handleInputChange={handleInputChange}
+              handleSubmit={submitData}
+              handleStageChange={setCurrentPopup}
+            />
+          </div>
+        )}
+        {currentPopup === 'dataLookup' && (
+          <div className="transition-opacity duration-500 ease-in-out opacity-100">
+            <DataLookup />
+          </div>
+        )}
+      </div>
+
+      {currentPopup === 'setup' && (
+        <div className="flex justify-between mt-4">
+          <button
+            onClick={clearData}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Clear
+          </button>
+          <button
+            onClick={() => setCurrentPopup('auton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Next: Autonomous
+          </button>
         </div>
       )}
-{currentPopup === 'driver' && (
-  <div className="transition-opacity duration-500 ease-in-out opacity-100">
-    <DriverPopup
-      formData={formData}
-      setFormData={setFormData}
-      handleInputChange={handleInputChange}
-      incrementValue={incrementValue}
-      decrementValue={decrementValue}
-      handlePrevPopup={() => setCurrentPopup('auton')}
-      handleReviewAndSubmit={() => setCurrentPopup('review')}
-    />
-  </div>
-)}
-{currentPopup === 'review' && (
-  <div className="transition-opacity duration-500 ease-in-out opacity-100">
-    <ReviewAndSubmit
-      formData={formData}
-      handleInputChange={handleInputChange}
-      handleSubmit={submitData}
-      handleStageChange={setCurrentPopup}
-    />
-  </div>
-)}
-{currentPopup === 'dataLookup' && (
-  <div className="transition-opacity duration-500 ease-in-out opacity-100">
-    <DataLookup />
-  </div>
-)}
-</div>
-
-{currentPopup === 'setup' && (
-<div className="flex justify-between mt-4">
-  <button
-    onClick={clearData}
-    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-  >
-    Clear
-  </button>
-  <button
-    onClick={() => setCurrentPopup('auton')}
-    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-  >
-    Next: Autonomous
-  </button>
-</div>
-)}
-{currentPopup === 'auton' && (
-<div className="flex justify-between mt-4">
-  <button
-    onClick={() => setCurrentPopup('setup')}
-    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-  >
-    Previous
-  </button>
-  <button
-    onClick={() => setCurrentPopup('driver')}
-    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-  >
-    Next: Teleop
-  </button>
-</div>
-)}
-{currentPopup === 'endgame' && (
-<div className="flex justify-between mt-4">
-  <button
-    onClick={() => setCurrentPopup('driver')}
-    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-  >
-    Previous
-  </button>
-  <button
-    onClick={() => setCurrentPopup('review')}
-    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-  >
-    Next: Review
-  </button>
-</div>
-)}
-{currentPopup === 'driver' && (
-<div className="flex justify-between mt-4">
-  <button
-    onClick={() => setCurrentPopup('auton')}
-    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-  >
-    Previous
-  </button>
-  <button
-  type="button"
-  onClick={() => incrementValue('amplifiedNotesAuton')}
-  className={`bg-transparent text-white font-bold uppercase border-2 px-6 py-3 rounded cursor-pointer ${
-    showCountdown ? 'bg-orange-500 border-orange-500' : 'border-white'
-  }`}
->
-  Amplified
-  {showCountdown && <span className="ml-2">{countdownTime}</span>}
-</button>
-  <button
-    onClick={() => setCurrentPopup('endgame')}
-    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-  >
-    Next: Endgame
-  </button>
-</div>
-)}
-{currentPopup === 'review' && (
-<div className="flex justify-between mt-4">
-  <button
-    onClick={() => setCurrentPopup('endgame')}
-    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-  >
-    Previous
-  </button>
-  <button
-    onClick={submitData}
-    className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-  >
-    Submit
-  </button>
+      {currentPopup === 'auton' && (
+        <div className="flex justify-between mt-4">
+          <button
+            onClick={() => setCurrentPopup('setup')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Previous
+          </button>
+          <button
+            onClick={() => setCurrentPopup('driver')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Next: Teleop
+          </button>
+        </div>
+      )}
+      {currentPopup === 'endgame' && (
+        <div className="flex justify-between mt-4">
+          <button
+            onClick={() => setCurrentPopup('driver')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Previous
+          </button>
+          <button
+            onClick={() => setCurrentPopup('review')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Next: Review
+          </button>
+        </div>
+      )}
+      {currentPopup === 'driver' && (
+        <div className="flex justify-between mt-4">
+          <button
+            onClick={() => setCurrentPopup('auton')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Previous
+          </button>
+          <button
+            type="button"
+            onClick={() => incrementValue('amplifiedNotesAuton')}
+            className={`bg-transparent text-white font-bold uppercase border-2 px-6 py-3 rounded cursor-pointer ${
+              showCountdown ? 'bg-orange-500 border-orange-500' : 'border-white'
+            }`}
+          >
+            Amplified
+            {showCountdown && <span className="ml-2">{countdownTime}</span>}
+          </button>
+          <button
+            onClick={() => setCurrentPopup('endgame')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Next: Endgame
+          </button>
+        </div>
+      )}
+      {currentPopup === 'review' && (
+  <div className="flex justify-between mt-4">
+    <button
+      onClick={() => setCurrentPopup('endgame')}
+      className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+    >
+      Previous
+    </button>
+    <button
+      onClick={submitData}
+      className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+    >
+      Submit
+    </button>
   </div>
 )}
 

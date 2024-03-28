@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 
-const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
+const AutonPopup = ({ formData, setFormData, handleStageChange, logAction }) => {
   const incrementValue = (field) => {
     setFormData((prevData) => ({ ...prevData, [field]: prevData[field] + 1 }));
   };
@@ -63,7 +63,10 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
         <div>
           <button 
             type="button"
-            onClick={() => incrementValue('speakersFailedAuton')}
+            onClick={() => {
+              incrementValue('speakersFailedAuton');
+              logAction('SPEAKER_FAILED_AUTON');
+            }}
             className="bg-red-600 text-white font-bold uppercase border-2 border-white px-4 py-2  rounded cursor-pointer w-full lg:px-6 lg:py-3"
           >
             Speaker [F]
@@ -71,7 +74,10 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
           </button>
           <button
             type="button"
-            onClick={() => incrementValue('ampsFailedAuton')}
+            onClick={() => {
+              incrementValue('ampsFailedAuton');
+              logAction('AMP_FAILED_AUTON');
+            }}
             className="bg-red-600 text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2 lg:px-6 lg:py-3"
           >
             Amp [F]
@@ -81,7 +87,10 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
         <div>
           <button
             type="button"
-            onClick={() => incrementValue('groundAuton')}
+            onClick={() => {
+              incrementValue('groundAuton');
+              logAction('PICKUP_AUTON');
+            }}
             className="bg-transparent text-white bg-blue-500 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full lg:px-6 lg:py-3"
           >
             Pickup
@@ -89,7 +98,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
           </button>
         </div>
         <div>
-        <button
+          <button
             type="button"
             onClick={() => {
               setFormData((prevData) => ({
@@ -97,6 +106,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
                 speakersScoredAuton: prevData.speakersScoredAuton + 1
               }));
               handleButtonClick('SPEAKER');
+              logAction('SPEAKER_SCORED_AUTON');
             }}
             className="bg-transparent text-black bg-yellow-200 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full lg:px-6 lg:py-3"
           >
@@ -108,6 +118,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange }) => {
             onClick={() => {
               incrementValue('ampsScoredAuton');
               handleButtonClick('AMP');
+              logAction('AMP_SCORED_AUTON');
             }}
             className="bg-transparent text-black bg-yellow-200 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2 lg:px-6 lg:py-3"
           >

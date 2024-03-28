@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 
-const DriverPopup = ({ formData, setFormData, handleStageChange }) => {
+const DriverPopup = ({ formData, setFormData, handleStageChange, logAction }) => {
   const incrementValue = (field) => {
     setFormData((prevData) => ({ ...prevData, [field]: prevData[field] + 1 }));
   };
@@ -61,9 +61,12 @@ const DriverPopup = ({ formData, setFormData, handleStageChange }) => {
     <div className="bg-cyan-700 p-4 rounded">
       <div className="grid grid-cols-3 gap-4 h-full">
         <div>
-        <button
+          <button
             type="button"
-            onClick={() => incrementValue('speakersFailedTeleop')}
+            onClick={() => {
+              incrementValue('speakersFailedTeleop');
+              logAction('SPEAKER_FAILED_TELEOP');
+            }}
             className="bg-red-600 text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2 lg:px-6 lg:py-3"
           >
             Speaker [F]
@@ -71,7 +74,10 @@ const DriverPopup = ({ formData, setFormData, handleStageChange }) => {
           </button>
           <button
             type="button"
-            onClick={() => incrementValue('ampsFailedTeleop')}
+            onClick={() => {
+              incrementValue('ampsFailedTeleop');
+              logAction('AMP_FAILED_TELEOP');
+            }}
             className="bg-red-600 text-white font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2 lg:px-6 lg:py-3"
           >
             Amp [F]
@@ -81,7 +87,10 @@ const DriverPopup = ({ formData, setFormData, handleStageChange }) => {
         <div>
           <button
             type="button"
-            onClick={() => incrementValue('groundTeleop')}
+            onClick={() => {
+              incrementValue('groundTeleop');
+              logAction('PICKUP_TELEOP');
+            }}
             className="bg-transparent text-white bg-blue-500 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full lg:px-6 lg:py-3"
           >
             Pickup
@@ -89,7 +98,7 @@ const DriverPopup = ({ formData, setFormData, handleStageChange }) => {
           </button>
         </div>
         <div>
-        <button
+          <button
             type="button"
             onClick={() => {
               setFormData((prevData) => ({
@@ -97,6 +106,7 @@ const DriverPopup = ({ formData, setFormData, handleStageChange }) => {
                 speakersScoredTeleop: prevData.speakersScoredTeleop + 1
               }));
               handleButtonClick('SPEAKER');
+              logAction('SPEAKER_SCORED_TELEOP');
             }}
             className="bg-transparent text-black bg-yellow-200 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full lg:px-6 lg:py-3"
           >
@@ -108,6 +118,7 @@ const DriverPopup = ({ formData, setFormData, handleStageChange }) => {
             onClick={() => {
               incrementValue('ampsScoredTeleop');
               handleButtonClick('AMP');
+              logAction('AMP_SCORED_TELEOP');
             }}
             className="bg-transparent text-black bg-yellow-200 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2 lg:px-6 lg:py-3"
           >

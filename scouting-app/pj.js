@@ -50,6 +50,15 @@ matchKeys.forEach(matchKey => {
   // Replace newline characters with semicolons in the notes field
   const notes = match.notes.replace(/\n/g, ';');
 
+  // Convert "Yes", "No", and "Fail" to 1, 0, and -1 respectively
+  const defenseBot = match.defenseBot === 'Yes' ? 1 : match.defenseBot === 'No' ? 0 : '';
+  const harmony = match.harmony === 'Yes' ? 1 : match.harmony === 'No' ? 0 : '';
+  const onstage = match.onstage === 'Yes' ? 1 : match.onstage === 'No' ? 0 : match.onstage === 'Fail' ? -1 : '';
+  const spotlight = match.spotlight === 'Yes' ? 1 : match.spotlight === 'No' ? 0 : match.spotlight === 'Fail' ? -1 : '';
+  const trap = match.trap === 'Yes' ? 1 : match.trap === 'No' ? 0 : '';
+  const disabledDamagedBot = match.disabledDamagedBot === 'Yes' ? 1 : match.disabledDamagedBot === 'No' ? 0 : '';
+  const nonFunctionalBot = match.nonFunctionalBot === 'Yes' ? 1 : match.nonFunctionalBot === 'No' ? 0 : '';
+
   // Extract the relevant data from the match object
   const row = [
     match.matchNumber,
@@ -69,13 +78,13 @@ matchKeys.forEach(matchKey => {
     match.sourceTeleop,
     match.amplifiedNotesAuton,
     match.amplifiedNotesTeleop,
-    match.defenseBot,
-    match.harmony,
-    match.onstage,
-    match.spotlight,
-    match.trap,
-    match.disabledDamagedBot || '',
-    match.nonFunctionalBot || '',
+    defenseBot,
+    harmony,
+    onstage,
+    spotlight,
+    trap,
+    disabledDamagedBot,
+    nonFunctionalBot,
     notes,
     actionLogsJson
   ];
@@ -90,4 +99,4 @@ const csvString = [headers.join(','), ...csvRows.map(row => row.map(field => `"$
 // Write the CSV string to a file
 fs.writeFileSync('output.csv', csvString, 'utf8');
 
-console.log('CSV file generated successfully!');  
+console.log('CSV file generated successfully!');

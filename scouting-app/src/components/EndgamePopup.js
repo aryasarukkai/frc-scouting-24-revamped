@@ -115,42 +115,6 @@ const EndgamePopup = ({ formData, handleInputChange, handleStageChange }) => {
             ))}
           </div>
         </div>
-        <div className="mb-2">
-          <label className="block mb-1">Disabled/Damaged Bot:</label>
-          <div className="flex space-x-2">
-            {['Yes', 'No'].map((option) => (
-              <button
-                key={option}
-                className={`px-4 py-2 rounded ${
-                  selectedOptions.disabledDamagedBot === option
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-white text-black'
-                }`}
-                onClick={() => handleOptionChange('disabledDamagedBot', option)}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div className="mb-2">
-          <label className="block mb-1">Non Functional Bot:</label>
-          <div className="flex space-x-2">
-            {['Yes', 'No'].map((option) => (
-              <button
-                key={option}
-                className={`px-4 py-2 rounded ${
-                  selectedOptions.nonFunctionalBot === option
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-white text-black'
-                }`}
-                onClick={() => handleOptionChange('nonFunctionalBot', option)}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );

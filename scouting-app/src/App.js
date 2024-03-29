@@ -47,6 +47,7 @@ const App = () => {
     notes: '',
   });
   const [actionLogs, setActionLogs] = useState([]);
+  const [brokenBot, setBrokenBot] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -64,7 +65,7 @@ const App = () => {
 
   const submitData = () => {
     const newSubmissionRef = push(ref(database, 'formData-mbr'));
-    set(newSubmissionRef, { ...formData, actionLogs })
+    set(newSubmissionRef, { ...formData, actionLogs, brokenBot })
       .then(() => {
         console.log('Data submitted successfully');
         setFormData({
@@ -89,13 +90,11 @@ const App = () => {
           harmony: '',
           trap: '',
           spotlight: '',
-          defenseBot: '',
-          disabledDamagedBot: '',
-          nonFunctionalBot: '',
           amplifiedNotesAuton: isNaN(formData.amplifiedNotesAuton) ? 0 : formData.amplifiedNotesAuton,
           actionLogs: actionLogs,
         });
         setActionLogs([]); // Clear the action logs after submission
+        setBrokenBot(false); // Reset the brokenBot state after submission
         setCurrentPopup('success');
       })
       .catch((error) => {
@@ -289,6 +288,8 @@ const App = () => {
               handlePrevPopup={() => setCurrentPopup('auton')}
               handleReviewAndSubmit={() => setCurrentPopup('review')}
               logAction={logAction}
+              brokenBot={brokenBot}
+              setBrokenBot={setBrokenBot}
             />
           </div>
         )}
@@ -375,33 +376,41 @@ const App = () => {
             Amplified
             {showCountdown && <span className="ml-2">{countdownTime}</span>}
           </button>
-
           <button
-            onClick={() => {
-              setCurrentPopup('endgame');
-              logAction('ENDGAME');
-            }}
-            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-          >
-            Next: Endgame
-          </button>
-        </div>
-      )}
-      {currentPopup === 'review' && (
-  <div className="flex justify-between mt-4">
-    <button
-      onClick={() => setCurrentPopup('endgame')}
-      className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-    >
-      Previous
-    </button>
-    <button
-      onClick={submitData}
-      className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
-    >
-      Submit
-    </button>
-  </div>
+  type="button"
+  onClick={() => setBrokenBot(!brokenBot)}
+  className={`bg-transparent text-white font-bold uppercase border-2 px-6 py-3 rounded cursor-pointer ${
+    brokenBot ? 'bg-red-500 border-red-500' : 'border-white'
+  }`}
+>
+  Broken Bot
+</button>
+<button
+  onClick={() => {
+    setCurrentPopup('endgame');
+    logAction('ENDGAME');
+  }}
+  className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+>
+  Next: Endgame
+</button>
+</div>
+)}
+{currentPopup === 'review' && (
+<div className="flex justify-between mt-4">
+<button
+  onClick={() => setCurrentPopup('endgame')}
+  className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+>
+  Previous
+</button>
+<button
+  onClick={submitData}
+  className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+>
+  Submit
+</button>
+</div>
 )}
 
 </div>

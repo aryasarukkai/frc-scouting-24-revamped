@@ -26,7 +26,7 @@ const DataLookup = () => {
 
   const fetchData = async () => {
     try {
-        const submissionsRef = ref(database, 'formData-dev');
+        const submissionsRef = ref(database, 'formData-mbr');
         const teamQuery = query(submissionsRef, orderByChild('teamNumber'), equalTo(teamNumber));
       onValue(teamQuery, (snapshot) => {
         const data = snapshot.val() ? Object.values(snapshot.val()).map(team => team) : [];

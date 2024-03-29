@@ -63,7 +63,7 @@ const App = () => {
   };
 
   const submitData = () => {
-    const newSubmissionRef = push(ref(database, 'formData-dev'));
+    const newSubmissionRef = push(ref(database, 'formData-mbr'));
     set(newSubmissionRef, { ...formData, actionLogs })
       .then(() => {
         console.log('Data submitted successfully');

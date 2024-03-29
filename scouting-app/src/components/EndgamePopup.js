@@ -1,113 +1,155 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const EndgamePopup = ({ formData, handleInputChange, handleStageChange }) => {
+  const [selectedOptions, setSelectedOptions] = useState({
+    onstage: '',
+    harmony: '',
+    trap: '',
+    spotlight: '',
+    defenseBot: '',
+    disabledDamagedBot: '',
+    nonFunctionalBot: '',
+  });
+
+  const handleOptionChange = (category, value) => {
+    setSelectedOptions((prevOptions) => ({
+      ...prevOptions,
+      [category]: value,
+    }));
+    handleInputChange({ target: { name: category, value } });
+  };
+
   return (
     <div className="bg-blue-950 text-white p-4 rounded-lg">
       <h2 className="text-2xl font-bold mb-4">Endgame</h2>
       <div className="mb-4">
-        <div className="flex items-center mb-2">
-          <label htmlFor="onstage" className="mr-2">Onstage:</label>
-          <select
-            id="onstage"
-            name="onstage"
-            value={formData.onstage}
-            onChange={handleInputChange}
-            className="bg-black text-white px-2 py-1 rounded"
-          >
-            <option value="">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            <option value="Fail">Fail</option>
-          </select>
+        <div className="mb-2">
+          <label className="block mb-1">Onstage:</label>
+          <div className="flex space-x-2">
+            {['Yes', 'No', 'Fail'].map((option) => (
+              <button
+                key={option}
+                className={`px-4 py-2 rounded ${
+                  selectedOptions.onstage === option
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-white text-black'
+                }`}
+                onClick={() => handleOptionChange('onstage', option)}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="flex items-center mb-2">
-          <label htmlFor="harmony" className="mr-2">Harmony:</label>
-          <select
-            id="harmony"
-            name="harmony"
-            value={formData.harmony}
-            onChange={handleInputChange}
-            className="bg-black text-white px-2 py-1 rounded"
-          >
-            <option value="">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            <option value="Fail">Fail</option>
-          </select>
+        <div className="mb-2">
+          <label className="block mb-1">Harmony:</label>
+          <div className="flex space-x-2">
+            {['Yes', 'No', 'Fail'].map((option) => (
+              <button
+                key={option}
+                className={`px-4 py-2 rounded ${
+                  selectedOptions.harmony === option
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-white text-black'
+                }`}
+                onClick={() => handleOptionChange('harmony', option)}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="flex items-center mb-2">
-          <label htmlFor="trap" className="mr-2">Trap:</label>
-          <select
-            id="trap"
-            name="trap"
-            value={formData.trap}
-            onChange={handleInputChange}
-            className="bg-black text-white px-2 py-1 rounded"
-          >
-            <option value="">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            <option value="Fail">Fail</option>
-          </select>
+        <div className="mb-2">
+          <label className="block mb-1">Trap:</label>
+          <div className="flex space-x-2">
+            {['Yes', 'No', 'Fail'].map((option) => (
+              <button
+                key={option}
+                className={`px-4 py-2 rounded ${
+                  selectedOptions.trap === option
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-white text-black'
+                }`}
+                onClick={() => handleOptionChange('trap', option)}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="flex items-center mb-2">
-          <label htmlFor="spotlight" className="mr-2">Spotlight:</label>
-          <select
-            id="spotlight"
-            name="spotlight"
-            value={formData.spotlight}
-            onChange={handleInputChange}
-            className="bg-black text-white px-2 py-1 rounded"
-          >
-            <option value="">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            <option value="Fail">Fail</option>
-          </select>
+        <div className="mb-2">
+          <label className="block mb-1">Spotlight:</label>
+          <div className="flex space-x-2">
+            {['Yes', 'No', 'Fail'].map((option) => (
+              <button
+                key={option}
+                className={`px-4 py-2 rounded ${
+                  selectedOptions.spotlight === option
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-white text-black'
+                }`}
+                onClick={() => handleOptionChange('spotlight', option)}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
       <div className="mb-4">
-        <div className="flex items-center mb-2">
-          <label htmlFor="defenseBot" className="mr-2">Defense Bot:</label>
-          <select
-            id="defenseBot"
-            name="defenseBot"
-            value={formData.defenseBot}
-            onChange={handleInputChange}
-            className="bg-black text-white px-2 py-1 rounded"
-          >
-            <option value="">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
+        <div className="mb-2">
+          <label className="block mb-1">Defense Bot:</label>
+          <div className="flex space-x-2">
+            {['Yes', 'No'].map((option) => (
+              <button
+                key={option}
+                className={`px-4 py-2 rounded ${
+                  selectedOptions.defenseBot === option
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-white text-black'
+                }`}
+                onClick={() => handleOptionChange('defenseBot', option)}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="flex items-center mb-2">
-          <label htmlFor="disabledDamagedBot" className="mr-2">Disabled/Damaged Bot:</label>
-          <select
-            id="disabledDamagedBot"
-            name="disabledDamagedBot"
-            value={formData.disabledDamagedBot}
-            onChange={handleInputChange}
-            className="bg-black text-white px-2 py-1 rounded"
-          >
-            <option value="">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
+        <div className="mb-2">
+          <label className="block mb-1">Disabled/Damaged Bot:</label>
+          <div className="flex space-x-2">
+            {['Yes', 'No'].map((option) => (
+              <button
+                key={option}
+                className={`px-4 py-2 rounded ${
+                  selectedOptions.disabledDamagedBot === option
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-white text-black'
+                }`}
+                onClick={() => handleOptionChange('disabledDamagedBot', option)}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="flex items-center mb-2">
-          <label htmlFor="nonFunctionalBot" className="mr-2">Non Functional Bot:</label>
-          <select
-            id="nonFunctionalBot"
-            name="nonFunctionalBot"
-            value={formData.nonFunctionalBot}
-            onChange={handleInputChange}
-            className="bg-black text-white px-2 py-1 rounded"
-          >
-            <option value="">Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
+        <div className="mb-2">
+          <label className="block mb-1">Non Functional Bot:</label>
+          <div className="flex space-x-2">
+            {['Yes', 'No'].map((option) => (
+              <button
+                key={option}
+                className={`px-4 py-2 rounded ${
+                  selectedOptions.nonFunctionalBot === option
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-white text-black'
+                }`}
+                onClick={() => handleOptionChange('nonFunctionalBot', option)}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>

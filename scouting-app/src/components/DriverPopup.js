@@ -33,7 +33,7 @@ const DriverPopup = ({ formData, setFormData, handleStageChange, logAction }) =>
   };
   const handleVibrate = () => {
     if (navigator.vibrate) {
-      navigator.vibrate(500); // Vibrate for 200 milliseconds
+      navigator.vibrate(500); 
     }
   };
   const [showCheckmark, setShowCheckmark] = useState(false);

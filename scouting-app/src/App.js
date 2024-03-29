@@ -375,8 +375,12 @@ const App = () => {
             Amplified
             {showCountdown && <span className="ml-2">{countdownTime}</span>}
           </button>
+          <!-- button that utilizws the setActionLogs function when swapping to endgame-->
           <button
-            onClick={() => setCurrentPopup('endgame')}
+            onClick={() => {
+              setCurrentPopup('endgame');
+              logAction('ENDGAME');
+            }}
             className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
           >
             Next: Endgame

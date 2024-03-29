@@ -123,7 +123,7 @@ const AutonPopup = ({ formData, setFormData, handleStageChange, logAction }) => 
             className="bg-transparent text-black bg-yellow-200 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full mt-2 lg:px-6 lg:py-3"
           >
             Amp [S]
-            <span className="block">{formData.ampsScoredAuton}</span>
+            <span className="block">{formData.amplifiedNotesAuton}</span>
           </button>
         </div>
       </div>

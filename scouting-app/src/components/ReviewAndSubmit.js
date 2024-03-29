@@ -183,7 +183,7 @@ const ReviewAndSubmit = ({ formData, handleInputChange, handleSubmit, handleStag
             <input
               type="number"
               name="amplifiedNotesAuton"
-              value={formData.ampsScoredAuton}
+              value={formData.amplifiedNotesAuton}
               onChange={handleEditInputChange}
               className="border border-gray-300 rounded px-2 py-1 bg-black text-white"
             />

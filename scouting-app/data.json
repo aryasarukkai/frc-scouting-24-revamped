@@ -3266,5 +3266,3690 @@
     "spotlight": "No",
     "teamNumber": "4765",
     "trap": "No"
+  },
+  "-NuA6GHrKH14F57eDZ29": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:45"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 0,
+    "harmony": "No",
+    "matchNumber": "7",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Shaurya C",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 1,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "7777",
+    "trap": "No"
+  },
+  "-NuA6GUrBhiSZTqWmx42": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:45"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 0,
+    "harmony": "No",
+    "matchNumber": "7",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Shaurya C",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 1,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "7777",
+    "trap": "No"
+  },
+  "-NuA6Gs7h3gGWXm0ubGo": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "02:06"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:49"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:40"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:34"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:23"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "Yes",
+    "groundAuton": 0,
+    "groundTeleop": 2,
+    "harmony": "No",
+    "matchNumber": "7",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "Maahi",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 3,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "6506",
+    "trap": "No"
+  },
+  "-NuA6HNnUtqRvTccOpZ7": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:13"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:08"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:04"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:04"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:01"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:05"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:56"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:44"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "01:42"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:40"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:39"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:35"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:30"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:26"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:24"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:20"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:16"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:02"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:51"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:47"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:43"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:40"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:31"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:24"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:21"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:16"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:13"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:05"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 1,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 3,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 3,
+    "groundTeleop": 12,
+    "harmony": "No",
+    "matchNumber": "7",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "Jamar ",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 3,
+    "speakersScoredTeleop": 7,
+    "spotlight": "No",
+    "teamNumber": "100",
+    "trap": "No"
+  },
+  "-NuA6IwDk-7AELnmySQd": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "02:04"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "02:03"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:59"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:59"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "02:06"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:01"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:59"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:58"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:57"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:51"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:48"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:47"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:38"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:33"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:33"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:58"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:57"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:48"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:45"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:44"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:38"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:38"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:36"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:31"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:24"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": "0",
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 2,
+    "groundTeleop": 8,
+    "harmony": "No",
+    "matchNumber": "7",
+    "notes": "Missed a lot of shots",
+    "onstage": "No",
+    "scoutName": "Shaurya",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 7,
+    "speakersScoredAuton": 2,
+    "speakersScoredTeleop": 7,
+    "spotlight": "No",
+    "teamNumber": "1280",
+    "trap": "No"
+  },
+  "-NuA8eFI0vGXqvbHcXxK": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_FAILED_AUTON",
+        "timestamp": "00:12"
+      },
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:06"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:04"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:01"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:00"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:59"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:56"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:52"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:47"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:43"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:37"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:27"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:23"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:22"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:18"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:16"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:13"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:07"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:03"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:56"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:51"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:44"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:42"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:39"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:32"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:29"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:21"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 13,
+    "matchNumber": "8",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Arjun Bawa",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 1,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 12,
+    "spotlight": "No",
+    "teamNumber": "604",
+    "trap": "Yes"
+  },
+  "-NuA8fB3Q2NX9f2gPQvT": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:11"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:12"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "02:10"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:06"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "02:04"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:59"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:56"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:52"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:50"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:42"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:38"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:25"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:08"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:00"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:49"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:42"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:36"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:31"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:25"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:14"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:04"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:03"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 8,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 11,
+    "harmony": "No",
+    "matchNumber": "8",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "saachi",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 1,
+    "speakersScoredTeleop": 2,
+    "spotlight": "No",
+    "teamNumber": "6962",
+    "trap": "No"
+  },
+  "-NuA8fKefi29A2aCMErK": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:11"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:12"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "02:10"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:06"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "02:04"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:59"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:56"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:52"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:50"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:42"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:38"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:25"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:08"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:00"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:49"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:42"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:36"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:31"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:25"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:14"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:04"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:03"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 8,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 11,
+    "harmony": "No",
+    "matchNumber": "8",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "saachi",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 1,
+    "speakersScoredTeleop": 2,
+    "spotlight": "No",
+    "teamNumber": "6962",
+    "trap": "No"
+  },
+  "-NuA8fYYb0nSSaV0Jqy8": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:11"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:12"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "02:10"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:06"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "02:04"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:59"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:56"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:52"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:50"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:42"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:38"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:25"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:08"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:00"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:49"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:42"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:36"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:31"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:25"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:14"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:04"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:03"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 8,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 11,
+    "harmony": "No",
+    "matchNumber": "8",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "saachi",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 1,
+    "speakersScoredTeleop": 2,
+    "spotlight": "No",
+    "teamNumber": "6962",
+    "trap": "No"
+  },
+  "-NuA8f_l6yUGaM_EdYxZ": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_FAILED_AUTON",
+        "timestamp": "00:12"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:04"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:01"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:00"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:59"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:57"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:55"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:48"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:45"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:39"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:36"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:30"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:26"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:22"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:17"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:10"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:04"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:00"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:55"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:53"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:52"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:49"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:48"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:41"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:40"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:33"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:29"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:03"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 13,
+    "harmony": "No",
+    "matchNumber": "8",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Shaurya C",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 1,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 13,
+    "spotlight": "Yes",
+    "teamNumber": "604",
+    "trap": "Yes"
+  },
+  "-NuA8gNby9ZthFKVq_n7": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_FAILED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:06"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:35"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:17"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:57"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:37"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "00:33"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "00:31"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:29"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:26"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:25"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:04"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 2,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 3,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 5,
+    "harmony": "No",
+    "matchNumber": "8",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Jamar ",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 1,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "3257",
+    "trap": "No"
+  },
+  "-NuA8hC8IVJRLpnE0XuI": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_FAILED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:13"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:12"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "02:10"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:07"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:48"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:47"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:41"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:25"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:24"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:16"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:16"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:10"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:01"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:51"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:49"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:45"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:38"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:09"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 2,
+    "groundTeleop": 14,
+    "harmony": "No",
+    "matchNumber": "8",
+    "notes": "Shot notes over the field to speaker area",
+    "onstage": "Yes",
+    "scoutName": "Shaurya",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 1,
+    "speakersFailedTeleop": 1,
+    "speakersScoredAuton": 2,
+    "speakersScoredTeleop": 2,
+    "spotlight": "No",
+    "teamNumber": "971",
+    "trap": "Yes"
+  },
+  "-NuA8hQY6EDVGmwtGQGP": {
+    "actionLogs": [
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:06"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:05"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "02:03"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:59"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:49"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:39"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:31"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:28"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:22"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:13"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:08"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:57"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:48"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:40"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:33"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:25"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 3,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 8,
+    "harmony": "No",
+    "matchNumber": "8",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Maahi",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 4,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 1,
+    "spotlight": "No",
+    "teamNumber": "3669",
+    "trap": "Fail"
+  },
+  "-NuAAZLvRkGeDXTVF4mj": {
+    "actionLogs": [
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:11"
+      },
+      {
+        "action": "AMP_FAILED_AUTON",
+        "timestamp": "00:10"
+      },
+      {
+        "action": "SPEAKER_FAILED_AUTON",
+        "timestamp": "00:09"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:15"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:01"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:28"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:28"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:19"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:01"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:47"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:46"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:37"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:36"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:17"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:16"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 1,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "groundAuton": 1,
+    "groundTeleop": 8,
+    "harmony": "No",
+    "matchNumber": "9",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "Saachi Jain",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 1,
+    "speakersFailedTeleop": 3,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 3,
+    "spotlight": "No",
+    "teamNumber": "5700",
+    "trap": "No"
+  },
+  "-NuAA_H9xMn4SMzPVs2L": {
+    "actionLogs": [
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "Yes",
+    "groundAuton": 0,
+    "groundTeleop": 0,
+    "harmony": "No",
+    "matchNumber": "9",
+    "notes": "",
+    "onstage": "Fail",
+    "scoutName": "Maahi ",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "6918",
+    "trap": "No"
+  },
+  "-NuAAa-4YXP9kMmqbHz3": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:12"
+      },
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:48"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": true,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 0,
+    "harmony": "No",
+    "matchNumber": "9",
+    "notes": "",
+    "onstage": "Fail",
+    "scoutName": "Arjun Bawa",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 1,
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "4255",
+    "trap": "No"
+  },
+  "-NuAAaxmt-ZNMBSy1zYg": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:11"
+      },
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:39"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "02:06"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 0,
+    "harmony": "No",
+    "matchNumber": "9",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "Shaurya ac",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 1,
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "4255",
+    "trap": "No"
+  },
+  "-NuAAgLdpXkV6jMm2Nry": {
+    "actionLogs": [
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "02:06"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:58"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:53"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:43"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:36"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:25"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:14"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:56"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:04"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 4,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 4,
+    "harmony": "No",
+    "matchNumber": "9",
+    "notes": "they normally grief but they didn't this time",
+    "onstage": "Yes",
+    "scoutName": "Jamar ",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "6665",
+    "trap": "No"
+  },
+  "-NuAApFyk7fMpylFjeLR": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_FAILED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "AMP_FAILED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "AMP_FAILED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "AMP_FAILED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_FAILED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "02:14"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "02:14"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "02:13"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "02:13"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "02:13"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:15"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:15"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:15"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:14"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:14"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:14"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:14"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:14"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:14"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:13"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:13"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:13"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:12"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:12"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:11"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:10"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:09"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:09"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:08"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:14"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "02:11"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": "0",
+    "ampsFailedTeleop": 3,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": "2",
+    "groundTeleop": 13,
+    "harmony": "No",
+    "matchNumber": "9",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "Shaurya",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": "0",
+    "speakersFailedTeleop": 2,
+    "speakersScoredAuton": "1",
+    "speakersScoredTeleop": 8,
+    "spotlight": "No",
+    "teamNumber": "115",
+    "trap": "No"
+  },
+  "-NuACXZhKkRvjbrt7n0s": {
+    "actionLogs": [
+      {
+        "action": "AMP_FAILED_AUTON",
+        "timestamp": "00:07"
+      },
+      {
+        "action": "AMP_SCORED_AUTON",
+        "timestamp": "00:06"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:57"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:52"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:42"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:36"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:20"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:19"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:06"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:02"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:56"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:54"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:45"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:40"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:35"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:34"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:19"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:14"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "",
+    "amplifiedNotesAuton": 1,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 1,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 8,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 8,
+    "harmony": "Yes",
+    "matchNumber": "10",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Saachi Jain",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "4765",
+    "trap": "No"
+  },
+  "-NuACZN8A0bbtmUZZKhq": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:10"
+      },
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:42"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:11"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:02"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:57"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:19"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:13"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 3,
+    "harmony": "No",
+    "matchNumber": "10",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Maahi",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 1,
+    "speakersScoredAuton": 1,
+    "speakersScoredTeleop": 2,
+    "spotlight": "No",
+    "teamNumber": "6884",
+    "trap": "No"
+  },
+  "-NuACa2v3R8yNBvXhW2j": {
+    "actionLogs": [
+      {
+        "action": "AMP_SCORED_AUTON",
+        "timestamp": "00:13"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:11"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:11"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "01:58"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:57"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:53"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:52"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:47"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:42"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "01:36"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:35"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:12"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:03"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "00:48"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:47"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:42"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:36"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:32"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:18"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 1,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 3,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 3,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 9,
+    "harmony": "Fail",
+    "matchNumber": "10",
+    "notes": "",
+    "onstage": "Fail",
+    "scoutName": "Jamar ",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 1,
+    "speakersScoredAuton": 1,
+    "speakersScoredTeleop": 1,
+    "spotlight": "No",
+    "teamNumber": "5104",
+    "trap": "No"
+  },
+  "-NuACb8x0zCLdFcCv8vT": {
+    "actionLogs": [
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:06"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:52"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:16"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:15"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:02"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:50"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:32"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 6,
+    "harmony": "No",
+    "matchNumber": "10",
+    "notes": "Assisted notes rather than scoring",
+    "onstage": "Yes",
+    "scoutName": "Shaurya C",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 0,
+    "spotlight": "Yes",
+    "teamNumber": "5085",
+    "trap": "No"
+  },
+  "-NuACizS9-SpkmXW0_Qy": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_FAILED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:14"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:05"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:55"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:51"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:46"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:45"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "01:30"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": "3",
+    "groundTeleop": "15",
+    "harmony": "Yes",
+    "matchNumber": "10",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Shaurya",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 1,
+    "speakersFailedTeleop": "1",
+    "speakersScoredAuton": "4",
+    "speakersScoredTeleop": "15",
+    "spotlight": "No",
+    "teamNumber": "1072",
+    "trap": "No"
+  },
+  "-NuAEIAAap0KvJJBw_57": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:11"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:10"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:09"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:07"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:05"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:03"
+      },
+      {
+        "action": "SPEAKER_FAILED_AUTON",
+        "timestamp": "00:01"
+      },
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:11"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:06"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:00"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:41"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:38"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:35"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:31"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:30"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:23"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:09"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:05"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:04"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:02"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:01"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:58"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:55"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:45"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:39"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:36"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:35"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:31"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:25"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:21"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:20"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:16"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:13"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 3,
+    "groundTeleop": 13,
+    "harmony": "No",
+    "matchNumber": "11",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "Maahi",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 1,
+    "speakersFailedTeleop": 5,
+    "speakersScoredAuton": 3,
+    "speakersScoredTeleop": 8,
+    "spotlight": "No",
+    "teamNumber": "3045",
+    "trap": "No"
+  },
+  "-NuAEJLtx8phdxI-MegG": {
+    "actionLogs": [
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:10"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:09"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:02"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:56"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:42"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:33"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:28"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:19"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:09"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:59"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:54"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:41"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:41"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 1,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 6,
+    "harmony": "No",
+    "matchNumber": "11",
+    "notes": "",
+    "onstage": "Fail",
+    "scoutName": "Shaurya C",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 2,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 5,
+    "spotlight": "No",
+    "teamNumber": "2135",
+    "trap": "No"
+  },
+  "-NuAEKFv1BGgSDwYmPPO": {
+    "actionLogs": [
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:11"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "02:10"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:54"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:53"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:19"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:14"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:11"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:10"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:57"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:56"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:56"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:40"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 5,
+    "harmony": "No",
+    "matchNumber": "11",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Shaurya",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 4,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 2,
+    "spotlight": "Yes",
+    "teamNumber": "5171",
+    "trap": "No"
+  },
+  "-NuAEKOWSm1h-_xJvdzp": {
+    "actionLogs": [
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:11"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "02:10"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:54"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:53"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:19"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:14"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:11"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:10"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:57"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:56"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:56"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:40"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 5,
+    "harmony": "No",
+    "matchNumber": "11",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Shaurya",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 4,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 2,
+    "spotlight": "Yes",
+    "teamNumber": "5171",
+    "trap": "No"
+  },
+  "-NuAEKod08esZcM0TWst": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:07"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "02:07"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:03"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "02:03"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:42"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:41"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:38"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:36"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:34"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:32"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:30"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:26"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:25"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:22"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:19"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:11"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:08"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:04"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:58"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:53"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:50"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "00:47"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:46"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:42"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:32"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:24"
+      }
+    ],
+    "allianceColor": "",
+    "amplifiedNotesAuton": 1,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 1,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 5,
+    "brokenBot": false,
+    "groundAuton": "5",
+    "groundTeleop": 12,
+    "harmony": "No",
+    "matchNumber": "11",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Saachi Jain",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 1,
+    "speakersScoredAuton": 6,
+    "speakersScoredTeleop": 6,
+    "spotlight": "No",
+    "teamNumber": "1323",
+    "trap": "Yes"
+  },
+  "-NuAEWiWtT17MyaodW_O": {
+    "actionLogs": [
+      {
+        "action": "AMP_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "AMP_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:05"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "01:53"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:43"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:28"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:20"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:08"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:02"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:51"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:41"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "00:31"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:05"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 3,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 1,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 4,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 5,
+    "harmony": "Yes",
+    "matchNumber": "11",
+    "notes": "amp only, can only get notes from source(someone drops it)",
+    "onstage": "Yes",
+    "scoutName": "jamar",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "253",
+    "trap": "No"
+  },
+  "-NuAGfv_LjVA9yak-i0D": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:12"
+      },
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:09"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:07"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:58"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:56"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:50"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:47"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:16"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:57"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:14"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:10"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:09"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 3,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 6,
+    "harmony": "No",
+    "matchNumber": "12",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "Shaurya C",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 1,
+    "speakersScoredTeleop": 6,
+    "spotlight": "No",
+    "teamNumber": "9006",
+    "trap": "No"
+  },
+  "-NuAGj2IBxuGgm7YMndh": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:13"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 3,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 0,
+    "harmony": "No",
+    "matchNumber": "12",
+    "notes": "broke down in amp corner",
+    "onstage": "No",
+    "scoutName": "jamar",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 1,
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "852",
+    "trap": "No"
+  },
+  "-NuAGsDye0is_3lBhuft": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:12"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:10"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:08"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:07"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:05"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:04"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 3,
+    "groundTeleop": 0,
+    "harmony": "No",
+    "matchNumber": "11",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "Maahi",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 4,
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "2473",
+    "trap": "No"
+  },
+  "-NuAGt-cR3s09DWxxRwn": {
+    "actionLogs": [
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_FAILED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "AMP_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "AMP_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "AMP_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "AMP_SCORED_AUTON",
+        "timestamp": "00:15"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "01:55"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 4,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": "5",
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": "0",
+    "groundTeleop": "4",
+    "harmony": "No",
+    "matchNumber": "12",
+    "notes": "Amp bot",
+    "onstage": "No",
+    "scoutName": "Shaurya",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": "0",
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": "0",
+    "speakersScoredTeleop": 0,
+    "spotlight": "No",
+    "teamNumber": "7526",
+    "trap": "No"
+  },
+  "-NuAJ7FdaZGfJ17v4qLH": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:12"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:11"
+      },
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:07"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:03"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:59"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:56"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:52"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:49"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:45"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:43"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:36"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:29"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:26"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:23"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "01:21"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:12"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "00:58"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:56"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:52"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:38"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 2,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 1,
+    "groundTeleop": 9,
+    "harmony": "No",
+    "matchNumber": "13",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Arvin",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 2,
+    "speakersScoredAuton": 1,
+    "speakersScoredTeleop": 5,
+    "spotlight": "No",
+    "teamNumber": "3669",
+    "trap": "Yes"
+  },
+  "-NuAJF1x7EhoeLfsA27u": {
+    "actionLogs": [
+      {
+        "action": "SPEAKER_SCORED_AUTON",
+        "timestamp": "00:10"
+      },
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:06"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "02:01"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:25"
+      }
+    ],
+    "allianceColor": "blue",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 1,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 1,
+    "harmony": "No",
+    "matchNumber": "13",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "Arjun Bawa",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 1,
+    "speakersScoredTeleop": 0,
+    "spotlight": "Yes",
+    "teamNumber": "2643",
+    "trap": "No"
+  },
+  "-NuAJH7GZzXhSvcjbuqN": {
+    "actionLogs": [
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "02:09"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "02:04"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:45"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:39"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:37"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:32"
+      },
+      {
+        "action": "SPEAKER_FAILED_TELEOP",
+        "timestamp": "01:31"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:25"
+      },
+      {
+        "action": "AMP_FAILED_TELEOP",
+        "timestamp": "01:20"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:17"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:54"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 1,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 5,
+    "harmony": "No",
+    "matchNumber": "12",
+    "notes": "",
+    "onstage": "Yes",
+    "scoutName": "Maahi ",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 2,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 3,
+    "spotlight": "No",
+    "teamNumber": "2035",
+    "trap": "No"
+  },
+  "-NuAJJfem4lMHp32Snpk": {
+    "actionLogs": [
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "AMP_SCORED_TELEOP",
+        "timestamp": "02:01"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:41"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": 0,
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 1,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": 0,
+    "groundTeleop": 1,
+    "harmony": "No",
+    "matchNumber": "13",
+    "notes": "dead weight,  can’t do much",
+    "onstage": "Yes",
+    "scoutName": "amogh",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 0,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": 0,
+    "speakersScoredTeleop": 0,
+    "spotlight": "Fail",
+    "teamNumber": "6665",
+    "trap": "No"
+  },
+  "-NuAJONCXTWRHk2FykYg": {
+    "actionLogs": [
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:10"
+      },
+      {
+        "action": "AMP_FAILED_AUTON",
+        "timestamp": "00:10"
+      },
+      {
+        "action": "AMP_FAILED_AUTON",
+        "timestamp": "00:09"
+      },
+      {
+        "action": "PICKUP_AUTON",
+        "timestamp": "00:08"
+      },
+      {
+        "action": "SPEAKER_FAILED_AUTON",
+        "timestamp": "00:08"
+      },
+      {
+        "action": "CUT_TO_TELEOP",
+        "timestamp": "00:00"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:15"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:14"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:13"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:11"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "01:06"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "01:06"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:56"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:50"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:39"
+      },
+      {
+        "action": "SPEAKER_SCORED_TELEOP",
+        "timestamp": "00:23"
+      },
+      {
+        "action": "PICKUP_TELEOP",
+        "timestamp": "00:21"
+      },
+      {
+        "action": "ENDGAME",
+        "timestamp": "00:00"
+      }
+    ],
+    "allianceColor": "red",
+    "amplifiedNotesAuton": 0,
+    "amplifiedNotesTeleop": 0,
+    "ampsFailedAuton": "0",
+    "ampsFailedTeleop": 0,
+    "ampsScoredAuton": 0,
+    "ampsScoredTeleop": 0,
+    "brokenBot": false,
+    "defenseBot": "No",
+    "groundAuton": "1",
+    "groundTeleop": 6,
+    "harmony": "No",
+    "matchNumber": "13",
+    "notes": "",
+    "onstage": "No",
+    "scoutName": "Julius ",
+    "sourceTeleop": 0,
+    "speakersFailedAuton": 1,
+    "speakersFailedTeleop": 0,
+    "speakersScoredAuton": "1",
+    "speakersScoredTeleop": 5,
+    "spotlight": "No",
+    "teamNumber": "4255",
+    "trap": "No"
   }
 }

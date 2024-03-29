@@ -375,7 +375,7 @@ const App = () => {
             Amplified
             {showCountdown && <span className="ml-2">{countdownTime}</span>}
           </button>
-          <!-- button that utilizws the setActionLogs function when swapping to endgame-->
+
           <button
             onClick={() => {
               setCurrentPopup('endgame');

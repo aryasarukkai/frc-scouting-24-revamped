@@ -378,6 +378,22 @@ const App = () => {
           </button>
         </div>
       )}
+      {currentPopup === 'dmode' && (
+        <div className="flex justify-between mt-4">
+          <button
+            onClick={() => setCurrentPopup('driver')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Previous
+          </button>
+          <button
+            onClick={() => setCurrentPopup('endgame')}
+            className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
+          >
+            Next: Endgame
+          </button>
+        </div>
+      )}
       {currentPopup === 'driver' && (
         <div className="flex justify-between mt-4">
           <button
@@ -407,12 +423,12 @@ const App = () => {
 </button>
 <button
   onClick={() => {
-    setCurrentPopup('endgame');
-    logAction('ENDGAME');
+    setCurrentPopup('dmode');
+    logAction('dmode');
   }}
   className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer"
 >
-  Next: Endgame
+  Next: DMODE
 </button>
 </div>
 )}

@@ -45,10 +45,10 @@ matchKeys.forEach(matchKey => {
   const match = data[matchKey];
 
   // Convert the actionLogs array to a JSON string
-  const actionLogsJson = JSON.stringify(match.actionLogs);
+  const actionLogsJson = JSON.stringify(match.actionLogs || []);
 
   // Replace newline characters with semicolons in the notes field
-  const notes = match.notes.replace(/\n/g, ';');
+  const notes = (match.notes || '').replace(/\n/g, ';');
 
   // Convert "Yes", "No", and "Fail" to 1, 0, and -1 respectively
   const defenseBot = match.defenseBot === 'Yes' ? 1 : match.defenseBot === 'No' ? 0 : '';
@@ -61,23 +61,23 @@ matchKeys.forEach(matchKey => {
 
   // Extract the relevant data from the match object
   const row = [
-    match.matchNumber,
-    match.scoutName,
-    match.teamNumber,
-    match.allianceColor,
-    match.speakersScoredAuton,
-    match.speakersFailedAuton,
-    match.ampsScoredAuton,
-    match.ampsFailedAuton,
-    match.speakersScoredTeleop,
-    match.speakersFailedTeleop,
-    match.ampsScoredTeleop,
-    match.ampsFailedTeleop,
-    match.groundAuton,
-    match.groundTeleop,
-    match.sourceTeleop,
-    match.amplifiedNotesAuton,
-    match.amplifiedNotesTeleop,
+    match.matchNumber || '',
+    match.scoutName || '',
+    match.teamNumber || '',
+    match.allianceColor || '',
+    match.speakersScoredAuton || '',
+    match.speakersFailedAuton || '',
+    match.ampsScoredAuton || '',
+    match.ampsFailedAuton || '',
+    match.speakersScoredTeleop || '',
+    match.speakersFailedTeleop || '',
+    match.ampsScoredTeleop || '',
+    match.ampsFailedTeleop || '',
+    match.groundAuton || '',
+    match.groundTeleop || '',
+    match.sourceTeleop || '',
+    match.amplifiedNotesAuton || '',
+    match.amplifiedNotesTeleop || '',
     defenseBot,
     harmony,
     onstage,
@@ -94,9 +94,13 @@ matchKeys.forEach(matchKey => {
 });
 
 // Convert the CSV rows array to a CSV string
-const csvString = [headers.join(','), ...csvRows.map(row => row.map(field => `"${field.toString().replace(/"/g, '""')}"`).join(','))].join('\n');
+const csvString = [
+  headers.join(','),
+  ...csvRows.map(row =>
+    row.map(field => field === undefined ? '""' : `"${field.toString().replace(/"/g, '""')}"`).join(',')
+  )
+].join('\n');
 
 // Write the CSV string to a file
 fs.writeFileSync('output.csv', csvString, 'utf8');
-
 console.log('CSV file generated successfully!');

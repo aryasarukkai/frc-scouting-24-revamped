@@ -48,23 +48,35 @@ const DModePopup = () => {
   };
 
   return (
-    <div className="bg-cyan-700 p-4 rounded">
+    <div className="bg-red-700 p-4 rounded">
       <div className="grid grid-cols-3 gap-4 h-full">
         <div>
           <header className="header">Defense Mode</header>
           <div className="timer">{formatTime(timer)}</div>
           <div className="timeButtons">
-            <button onClick={handleStartStop}>{isActive ? 'Stop' : 'Start'}</button>
-            <button onClick={handleReset}>Reset</button>
+            <button onClick={handleStartStop} className={`px-4 py-2 rounded ${isActive ? 'bg-blue-500 text-white' : 'bg-white text-black'}`}>
+              {isActive ? 'Stop' : 'Start'}
+            </button>
+            <button onClick={handleReset} className="px-4 py-2 rounded bg-white text-black">
+              Reset
+            </button>
           </div>
         </div>
         <div>
           <div className="side-by-side-buttons">
-            <button type="button" className="left-button" onClick={() => incrementValue('shotsBlocked')}>
+            <button
+              type="button"
+              className="px-4 py-2 rounded bg-white text-black"
+              onClick={() => incrementValue('shotsBlocked')}
+            >
               Shots Blocked
               <span className="data">{formData.shotsBlocked}</span>
             </button>
-            <button type="button" onClick={() => incrementValue('penalties')}>
+            <button
+              type="button"
+              className="px-4 py-2 rounded bg-white text-black"
+              onClick={() => incrementValue('penalties')}
+            >
               Penalties
               <span className="data">{formData.penalties}</span>
             </button>

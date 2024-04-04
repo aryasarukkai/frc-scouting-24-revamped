@@ -5,11 +5,13 @@ import SetupPopup from './components/SetupPopup';
 import AutonPopup from './components/AutonPopup';
 import Header from './components/Header';
 import DriverPopup from './components/DriverPopup';
+import DModePopup from './components/DModePopup';
 import ReviewAndSubmit from './components/ReviewAndSubmit';
 import LandscapePopup from './components/LandscapePopup';
 import DataLookup from './components/DataLookup';
 import SuccessPopup from './components/SuccessPopup';
 import EndgamePopup from './components/EndgamePopup';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAso045mvuwi4VgaqCFVBT0bz1u3_e9O9g",
@@ -211,6 +213,12 @@ const App = () => {
               className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
             >
               Auton
+            </button>
+            <button
+              onClick={() => setCurrentPopup('dmode')}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+            >
+              DMODE
             </button>
             <button
               onClick={() => setCurrentPopup('driver')}

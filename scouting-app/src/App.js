@@ -215,16 +215,16 @@ const App = () => {
               Auton
             </button>
             <button
-              onClick={() => setCurrentPopup('dmode')}
-              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
-            >
-              DMODE
-            </button>
-            <button
               onClick={() => setCurrentPopup('driver')}
               className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
             >
               Teleop
+            </button>
+            <button
+              onClick={() => setCurrentPopup('dmode')}
+              className="bg-transparent text-white font-bold uppercase border-2 border-white px-6 py-3 rounded cursor-pointer m-2"
+            >
+              DMODE
             </button>
             <button
               onClick={() => setCurrentPopup('endgame')}

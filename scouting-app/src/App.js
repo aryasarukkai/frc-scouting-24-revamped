@@ -301,6 +301,15 @@ const App = () => {
             />
           </div>
         )}
+        {currentPopup === 'dmode' && (
+          <div className="transition-opacity duration-500 ease-in-out opacity-100">
+            <DModePopup
+              formData={formData}
+              handleInputChange={handleInputChange}
+              handleStageChange={setCurrentPopup}
+            />
+          </div>
+        )}
         {currentPopup === 'review' && (
           <div className="transition-opacity duration-500 ease-in-out opacity-100">
             <ReviewAndSubmit

@@ -31,11 +31,13 @@ const DriverPopup = ({ formData, setFormData, handleStageChange, logAction }) =>
     const remainingSeconds = seconds % 60;
     return `${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
   };
+
   const handleVibrate = () => {
     if (navigator.vibrate) {
       navigator.vibrate(500); 
     }
   };
+
   const [showCheckmark, setShowCheckmark] = useState(false);
   const [scoredItem, setScoredItem] = useState('');
 
@@ -46,7 +48,6 @@ const DriverPopup = ({ formData, setFormData, handleStageChange, logAction }) =>
       setShowCheckmark(false);
     }, 750);
   };
-
 
   const handleStartStop = () => {
     setIsActive((prevActive) => !prevActive);
@@ -127,7 +128,45 @@ const DriverPopup = ({ formData, setFormData, handleStageChange, logAction }) =>
           </button>
         </div>
       </div>
-      
+
+      {/* New row with "FEEDING:" header */}
+      <div className="grid grid-cols-3 gap-4 mt-4">
+        <div className="col-span-3 text-white font-bold uppercase">
+          FEEDING:
+        </div>
+      </div>
+
+      {/* New row with "source feed" and "intake feed" buttons */}
+      <div className="grid grid-cols-3 gap-4 mt-2">
+        <div>
+          <button
+            type="button"
+            onClick={() => {
+              incrementValue('sourceFeed');
+              logAction('SOURCE_FEED');
+            }}
+            className="bg-transparent text-white bg-blue-500 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full lg:px-6 lg:py-3"
+          >
+            FED from Source
+            <span className="block">{formData.sourceFeed}</span>
+          </button>
+        </div>
+        <div>
+          <button
+            type="button"
+            onClick={() => {
+              incrementValue('intakeFeed');
+              logAction('INTAKE_FEED');
+            }}
+            className="bg-transparent text-white bg-blue-500 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full lg:px-6 lg:py-3"
+          >
+            Intaked Feed
+            <span className="block">{formData.intakeFeed}</span>
+          </button>
+        </div>
+        <div></div>
+      </div>
+
       {showCheckmark && (
         <div className="fixed inset-0 flex flex-col items-center justify-center bg-green-500 bg-opacity-75 transition-opacity duration-1000 animate-fade-out" style={{ zIndex: 9999 }}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-48 w-48 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">

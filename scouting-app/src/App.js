@@ -46,6 +46,8 @@ const App = () => {
     speakersScoredTeleop: 0,
     amplifiedNotesAuton: 0,
     ampsScoredTeleop: 0,
+    intakeFeed: 0,
+    sourceFeed: 0,
     notes: '',
   });
   const [actionLogs, setActionLogs] = useState([]);
@@ -66,7 +68,7 @@ const App = () => {
   };
 
   const submitData = () => {
-    const newSubmissionRef = push(ref(database, 'formData-mbr'));
+    const newSubmissionRef = push(ref(database, 'formData-ebr'));
     set(newSubmissionRef, { ...formData, actionLogs, brokenBot })
       .then(() => {
         console.log('Data submitted successfully');

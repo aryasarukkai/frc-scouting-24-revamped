@@ -147,7 +147,7 @@ const DriverPopup = ({ formData, setFormData, handleStageChange, logAction }) =>
             }}
             className="bg-transparent text-white bg-blue-500 font-bold uppercase border-2 border-white px-4 py-2 rounded cursor-pointer w-full h-full lg:px-6 lg:py-3"
           >
-            FED from Source
+            Feed Shot
             <span className="block">{formData.sourceFeed}</span>
           </button>
         </div>
